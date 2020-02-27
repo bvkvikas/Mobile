@@ -88,8 +88,9 @@ class SingletonCLass: NSObject {
     
     func deleteTrain(_ trainLineName: String) -> Bool
     {
-        if let _ = getTrain(trainLineName) {
+        if let t = getTrain(trainLineName) {
             trainsObj.removeAll(where:{ $0.trainLineName == trainLineName })
+            scheduleObj.removeAll(where: {$0.lineID == t.lineID})
            return true
         }
         return false
@@ -111,9 +112,9 @@ class SingletonCLass: NSObject {
         return train
     }
     
-    func showSchedulesForTrain(_ trainLineName: String) -> [Schedules]? {
+    func showSchedulesForTrain(_ trainLineName: String) -> [Schedules] {
         guard let tr  = getTrain(trainLineName) else{
-            return nil
+            return []
         }
         return tr.schedule
     }
@@ -151,8 +152,11 @@ class SingletonCLass: NSObject {
     
     func deleteSchedule(_ scheduleID : Int) -> Bool
     {
-        if let _ = getSchedule(scheduleID) {
+        if let s = getSchedule(scheduleID) {
+            let t = getTrainByID(s.lineID);
+            t?.schedule.removeAll(where:{ $0.scheduleID == scheduleID })
             scheduleObj.removeAll(where:{ $0.scheduleID == scheduleID })
+            
            return true
         }
         return false

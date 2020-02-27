@@ -52,7 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                
            case .trainOptionsButton:
                let buttons = [("Add Train",choice.addTrain.rawValue),
-                              ("Update Train ",choice.updateTrain.rawValue),
                               ("View all trains",choice.displayAllTrains.rawValue),
                               ("Delete Train",choice.deleteTrain.rawValue),
                               ("Main Menu",choice.ask.rawValue)]
@@ -60,11 +59,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                
            case .scheduleOptionsButton:
             let buttons = [("Add Schedule",choice.addSchedule.rawValue),
-                           ("Update Schedule",choice.updateSchedule.rawValue),
                            ("View All Schedules",choice.showAllSchedules.rawValue),
                               ("Delete Schedule",choice.deleteSchedule.rawValue),
-                              ("Main Menu",choice.ask.rawValue),
-                              ("Schedule by train",choice.showSchedulesOfTrain.rawValue)
+                              ("Schedule by train",choice.showSchedulesOfTrain.rawValue),
+                ("Main Menu",choice.ask.rawValue)
+                
             ]
                view = getView( y: 60, buttons: buttons)
                
@@ -72,15 +71,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let textViews = [("Line Name",TFType.trainName)];
                 view = addTrain(y: 60, textViews: textViews);
                
-           case .updateTrain:
-            let textViews = [("Line Name",TFType.trainName)];
-               view = addTrain(y: 60, textViews: textViews, isUpdate: true)
-               
+//           case .updateTrain:
+//            let textViews = [("Line Name",TFType.trainName)];
+//               view = addTrain(y: 60, textViews: textViews, isUpdate: true)
+//
            case .displayAllTrains:
                view = displayAllTrains()
                
            case .deleteTrain:
-               let textViews = [("Train ID",TFType.lineID)]
+               let textViews = [("Train name",TFType.trainName)]
                view = deleteTrain(y: 60, textViews: textViews)
             
            case .addSchedule:
@@ -91,13 +90,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                    ]
                view = addSchedule(y: 60, textViews: textViews)
             
-           case .updateSchedule:
-               let textViews =     [("Arrival Time",TFType.arrivalTime),
-                                    ("Departure Time",TFType.departureTime),
-                                    ("Train",TFType.lineID)
-                                                 ]
-               view = addSchedule(y: 60, textViews: textViews, isUpdate: true)
-               
+//           case .updateSchedule:
+//               let textViews =     [("Arrival Time",TFType.arrivalTime),
+//                                    ("Departure Time",TFType.departureTime),
+//                                    ("Train",TFType.lineID)
+//                                                 ]
+//               view = addSchedule(y: 60, textViews: textViews, isUpdate: true)
+//
            case .showAllSchedules:
                view = showAllSchedules()
                
@@ -124,7 +123,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            if view != nil
            {
                window!.addSubview(view)
-           
            }
        }
     
@@ -188,19 +186,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         switch ch {
         case .addTrainButton:
-            validateTrainDetails(false)
+            validateTrainDetails()
             return
-        case .updateTrainButton:
-            validateTrainDetails(true)
+//        case .updateTrainButton:
+//            validateTrainDetails(true)
         case .deleteTrainButton:
             validateDeleteTrain()
             return
         case .addScheduleButton:
-            validateSchedule(false)
+            validateSchedule()
             return
-        case .updateScheduleButton:
-            validateSchedule(true)
-            return
+//        case .updateScheduleButton:
+//            validateSchedule(true)
+//            return
         case .deleteScheduleButton:
             validateDeleteSchedule()
             return
@@ -219,13 +217,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let view = getView()
         
         
+        
         var str = ""
+       
+        if SingletonCLass.shared.trainsObj.count == 0 {
+            str = "No trains in the list"
+        }else {
         for train in SingletonCLass.shared.trainsObj
         {
             str = str + "\n Train Name: \(train.trainLineName!)\n Line ID:\(train.lineID!)\n"
             print(str)
         }
-        
+        }
 //        let label = createLabel(yAxis: 50, text: str)
 //        view.addSubview(label)
 //
@@ -243,12 +246,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            
             
             var str = ""
-           for schedule in SingletonCLass.shared.showSchedulesForTrain(lineName) ?? []
+            let schedules = SingletonCLass.shared.showSchedulesForTrain(lineName)
+            
+            if schedules.count == 0 {
+                str = "No schedules for line: \(lineName) in the list"
+            }else {
+           for schedule in schedules
             {
                 str = str + "\n Schedule ID : \(schedule.scheduleID!)\n Line ID:\(schedule.lineID!)\n Arrival Time:\(schedule.arrivalTime!)\n Departure Time: \(schedule.departureTime!)"
                 print(str)
             }
-            
+            }
     //        let label = createLabel(yAxis: 50, text: str)
     //        view.addSubview(label)
     //
@@ -396,11 +404,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let view = getView()
         
         var str = ""
+        if SingletonCLass.shared.scheduleObj.count == 0 {
+            str = "No trains in the list"
+        }else {
         for schedule in SingletonCLass.shared.scheduleObj
         {
             str = str + "\n Train ID: \(schedule.lineID!)\n Schedule ID:\(schedule.scheduleID!)\n Arrival Time: \(schedule.arrivalTime!)\n Departure Time:\(schedule.departureTime!) \n"
         }
-        
+        }
 //        let label = createLabel(yAxis: 50, text: str)
 //        view.addSubview(label)
         
@@ -485,7 +496,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return textView
    }
 //
-    func validateTrainDetails(_ isUpdate : Bool)
+    func validateTrainDetails()
     {
         
         var train : Train!
@@ -495,25 +506,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         
-        
-        if (isUpdate){
-            
-            guard let tr = SingletonCLass.shared.getTrain(na) else {
-                showAlert(title: "Train not found")
-                return
-            }
-            train = tr
-        }
-        
 //
-//        if let _ = SingletonCLass.shared.getTrain(Int(na)!)  {
-//            showAlert(title: "Line exists already")
-//            return
+//        if (isUpdate){
+//
+//            guard let tr = SingletonCLass.shared.getTrain(na) else {
+//                showAlert(title: "Train not found")
+//                return
+//            }
+//            train = tr
 //        }
         
-        if (!isUpdate){
-            train =  SingletonCLass.shared.addTrain()
+
+        if let _ = SingletonCLass.shared.getTrain(na)  {
+            showAlert(title: "Line exists already")
+            return
         }
+        train =  SingletonCLass.shared.addTrain()
+        
         train.trainLineName = na
         
         showAlert(title: "Line succesfully created")
@@ -536,7 +545,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func validateScheduleFortrain()
      {
         
-        guard let line = lineIDTF,let lineName = line.text, !lineName.isEmptyOrWhitespace() else {
+        guard let line = trainNameTF,let lineName = line.text, !lineName.isEmptyOrWhitespace() else {
                        showAlert(title: "Enter correct line name")
                        return
                    }
@@ -559,22 +568,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       print(title)
         }
     
-    func validateSchedule(_ isUpdate : Bool)
+    func validateSchedule()
     {
         var schedule : Schedules!
-        if isUpdate
-        {
-            guard let scheduleID = scheduleIDTF,let sid = scheduleID.text, !sid.isEmptyOrWhitespace() else {
-                showAlert(title: "Enter correct id")
-                return
-            }
-            
-            guard let sch = SingletonCLass.shared.getSchedule(Int(sid)!) else {
-                showAlert(title: "Schedule not found, please try again")
-                return
-            }
-            schedule = sch
-        }
+//        if isUpdate
+//        {
+//            guard let scheduleID = scheduleIDTF,let sid = scheduleID.text, !sid.isEmptyOrWhitespace() else {
+//                showAlert(title: "Enter correct id")
+//                return
+//            }
+//
+//            guard let sch = SingletonCLass.shared.getSchedule(Int(sid)!) else {
+//                showAlert(title: "Schedule not found, please try again")
+//                return
+//            }
+//            schedule = sch
+//        }
         guard let lineID = lineIDTF, let lid = lineID.text ,!lid.isEmptyOrWhitespace()  else {
             
             showAlert(title: "Enter train id")
@@ -593,10 +602,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             showAlert(title: "Enter correct departure time format in HH:mm")
             return
         }
+        schedule =  SingletonCLass.shared.addSchedule(train: train)
         
-        if (!isUpdate){
-            schedule =  SingletonCLass.shared.addSchedule(train: train)
-        }
         schedule.lineID = train.lineID
         schedule.arrivalTime = at
         schedule.departureTime = dt
@@ -611,7 +618,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                   showAlert(title: "Enter correct schedule ID")
                   return
               }
-        if !SingletonCLass.shared.deleteTrain(sid)  {
+        if !SingletonCLass.shared.deleteSchedule(Int(sid)!)  {
             showAlert(title: "Schedule ID not found, please retry")
             return
         }
