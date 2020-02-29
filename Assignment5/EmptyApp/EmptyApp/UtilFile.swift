@@ -86,19 +86,19 @@ class SingletonCLass: NSObject {
         return train
     }
     
-    func deleteTrain(_ trainLineName: String) -> Bool
+    func deleteTrain(_ trn: String) -> Bool
     {
-        if let t = getTrain(trainLineName) {
-            trainsObj.removeAll(where:{ $0.trainLineName == trainLineName })
-            scheduleObj.removeAll(where: {$0.lineID == t.lineID})
+        if let t = getTrain(trn) {
+            trainsObj.removeAll(where: { $0.trainLineName == trn })
+            scheduleObj.removeAll(where: { $0.lineID == t.lineID })
            return true
         }
         return false
     }
 
-    func getTrain(_ trainLineName: String) -> Train? {
+    func getTrain(_ trn: String) -> Train? {
         
-        guard let train = trainsObj.first(where: { $0.trainLineName == trainLineName }) else {
+        guard let train = trainsObj.first(where: { $0.trainLineName == trn }) else {
             return nil
         }
         return train

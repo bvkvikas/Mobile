@@ -115,14 +115,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                print("")
            }
            
-           for subview in window!.subviews
-           {
-               subview.removeFromSuperview()
-           }
-           
+//           for subview in window!.subviews
+//           {
+//               subview.removeFromSuperview()
+//           }
+//
            if view != nil
            {
-               window!.addSubview(view)
+            window!.rootViewController?.view.addSubview(view)
            }
        }
     
@@ -279,9 +279,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             yAxis = yAxis + 50
             
             switch t.tag {
-            case .lineID:
-                self.lineIDTF = textView
-                
+            case .trainName:
+                self.trainNameTF = textView
             default:
                 print("")
             }
@@ -560,12 +559,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
        let alert = UIAlertController(title:title, message:"", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        //UIApplication.shared.keyWindow?.makeKeyAndVisible()
-        //window?.makeKeyAndVisible()
-        //window?.rootViewController?.present(alert, animated: true, completion: nil)
-        //UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
-     //   test.present(alert, animated: true, completion: nil)
-      print(title)
+        window?.rootViewController?.present(alert, animated: true, completion: nil)
+      //print(title)
         }
     
     func validateSchedule()
