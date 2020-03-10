@@ -27,9 +27,12 @@
 		A819FE0E2415A3E00093D935 /* CustomCellTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819FE0D2415A3E00093D935 /* CustomCellTVCell.swift */; };
 		A819FE142415B56C0093D935 /* ShowTrainsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A819FE132415B56C0093D935 /* ShowTrainsTableViewController.xib */; };
 		A819FE182415B71D0093D935 /* ShowTrainsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819FE172415B71D0093D935 /* ShowTrainsTableViewController.swift */; };
+		A87A5D9C2417453C0075E308 /* SearchScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A5D9B2417453C0075E308 /* SearchScheduleViewController.swift */; };
+		A87A5D9E2417454D0075E308 /* SearchScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A87A5D9D2417454D0075E308 /* SearchScheduleViewController.xib */; };
 		A8ECCE4C2416CA4000C30361 /* UpdateTrainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8ECCE4B2416CA4000C30361 /* UpdateTrainViewController.xib */; };
 		A8ECCE4E2416CA6800C30361 /* UpdateTrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECCE4D2416CA6800C30361 /* UpdateTrainViewController.swift */; };
-		A8ECCE522416FEAB00C30361 /* DeleteTrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECCE512416FEAB00C30361 /* DeleteTrainViewController.swift */; };
+		A8ECCE54241713A000C30361 /* ScheduleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8ECCE53241713A000C30361 /* ScheduleView.xib */; };
+		A8ECCE5D241732FD00C30361 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECCE5C241732FD00C30361 /* ScheduleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,9 +58,12 @@
 		A819FE0D2415A3E00093D935 /* CustomCellTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTVCell.swift; sourceTree = "<group>"; };
 		A819FE132415B56C0093D935 /* ShowTrainsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowTrainsTableViewController.xib; sourceTree = "<group>"; };
 		A819FE172415B71D0093D935 /* ShowTrainsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTrainsTableViewController.swift; sourceTree = "<group>"; };
+		A87A5D9B2417453C0075E308 /* SearchScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScheduleViewController.swift; sourceTree = "<group>"; };
+		A87A5D9D2417454D0075E308 /* SearchScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchScheduleViewController.xib; sourceTree = "<group>"; };
 		A8ECCE4B2416CA4000C30361 /* UpdateTrainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateTrainViewController.xib; sourceTree = "<group>"; };
 		A8ECCE4D2416CA6800C30361 /* UpdateTrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTrainViewController.swift; sourceTree = "<group>"; };
-		A8ECCE512416FEAB00C30361 /* DeleteTrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTrainViewController.swift; sourceTree = "<group>"; };
+		A8ECCE53241713A000C30361 /* ScheduleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleView.xib; sourceTree = "<group>"; };
+		A8ECCE5C241732FD00C30361 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +119,8 @@
 		A819FDE22414C28E0093D935 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A8ECCE502416FE8F00C30361 /* DeleteTrain */,
-				A8ECCE4F2416D0CA00C30361 /* Show Train */,
-				A8ECCE4A2416C9F400C30361 /* UpdateTrain */,
+				A8ECCE4F2416D0CA00C30361 /* ScheduleViews */,
+				A8ECCE4A2416C9F400C30361 /* UpdateSearchDeleteTrain */,
 				A819FE0A2415A3BE0093D935 /* CustomCell */,
 				A819FE052415966E0093D935 /* ShowAllTrains */,
 				A819FDFC2415819E0093D935 /* CreateTrain */,
@@ -198,28 +203,56 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
-		A8ECCE4A2416C9F400C30361 /* UpdateTrain */ = {
+		A8ECCE4A2416C9F400C30361 /* UpdateSearchDeleteTrain */ = {
 			isa = PBXGroup;
 			children = (
 				A8ECCE4B2416CA4000C30361 /* UpdateTrainViewController.xib */,
 				A8ECCE4D2416CA6800C30361 /* UpdateTrainViewController.swift */,
 			);
-			path = UpdateTrain;
+			path = UpdateSearchDeleteTrain;
 			sourceTree = "<group>";
 		};
-		A8ECCE4F2416D0CA00C30361 /* Show Train */ = {
+		A8ECCE4F2416D0CA00C30361 /* ScheduleViews */ = {
+			isa = PBXGroup;
+			children = (
+				A8ECCE5B241732DC00C30361 /* Schedule */,
+				A8ECCE5A2417151800C30361 /* ShowAllSchedules */,
+				A8ECCE58241713BF00C30361 /* SearchSchedule */,
+				A8ECCE57241713B800C30361 /* DeleteSchedule */,
+				A8ECCE53241713A000C30361 /* ScheduleView.xib */,
+			);
+			path = ScheduleViews;
+			sourceTree = "<group>";
+		};
+		A8ECCE57241713B800C30361 /* DeleteSchedule */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "Show Train";
+			path = DeleteSchedule;
 			sourceTree = "<group>";
 		};
-		A8ECCE502416FE8F00C30361 /* DeleteTrain */ = {
+		A8ECCE58241713BF00C30361 /* SearchSchedule */ = {
 			isa = PBXGroup;
 			children = (
-				A8ECCE512416FEAB00C30361 /* DeleteTrainViewController.swift */,
+				A87A5D9B2417453C0075E308 /* SearchScheduleViewController.swift */,
+				A87A5D9D2417454D0075E308 /* SearchScheduleViewController.xib */,
 			);
-			path = DeleteTrain;
+			path = SearchSchedule;
+			sourceTree = "<group>";
+		};
+		A8ECCE5A2417151800C30361 /* ShowAllSchedules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShowAllSchedules;
+			sourceTree = "<group>";
+		};
+		A8ECCE5B241732DC00C30361 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				A8ECCE5C241732FD00C30361 /* ScheduleViewController.swift */,
+			);
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +322,8 @@
 				A819FDD62414B8B20093D935 /* Preview Assets.xcassets in Resources */,
 				A819FDD32414B8B20093D935 /* Assets.xcassets in Resources */,
 				A819FDF924157BA30093D935 /* ScheduleOptionsViewController.xib in Resources */,
+				A8ECCE54241713A000C30361 /* ScheduleView.xib in Resources */,
+				A87A5D9E2417454D0075E308 /* SearchScheduleViewController.xib in Resources */,
 				A819FE142415B56C0093D935 /* ShowTrainsTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,19 +335,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8ECCE5D241732FD00C30361 /* ScheduleViewController.swift in Sources */,
 				A819FE0E2415A3E00093D935 /* CustomCellTVCell.swift in Sources */,
 				A819FE00241581CC0093D935 /* TrainOptionsViewController.swift in Sources */,
 				A819FE04241584B00093D935 /* CreateTrainViewController.swift in Sources */,
 				A819FDF5241564BE0093D935 /* SingletonClass.swift in Sources */,
 				A819FDCD2414B8B10093D935 /* AppDelegate.swift in Sources */,
 				A819FDFB24157D420093D935 /* ScheduleOptionsViewController.swift in Sources */,
+				A87A5D9C2417453C0075E308 /* SearchScheduleViewController.swift in Sources */,
 				A8ECCE4E2416CA6800C30361 /* UpdateTrainViewController.swift in Sources */,
 				A819FE182415B71D0093D935 /* ShowTrainsTableViewController.swift in Sources */,
 				A819FDEA241562ED0093D935 /* Train.swift in Sources */,
 				A819FDEC241562FC0093D935 /* Schedules.swift in Sources */,
 				A819FDE72414C6770093D935 /* FirstViewController.swift in Sources */,
 				A819FDF0241563CB0093D935 /* Stop.swift in Sources */,
-				A8ECCE522416FEAB00C30361 /* DeleteTrainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -73,7 +73,25 @@ class SingletonClass : NSObject{
         }
         return schedulesList
     }
-
+    
+    func getScheduleByID(sid: Int) -> Schedules? {
+        var schedule : Schedules? = nil
+        for train in trains {
+            schedule = train.schedule.first(where : { $0.scheduleID == sid})
+         }
+        return schedule
+    }
+    
+    func deleteSchedule(sid: Int) -> Bool {
+        if getScheduleByID(sid: sid) != nil {
+                for train in trains {
+                  train.schedule.removeAll(where : { $0.scheduleID == sid})
+                    return true
+                }
+        }
+        
+           return false;
+    }
 }
 
 enum TypeEnum

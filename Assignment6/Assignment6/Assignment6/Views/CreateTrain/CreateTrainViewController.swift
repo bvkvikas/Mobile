@@ -26,9 +26,9 @@ class CreateTrainViewController: UIViewController {
     
      override func viewDidLoad() {
         super.viewDidLoad()
-        TrainNameTF?.text = tr?.trainLineName
-        DestinationTF?.text = tr?.destination
-        SourceTF?.text = tr?.source
+        TrainNameTF?.text = tr?.trainLineName ?? "1"
+        DestinationTF?.text = tr?.destination ?? "3"
+        SourceTF?.text = tr?.source ?? "2"
         
         if action == "search" {
             TrainNameTF?.isUserInteractionEnabled = false
