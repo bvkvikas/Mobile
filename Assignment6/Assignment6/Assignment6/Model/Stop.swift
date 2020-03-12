@@ -10,8 +10,10 @@ import UIKit
 class Stop{
 
     var stopName: String!
-    var location: String!
+    var latitude: String!
+    var longitude: String!
     var address: String!
+    var scheduleID: Int!
     var stopID: Int!
     
 init() {

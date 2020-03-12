@@ -40,6 +40,7 @@ class ScheduleOptionsViewController: UIViewController {
                 self.navigationController?.pushViewController(DeleteScheduleViewController, animated: true)
     }
     @IBAction func showAllSchedules(_ sender: UIButton) {
+        let showAllSchedulesVC = ShowSchedulesViewController(); self.navigationController?.pushViewController(showAllSchedulesVC, animated: true)
     }
     @IBAction func showScheduleByTrain(_ sender: UIButton) {
     }

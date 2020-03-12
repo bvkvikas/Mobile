@@ -32,4 +32,7 @@ class FirstViewController: UIViewController {
     @IBAction func TrainAction(_ sender: UIButton) {
         self.navigationController?.pushViewController(TrainOptionsViewController(), animated: true)
     }
+    @IBAction func StopAction(_ sender: Any) {
+        self.navigationController?.pushViewController(StopOptionsViewController(), animated: true)
+    }
 }

@@ -44,10 +44,7 @@ class ScheduleViewController: UIViewController {
             btnTitle = "Update Schedule"
             trainName?.isUserInteractionEnabled = false
         }
-        
-        if action == "delete"{
-            btnTitle = "Delete Schedule"
-        }
+     
         actionBtn.setTitle(btnTitle, for: .normal)
         // Do any additional setup after loading the view.
     }
@@ -55,7 +52,7 @@ class ScheduleViewController: UIViewController {
     @IBAction func buttonClicked(_ sender: UIButton) {
         
         if action == "search"{
-            let _ = self.navigationController?.popToViewController((self.navigationController?.viewControllers[1]) as! ScheduleOptionsViewController, animated: true)
+             self.navigationController?.popToViewController((self.navigationController?.viewControllers[1]) as! ScheduleOptionsViewController, animated: true)
             return
         }
         var schedule : Schedules!
