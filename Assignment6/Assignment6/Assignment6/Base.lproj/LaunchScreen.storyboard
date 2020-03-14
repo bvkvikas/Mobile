@@ -15,20 +15,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Asssignment 6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOs-aA-3YS">
-                                <rect key="frame" x="127" y="368" width="180" height="78"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="shadowColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asssignment 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOs-aA-3YS">
+                                <rect key="frame" x="0.0" y="384" width="414" height="78"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="37"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LOs-aA-3YS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="320" id="A7j-p2-OVi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LOs-aA-3YS" secondAttribute="trailing" constant="89" id="cwW-EV-sVt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LOs-aA-3YS" secondAttribute="bottom" constant="420" id="fAm-dj-c7k"/>
-                            <constraint firstItem="LOs-aA-3YS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="145" id="tZd-kR-9NM"/>
+                            <constraint firstItem="LOs-aA-3YS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="340" id="A7j-p2-OVi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LOs-aA-3YS" secondAttribute="trailing" id="cwW-EV-sVt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LOs-aA-3YS" secondAttribute="bottom" constant="400" id="fAm-dj-c7k"/>
+                            <constraint firstItem="LOs-aA-3YS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tZd-kR-9NM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

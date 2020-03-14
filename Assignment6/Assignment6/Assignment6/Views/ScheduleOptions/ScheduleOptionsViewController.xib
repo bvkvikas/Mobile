@@ -96,7 +96,6 @@
                     </state>
                     <connections>
                         <action selector="searchScheduleByID:" destination="-1" eventType="touchUpInside" id="1E7-jq-7MY"/>
-                        <action selector="showScheduleByTrain:" destination="-1" eventType="touchUpInside" id="byG-Dv-slV"/>
                     </connections>
                 </button>
             </subviews>
