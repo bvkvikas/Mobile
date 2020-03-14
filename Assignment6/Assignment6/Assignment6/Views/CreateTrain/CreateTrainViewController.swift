@@ -14,6 +14,7 @@ class CreateTrainViewController: UIViewController {
     @IBOutlet weak var DestinationTF: UITextField?
     @IBOutlet weak var SourceTF: UITextField?
     
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var viewTitle: UILabel!
     @IBOutlet weak var ActionBtn: UIButton!
     
@@ -37,6 +38,18 @@ class CreateTrainViewController: UIViewController {
             viewTitle.text = "Train Details"
             btntitle = "Go to Train Options"
         }
+        
+        if action == "create" {
+            viewTitle.text = "Create Train"
+        }
+        
+        
+        if action == "update" {
+            TrainNameTF?.isUserInteractionEnabled = false
+            viewTitle.text = "Update Train"
+            btntitle = "Update Train"
+        }
+        
         ActionBtn.setTitle(btntitle, for: .normal)
         // Do any additional setup after loading the view.
     }
@@ -68,6 +81,11 @@ class CreateTrainViewController: UIViewController {
             tr?.trainLineName = trainName;
             showAlert(title: "Train Updated")
         }else if action == "create"{
+
+            if let _ = SingletonClass.shared.getTrain(trainName)  {
+                       showAlert(title: "Train exists already")
+                       return
+                   }
             let train = SingletonClass.shared.addTrain()
                         train.source = source;
                         train.destination = destination;
