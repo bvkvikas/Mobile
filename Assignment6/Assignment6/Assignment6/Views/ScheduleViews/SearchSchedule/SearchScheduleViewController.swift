@@ -19,6 +19,7 @@ class SearchScheduleViewController: UIViewController {
         case "search":
             header.title = "Search Schedule"
         case "delete":
+            searchScheduleAction.setTitle("Delete Scheule", for: .normal)
             header.title = "Delete Schedule"
         case "update":
             header.title = "Update Schedule"

@@ -86,6 +86,9 @@ class SingletonClass : NSObject{
         var schedule : Schedules? = nil
         for train in trains {
             schedule = train.schedule.first(where : { $0.scheduleID == sid})
+            if schedule != nil {
+                return schedule
+            }
         }
         return schedule
     }
@@ -94,10 +97,11 @@ class SingletonClass : NSObject{
         if getScheduleByID(sid: sid) != nil {
             for train in trains {
                 train.schedule.removeAll(where : { $0.scheduleID == sid})
-                return true
-            }
+             }
         }
-        
+        guard (SingletonClass.shared.getScheduleByID(sid: Int(sid)) != nil) else{
+                 return true;
+             }
         return false;
     }
     
@@ -112,6 +116,9 @@ class SingletonClass : NSObject{
         for train in trains {
             for sch in train.schedule {
                 stop = sch.stops.first(where : { $0.stopID == sid })
+                if stop != nil {
+                    return stop
+                }
             }
         }
         return stop;

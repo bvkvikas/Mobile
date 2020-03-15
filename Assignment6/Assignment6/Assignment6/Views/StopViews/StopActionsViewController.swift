@@ -41,6 +41,7 @@ class StopActionsViewController: UIViewController {
             header.title = "Create Stop"
         }
         if action == "search" {
+            scheduleIDTF?.isUserInteractionEnabled = false
             StopNameTF?.isUserInteractionEnabled = false
             LatitudeTF?.isUserInteractionEnabled = false
             LongitudeTF?.isUserInteractionEnabled = false
@@ -56,6 +57,11 @@ class StopActionsViewController: UIViewController {
             StopNameTF?.isUserInteractionEnabled = false
             scheduleIDTF?.isUserInteractionEnabled =  false
         }
+        
+        if action == "delete" {
+            btnTitle = "Delete Schedule"
+        }
+        
         Submit.setTitle(btnTitle, for: .normal)
         
         // Do any additional setup after loading the view.

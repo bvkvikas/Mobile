@@ -22,11 +22,14 @@ class SearchStopViewController: UIViewController {
             header.title = "Search Stop"
         case "delete":
             header.title = "Delete Stop"
+            actionButton.setTitle("Delete Stop", for: .normal)
         case "update":
             header.title = "Update Stop"
         default:
             header.title = "Stop"
         }
+        
+
         // Do any additional setup after loading the view.
     }
     
