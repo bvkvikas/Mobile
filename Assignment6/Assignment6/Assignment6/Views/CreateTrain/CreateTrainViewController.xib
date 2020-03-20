@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateTrainViewController" customModule="Assignment6" customModuleProvider="target">
+            <connections>
+                <outlet property="ActionBtn" destination="LY0-79-kau" id="zcK-5e-ETM"/>
+                <outlet property="DestinationTF" destination="vfT-64-95x" id="yPR-Vw-f5x"/>
+                <outlet property="SourceTF" destination="4eG-P3-4Ga" id="4z2-RV-6L7"/>
+                <outlet property="TrainNameTF" destination="tKR-Bz-OHd" id="64E-yZ-sqj"/>
+                <outlet property="view" destination="h7T-m3-cWj" id="ZeG-rx-u14"/>
+                <outlet property="viewTitle" destination="rUd-MG-Sl9" id="TRX-Re-Du7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="h7T-m3-cWj">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Create Train" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="rUd-MG-Sl9">
+                    <rect key="frame" x="20" y="82" width="374" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="89I-1p-Gvb">
+                    <rect key="frame" x="20" y="231" width="323" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vur-hr-b8i">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="mmW-hc-gim"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Red" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tKR-Bz-OHd">
+                            <rect key="frame" x="173" y="0.0" width="150" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="aed-hU-DN4"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="nw7-UO-kTT"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="aPU-0Q-k0f"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="MFm-30-cTq">
+                    <rect key="frame" x="20" y="269" width="323" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOT-Yw-wu2">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="jQI-jl-1LD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Quincy" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4eG-P3-4Ga">
+                            <rect key="frame" x="173" y="0.0" width="150" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="1k8-R2-o7I"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="m8e-od-c8q"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="Wy3-ls-vQF"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="IJH-Hk-6mu">
+                    <rect key="frame" x="20" y="307" width="323" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYr-b9-U2D">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="ZYX-pT-Fsm"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alewife" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vfT-64-95x">
+                            <rect key="frame" x="173" y="0.0" width="150" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="Ktf-Pl-Ihu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="WfG-K6-Rfn"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="wmz-w9-CdN"/>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LY0-79-kau">
+                    <rect key="frame" x="45" y="402" width="325.5" height="42"/>
+                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                    <state key="normal">
+                        <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </state>
+                    <connections>
+                        <action selector="createTrain:" destination="-1" eventType="touchUpInside" id="eza-QK-zbB"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="LY0-79-kau" firstAttribute="leading" secondItem="rez-10-JYX" secondAttribute="leading" constant="45" id="3ew-C4-Y9U"/>
+                <constraint firstItem="89I-1p-Gvb" firstAttribute="top" secondItem="rUd-MG-Sl9" secondAttribute="bottom" constant="81" id="Drd-Bp-isv"/>
+                <constraint firstItem="IJH-Hk-6mu" firstAttribute="leading" secondItem="rez-10-JYX" secondAttribute="leading" constant="20" id="JVg-bR-fle"/>
+                <constraint firstItem="89I-1p-Gvb" firstAttribute="leading" secondItem="MFm-30-cTq" secondAttribute="leading" id="Rke-aH-cnF"/>
+                <constraint firstItem="LY0-79-kau" firstAttribute="top" secondItem="vfT-64-95x" secondAttribute="bottom" constant="65" id="TUW-XI-eNh"/>
+                <constraint firstItem="rez-10-JYX" firstAttribute="trailing" secondItem="LY0-79-kau" secondAttribute="trailing" constant="43.5" id="byy-qE-aCn"/>
+                <constraint firstItem="rez-10-JYX" firstAttribute="bottom" secondItem="IJH-Hk-6mu" secondAttribute="bottom" constant="525" id="du1-ix-1Lz"/>
+                <constraint firstItem="rez-10-JYX" firstAttribute="trailing" secondItem="IJH-Hk-6mu" secondAttribute="trailing" constant="71" id="pqq-oB-qwP"/>
+                <constraint firstItem="IJH-Hk-6mu" firstAttribute="top" secondItem="4eG-P3-4Ga" secondAttribute="bottom" constant="8" id="yKN-YH-Lez"/>
+                <constraint firstItem="89I-1p-Gvb" firstAttribute="leading" secondItem="IJH-Hk-6mu" secondAttribute="leading" id="zoZ-qD-4M9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="rez-10-JYX"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
+        </view>
+    </objects>
+</document>
