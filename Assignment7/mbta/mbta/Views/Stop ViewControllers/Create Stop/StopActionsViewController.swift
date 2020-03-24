@@ -52,7 +52,7 @@ class StopActionsViewController: UIViewController {
         }
         
         if action == "delete" {
-            btnTitle = "Delete Schedule"
+            btnTitle = "Delete Stop"
         }
         
         Submit.setTitle(btnTitle, for: .normal)
@@ -108,7 +108,11 @@ class StopActionsViewController: UIViewController {
             showAlert(title: "Stop: \(stops?.stopID! ?? -1000) succesfully updated ")
             return
         }
-        
+
+        if let _ = SingletonClass.shared.getStopByName(stopName: stName)  {
+                   showAlert(title: "Stop exists already")
+                   return
+               }
         stop = SingletonClass.shared.addStop()
         stop.stopName = stName
         stop.latitude = lati

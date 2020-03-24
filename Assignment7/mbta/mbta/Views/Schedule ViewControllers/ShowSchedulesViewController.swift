@@ -27,7 +27,7 @@ class ShowSchedulesViewController: UIViewController, UITableViewDelegate, UITabl
            for stop in scheduleOfTrain.stops ?? []{
                stopsList += "\(stop.stopID ?? -100) \n"
            }
-           cell.label.text = "ScheduleID : \(scheduleOfTrain.scheduleID ?? -100)\n Arrival time : \(scheduleOfTrain.arrivalTime ?? "Error")\n Departure Time: \(scheduleOfTrain.departureTime ?? "Error")\n Stops: \(stopsList)"
+        cell.label.text = "Train Name:\(scheduleOfTrain.lineID ?? -100) \n ScheduleID : \(scheduleOfTrain.scheduleID ?? -100)\n Arrival time : \(scheduleOfTrain.arrivalTime ?? "Error")\n Departure Time: \(scheduleOfTrain.departureTime ?? "Error")\n Stops: \(stopsList)"
            
            return cell;
        }
@@ -76,9 +76,9 @@ class ShowSchedulesViewController: UIViewController, UITableViewDelegate, UITabl
 //                   controller.searchResultsUpdater = self
 //                   controller.dimsBackgroundDuringPresentation = false
 //                   controller.searchBar.sizeToFit()
-//                   
+//
 //                   tableObject.tableHeaderView = controller.searchBar
-//                   
+//
 //                   return controller
 //               })()
         // Do any additional setup after loading the view.

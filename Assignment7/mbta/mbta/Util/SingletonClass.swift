@@ -13,8 +13,18 @@ class SingletonClass : NSObject{
     var stops : [Stop] = []
     static let shared = SingletonClass()
     
+    
+    
     private override init() {
-        
+        for i in (1...10) {
+            let stop = Stop()
+            stop.stopName = "stop" + "\(i)";
+            stop.address = "address" + "\(i)";
+            stop.latitude = "latitude" + "\(i)";
+            stop.longitude = "longitude" + "\(i)";
+            stops.append(stop);
+            
+        }
     }
     
     func addTrain() -> Train {
@@ -121,16 +131,36 @@ class SingletonClass : NSObject{
      
     }
     
-    func deleteStop(sid: Int) -> Bool{
-        for train in trains {
-            for sch in train.schedule {
-                sch.stops.removeAll(where : { $0.stopID == sid })
-            }
-        }
-        guard (SingletonClass.shared.getStopByID(sid: Int(sid)) != nil) else{
-            return true;
-        }
-        return false;
+    func getStopByName(stopName: String) -> Stop? {
+        
+        guard let stop = stops.first(where: { $0.stopName == stopName }) else {
+              return nil
+          }
+          return stop
+        
+     
+    }
+    
+    
+    func deleteStop(stopName: String) -> Bool{
+        
+        
+        if getStopByName(stopName: stopName) != nil {
+                  stops.removeAll(where: { $0.stopName == stopName })
+                  return true
+              }
+              return false
+        
+        
+//        for train in trains {
+//            for sch in train.schedule {
+//                sch.stops.removeAll(where : { $0.stopID == sid })
+//            }
+//        }
+//        guard (SingletonClass.shared.getStopByID(sid: Int(sid)) != nil) else{
+//            return true;
+//        }
+//        return false;
     }
     
     func showAllStops() -> [Stop] {

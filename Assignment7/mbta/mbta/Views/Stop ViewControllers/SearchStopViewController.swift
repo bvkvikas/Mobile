@@ -39,17 +39,17 @@ class SearchStopViewController: UIViewController {
                    return
                }
                
-               guard let stop : Stop = SingletonClass.shared.getStopByID(sid: Int(sid)!) else{
+               guard let stop : Stop = SingletonClass.shared.getStopByName(stopName: sid) else{
                    showAlert(title: "No Stop found")
                    return
                }
                
                if action == "delete" {
-                   if SingletonClass.shared.deleteStop(sid: Int(sid)!){
+                if SingletonClass.shared.deleteStop(stopName: sid){
                        showAlert(title: "Stop removed from schedule")
                        return
                    }else{
-                       showAlert(title: "Error deleting schedule")
+                       showAlert(title: "Error deleting stop")
                        return
                    }
                }

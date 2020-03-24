@@ -271,6 +271,9 @@
 		A88340EE242561D3002AAF45 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					sourceTag,
+				);
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Krishna Vikas";

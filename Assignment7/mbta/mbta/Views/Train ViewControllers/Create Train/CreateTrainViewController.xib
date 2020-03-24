@@ -55,7 +55,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="nwd-JR-oGH">
                             <rect key="frame" x="0.0" y="50.5" width="323" height="30"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0a-JD-3Cl">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0a-JD-3Cl">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="y5i-ld-25V"/>
@@ -77,11 +77,14 @@
                                 <constraint firstAttribute="height" constant="30" id="9ie-oW-8fv"/>
                             </constraints>
                             <viewLayoutGuide key="safeArea" id="X9K-AM-fdh"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="itS-xa-kRo">
                             <rect key="frame" x="0.0" y="101" width="323" height="30"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acO-Uo-bbC">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acO-Uo-bbC">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="20.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="hqI-2f-uib"/>
@@ -97,6 +100,9 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="tag" value="destination"/>
+                                    </userDefinedRuntimeAttributes>
                                 </textField>
                             </subviews>
                             <constraints>
