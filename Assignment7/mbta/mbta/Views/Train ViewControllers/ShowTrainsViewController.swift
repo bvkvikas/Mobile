@@ -78,16 +78,16 @@ UIViewController, UITableViewDelegate, UITableViewDataSource , UISearchResultsUp
                
                NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "refresh"), object: nil)
                
-               search = ({
-                   let controller = UISearchController(searchResultsController: nil)
-                   controller.searchResultsUpdater = self
-                   controller.dimsBackgroundDuringPresentation = false
-                   controller.searchBar.sizeToFit()
-                   
-                   tableObject.tableHeaderView = controller.searchBar
-                   
-                   return controller
-               })()
+//               search = ({
+//                   let controller = UISearchController(searchResultsController: nil)
+//                   controller.searchResultsUpdater = self
+//                   controller.dimsBackgroundDuringPresentation = false
+//                   controller.searchBar.sizeToFit()
+//                   
+//                   tableObject.tableHeaderView = controller.searchBar
+//                   
+//                   return controller
+//               })()
         // Do any additional setup after loading the view.
     }
     
