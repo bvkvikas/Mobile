@@ -46,7 +46,7 @@ class SearchStopViewController: UIViewController {
                
                if action == "delete" {
                 if SingletonClass.shared.deleteStop(stopName: sid){
-                       showAlert(title: "Stop removed from schedule")
+                       showAlert(title: "Stop deleted")
                        return
                    }else{
                        showAlert(title: "Error deleting stop")

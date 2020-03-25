@@ -31,9 +31,9 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
         pickerData = SingletonClass.shared.stops;
         createPickerView()
         dismissPickerView()
-        TrainNameTF?.text = tr?.trainLineName ?? "1"
-        DestinationTF?.text = tr?.destination ?? "3"
-        SourceTF?.text = tr?.source ?? "2"
+        TrainNameTF?.text = tr?.trainLineName ?? ""
+        DestinationTF?.text = tr?.destination.stopName ?? ""
+        SourceTF?.text = tr?.source.stopName ?? ""
         SourceTF.allowsEditingTextAttributes = false;
         if action == "search" {
             TrainNameTF?.isUserInteractionEnabled = false
@@ -79,9 +79,19 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
             showAlert(title: "Enter correct destination")
             return
         }
+        
+        print(isSourceAndDestSame(source: source, destination: destination));
+        
+        if isSourceAndDestSame(source: source, destination: destination) {
+            showAlert(title: "Source and Destination should be different")
+            return
+        }
+        
+        
+        
         if action == "update"{
-            tr?.source = source;
-            tr?.destination = destination;
+            tr?.source = SingletonClass.shared.getStopByName(stopName: source);
+            tr?.destination = SingletonClass.shared.getStopByName(stopName: destination);
             tr?.trainLineName = trainName;
             showAlert(title: "Train Updated")
         }else if action == "create"{
@@ -91,14 +101,18 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
                 return
             }
             let train = SingletonClass.shared.addTrain()
-            train.source = source;
-            train.destination = destination;
+            train.source = SingletonClass.shared.getStopByName(stopName: source);
+            train.destination = SingletonClass.shared.getStopByName(stopName: destination);
             train.trainLineName = trainName;
             
             showAlert(title: "Train created")
         
         }
         
+    }
+    
+    func isSourceAndDestSame(source: String, destination: String) -> Bool {
+        return source.lowercased() == destination.lowercased();
     }
         
     func showAlert(title: String)
@@ -110,7 +124,7 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
     
     func refreshData(action: UIAlertAction) {
         NotificationCenter.default.post(name:  NSNotification.Name(rawValue: "refresh"), object: nil)
-        self.dismiss(animated: true, completion: nil)
+    //    self.dismiss(animated: true, completion: nil)
         
     }
 

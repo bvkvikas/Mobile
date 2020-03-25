@@ -25,9 +25,9 @@ class ShowSchedulesViewController: UIViewController, UITableViewDelegate, UITabl
            let scheduleOfTrain = SingletonClass.shared.getAllSchedules()[indexPath.row]
            var stopsList = "";
            for stop in scheduleOfTrain.stops ?? []{
-               stopsList += "\(stop.stopID ?? -100) \n"
+               stopsList += "\(stop.stopName ?? "") ,"
            }
-        cell.label.text = "Train Name:\(scheduleOfTrain.lineID ?? -100) \n ScheduleID : \(scheduleOfTrain.scheduleID ?? -100)\n Arrival time : \(scheduleOfTrain.arrivalTime ?? "Error")\n Departure Time: \(scheduleOfTrain.departureTime ?? "Error")\n Stops: \(stopsList)"
+        cell.label.text = "ScheduleID : \(scheduleOfTrain.scheduleID ?? -100)\n Arrival time : \(scheduleOfTrain.arrivalTime ?? "Error")\n Departure Time: \(scheduleOfTrain.departureTime ?? "Error")\n Stops: \(stopsList)"
            
            return cell;
        }
@@ -38,9 +38,14 @@ class ShowSchedulesViewController: UIViewController, UITableViewDelegate, UITabl
     
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
         let sch = self.schedules[indexPath.row]
+        let tr : Train = SingletonClass.shared.getTrainByID(sch.lineID)!
         let result =  CreateScheduleViewController()
         result.sch = sch
+        result.tn = tr
+        result.listOfStps = SingletonClass.shared.getListOfStopsInString(list: sch.stops)!
      result.action = "search"
         self.navigationController?.pushViewController(result, animated: true)
         

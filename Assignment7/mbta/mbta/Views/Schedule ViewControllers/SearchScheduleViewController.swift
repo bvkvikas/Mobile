@@ -58,6 +58,7 @@ class SearchScheduleViewController: UIViewController {
         SVController.dep = sch.departureTime
         SVController.tn =  tr
         SVController.action = action
+        SVController.listOfStps = SingletonClass.shared.getListOfStopsInString(list: sch.stops)!
         self.navigationController?.pushViewController(SVController, animated: true)
         
     }

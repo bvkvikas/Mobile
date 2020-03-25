@@ -16,5 +16,6 @@ class Schedule {
     var stops: [Stop]!
     init() {
         self.scheduleID = Int.random(in: 0 ..< 1000);
+        self.stops = [Stop()]
     }
 }

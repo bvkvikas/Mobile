@@ -27,7 +27,7 @@ UIViewController, UITableViewDelegate, UITableViewDataSource , UISearchResultsUp
               scheduleString = scheduleString + "\(schedule.scheduleID ?? 0), "
           }
           
-          cell.label.text = " Train ID: \(train.lineID ?? 0) \n Train Name : \(train.trainLineName ?? "Error") \n Source: \(train.source ?? "Error")\n Destination: \(train.destination ?? "Error") \n Schedules : \(scheduleString)"
+        cell.label.text = " Train ID: \(train.lineID ?? 0) \n Train Name : \(train.trainLineName ?? "Error") \n Source: \(train.source.stopName ?? "Error")\n Destination: \(train.destination.stopName ?? "Error") \n Schedules : \(scheduleString)"
           
           return cell;
       }

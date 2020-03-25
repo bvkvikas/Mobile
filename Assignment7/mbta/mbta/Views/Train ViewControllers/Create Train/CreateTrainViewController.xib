@@ -64,7 +64,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alewife" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Slh-T2-pgQ">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alewife" borderStyle="roundedRect" placeholder="Source" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Slh-T2-pgQ">
                                     <rect key="frame" x="173" y="0.0" width="150" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="150" id="JYT-8A-ki3"/>
@@ -93,7 +93,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Quincy" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="elA-qU-gNg">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Quincy" borderStyle="roundedRect" placeholder="Destination" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="elA-qU-gNg">
                                     <rect key="frame" x="173" y="0.0" width="150" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="150" id="lX5-n7-Sgx"/>

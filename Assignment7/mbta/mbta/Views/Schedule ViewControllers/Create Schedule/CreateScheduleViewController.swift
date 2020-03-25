@@ -15,18 +15,21 @@ class CreateScheduleViewController: UIViewController {
     @IBOutlet weak var actionBtn: UIButton!
     @IBOutlet weak var trainName: UITextField!
     @IBOutlet weak var header: UINavigationItem!
+    @IBOutlet weak var listOfStops: UITextField!
     var sch : Schedule?
     var dep : String?
     var arr : String?
     var tn : Train?
     var btnTitle: String?
+    var listOfStps: String?
     var action : String? = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrivalTime?.text = sch?.arrivalTime  ?? "08:02"
-           departureTime?.text = sch?.departureTime ?? "08:00"
-           trainName?.text = tn?.trainLineName ?? "1"
-           
+        arrivalTime?.text = sch?.arrivalTime  ?? ""
+           departureTime?.text = sch?.departureTime ?? ""
+           trainName?.text = tn?.trainLineName ?? ""
+            listOfStops?.text = SingletonClass.shared.getListOfStopsInString(list: sch?.stops ?? []) ?? ""
+            listOfStops?.text = listOfStps ?? ""
            if action == "create" {
                btnTitle = "Create Schedule"
                header.title = "Create Schedule"
@@ -35,6 +38,7 @@ class CreateScheduleViewController: UIViewController {
             trainName?.isUserInteractionEnabled = false
                arrivalTime?.isUserInteractionEnabled = false
                departureTime?.isUserInteractionEnabled = false
+               listOfStops?.isUserInteractionEnabled = false
                header.title = "Schedule Details"
                btnTitle = "Go to Schedule Options"
            }
@@ -56,6 +60,7 @@ class CreateScheduleViewController: UIViewController {
              self.navigationController?.popToViewController((self.navigationController?.viewControllers[1]) as! ScheduleOptionsViewController, animated: true)
             return
         }
+        
         var schedule : Schedule!
         guard let tr = trainName, let trName = tr.text ,!trName.isEmptyOrWhitespace()  else {
             
@@ -73,11 +78,21 @@ class CreateScheduleViewController: UIViewController {
             return
         }
         
+        guard let stops = listOfStops, let st = stops.text ,!st.isEmptyOrWhitespace() else {
+            showAlert(title: "Enter Stops")
+            return
+        }
+        
+        guard let stopsList = validateStopsList(listOfStops: st) else {
+            showAlert(title: "One of the stops does not exist")
+                       return
+        }
+        
         
         if action == "update"{
             sch?.arrivalTime = at
             sch?.departureTime = dt
-            
+            sch?.stops = stopsList
             showAlert(title: "Schedule: \(sch?.scheduleID! ?? -1000) succesfully updated ")
             return
         }
@@ -90,12 +105,39 @@ class CreateScheduleViewController: UIViewController {
             tn = train
         }
         
+        
+        
+        
         schedule =  SingletonClass.shared.addSchedule(train: tn!)
         schedule.lineID = tn!.lineID
         schedule.arrivalTime = at
         schedule.departureTime = dt
-        
+        schedule?.stops = stopsList
         showAlert(title: "Schedule: \(schedule.scheduleID!) succesfully added ")
+    }
+    
+    func validateStopsList(listOfStops : String) -> [Stop]? {
+        var result : [Stop]? = [];
+        let list : [String] = listOfStops.split(separator: ",").map {String($0)}
+        if list.count > 0 {
+        
+            for s in list {
+                if let st = doesStopExsit(stop: s) {
+                    result?.append(st);
+                }else{
+                    return nil;
+                }
+            }
+            
+        }
+        return result;
+    }
+    
+    func doesStopExsit(stop : String) -> Stop? {
+        if let res = SingletonClass.shared.getStopByName(stopName: stop){
+            return res;
+        }
+        return nil;
     }
     /*
     // MARK: - Navigation
@@ -116,7 +158,7 @@ class CreateScheduleViewController: UIViewController {
     
     func refreshData(action: UIAlertAction) {
       NotificationCenter.default.post(name:  NSNotification.Name(rawValue: "refresh"), object: nil)
-        self.dismiss(animated: true, completion: nil)
+       // self.dismiss(animated: true, completion: nil)
 
     }
 }

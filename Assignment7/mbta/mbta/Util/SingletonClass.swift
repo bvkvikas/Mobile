@@ -146,6 +146,9 @@ class SingletonClass : NSObject{
         
         
         if getStopByName(stopName: stopName) != nil {
+            if isStopUsed(stop: stopName) {
+                return false;
+            }
                   stops.removeAll(where: { $0.stopName == stopName })
                   return true
               }
@@ -171,6 +174,33 @@ class SingletonClass : NSObject{
             }
         }
         return stopsList
+    }
+    
+    func getListOfStopsInString(list : [Stop]) -> String? {
+        var res : String = ""
+        if list.count > 0 {
+        for stop in list {
+           res = res + "," + stop.stopName
+        }
+    }
+        return res;
+    }
+    
+    func isStopUsed(stop : String) -> Bool {
+        for train in trains{
+            if train.source.stopName == stop || train.destination.stopName == stop{
+                return true
+            }
+            for schedule in train.schedule {
+                for st in schedule.stops {
+                    if stop == st.stopName {
+                        return true
+                    }
+                }
+            }
+            
+        }
+        return false;
     }
     
 }

@@ -12,8 +12,8 @@ import UIKit
 class Train {
     var lineID: Int! = 0;
     var trainLineName : String!
-    var source : String!
-    var destination : String!
+    var source : Stop!
+    var destination : Stop!
     var schedule: [Schedule]
     
     init(){
