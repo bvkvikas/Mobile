@@ -10,7 +10,7 @@ import UIKit
 
 class ShowStopsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , UISearchResultsUpdating{
     
-    var stops : [Stop] = SingletonClass.shared.stops
+    var stops : [StopEntity] = CoreDataManager.getAllStops()
     
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.stops.count
@@ -21,7 +21,7 @@ class ShowStopsViewController: UIViewController, UITableViewDelegate, UITableVie
               let stop = self.stops[indexPath.row]
               let result =  StopActionsViewController()
               result.stops = stop
-            result.action = "search"
+              result.action = "search"
               self.navigationController?.pushViewController(result, animated: true)
               
           }
@@ -29,9 +29,9 @@ class ShowStopsViewController: UIViewController, UITableViewDelegate, UITableVie
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCellViewController
           
-        let stopsList = SingletonClass.shared.stops[indexPath.row]
+        let stopsList = self.stops[indexPath.row]
           
-        cell.label.text = "Stop Name : \(stopsList.stopName ?? "nil") \n StopID : \(stopsList.stopID ?? -100)\n Address : \(stopsList.address ?? "Error")\n Latitude: \(stopsList.latitude ?? "Error")\n Longitude: \(stopsList.longitude ?? "Error")\n "
+        cell.label.text = "Stop Name : \(stopsList.stopName ?? "nil") \n StopID : \(stopsList.stopID )\n Address : \(stopsList.address ?? "Error")\n Latitude: \(stopsList.latitude ?? "Error")\n Longitude: \(stopsList.longitude ?? "Error")\n "
           
           return cell;
       }
@@ -41,11 +41,11 @@ class ShowStopsViewController: UIViewController, UITableViewDelegate, UITableVie
       func updateSearchResults(for searchController: UISearchController) {
                   
           if let searchText = searchController.searchBar.text, !searchText.isEmpty {
-              self.stops = SingletonClass.shared.stops.filter { stop in
-                return stop.stopName.lowercased().contains(searchText.lowercased())
+            self.stops = CoreDataManager.getAllStops().filter { stop in
+                return stop.stopName!.lowercased().contains(searchText.lowercased())
               }
           } else {
-              self.stops  = SingletonClass.shared.stops
+              self.stops  = CoreDataManager.getAllStops()
           }
           self.tableObject.reloadData()
       }
@@ -103,7 +103,7 @@ class ShowStopsViewController: UIViewController, UITableViewDelegate, UITableVie
      
      @objc func refresh() {
          
-          stops = SingletonClass.shared.stops
+          stops = CoreDataManager.getAllStops()
           tableObject.reloadData()
      }
     /*

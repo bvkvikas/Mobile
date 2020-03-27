@@ -29,41 +29,36 @@ class SearchStopViewController: UIViewController {
             header.title = "Stop"
         }
         
-
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func buttonClicked(_ sender: Any) {
         guard let sid = searchTF!.text, !sid.isEmptyOrWhitespace() else{
-                   showAlert(title: "Enter Stop ID")
-                   return
-               }
-               
-               guard let stop : Stop = SingletonClass.shared.getStopByName(stopName: sid) else{
-                   showAlert(title: "No Stop found")
-                   return
-               }
-               
-               if action == "delete" {
-                if SingletonClass.shared.deleteStop(stopName: sid){
-                       showAlert(title: "Stop deleted")
-                       return
-                   }else{
-                       showAlert(title: "Error deleting stop")
-                       return
-                   }
-               }
-               
-               
-               let SVController = StopActionsViewController();
-               SVController.stops = stop;
-               SVController.sn = stop.stopName
-               SVController.lat = stop.latitude
-               SVController.long =  stop.longitude
-               SVController.add = stop.address
-               SVController.action = action
+            showAlert(title: "Enter Stop ID")
+            return
+        }
         
-               self.navigationController?.pushViewController(SVController, animated: true)
+        guard let stop : StopEntity = CoreDataManager.getStopByName(stopName: sid) else{
+            showAlert(title: "No Stop found")
+            return
+        }
+        
+        if action == "delete" {
+            CoreDataManager.deleteStop(entity: stop)
+            showAlert(title: "Stop deleted")
+            return
+        }
+        
+        let SVController = StopActionsViewController();
+        SVController.stops = stop
+        SVController.sn = stop.stopName
+        SVController.lat = stop.latitude
+        SVController.long =  stop.longitude
+        SVController.add = stop.address
+        SVController.action = action
+        
+        self.navigationController?.pushViewController(SVController, animated: true)
         
         
     }
@@ -78,10 +73,10 @@ class SearchStopViewController: UIViewController {
      }
      */
     func showAlert(title: String)
-      {
-          let alert = UIAlertController(title:title, message:"", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-          self.present(alert, animated: true)
-      }
+    {
+        let alert = UIAlertController(title:title, message:"", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
 }
 

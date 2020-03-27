@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ScheduleEntity" representedClassName=".ScheduleEntity" syncable="YES">
+        <attribute name="arrivalTime" optional="YES" attributeType="String"/>
+        <attribute name="departureTime" optional="YES" attributeType="String"/>
+        <attribute name="lineID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="scheduleID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="stops" optional="YES" attributeType="Transformable"/>
+        <relationship name="toTrain" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrainEntity" inverseName="manySchedules" inverseEntity="TrainEntity"/>
+    </entity>
+    <entity name="StopEntity" representedClassName=".StopEntity" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="latitude" optional="YES" attributeType="String"/>
+        <attribute name="longitude" optional="YES" attributeType="String"/>
+        <attribute name="stopID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="stopName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="TrainEntity" representedClassName=".TrainEntity">
+        <attribute name="destination" attributeType="Transformable"/>
+        <attribute name="lineID" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="schedule" attributeType="Transformable"/>
+        <attribute name="source" attributeType="Transformable"/>
+        <attribute name="trainLineName" attributeType="String"/>
+        <relationship name="manySchedules" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ScheduleEntity" inverseName="toTrain" inverseEntity="ScheduleEntity"/>
+        <userInfo/>
+    </entity>
+    <elements>
+        <element name="ScheduleEntity" positionX="137.79296875" positionY="14.91796875" width="128" height="133"/>
+        <element name="StopEntity" positionX="403.703125" positionY="194.7734375" width="128" height="118"/>
+        <element name="TrainEntity" positionX="-90.52734375" positionY="233.98828125" width="128" height="133"/>
+    </elements>
+</model>

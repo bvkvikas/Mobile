@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A859D455242DB6F1001CA75C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D454242DB6F1001CA75C /* AppDelegate.swift */; };
+		A859D458242DB6F1001CA75C /* mbta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A859D456242DB6F1001CA75C /* mbta.xcdatamodeld */; };
+		A859D460242DB6F2001CA75C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A859D45F242DB6F2001CA75C /* Assets.xcassets */; };
+		A859D463242DB6F2001CA75C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A859D462242DB6F2001CA75C /* Preview Assets.xcassets */; };
+		A859D466242DB6F2001CA75C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A859D464242DB6F2001CA75C /* LaunchScreen.storyboard */; };
+		A859D473242DB76E001CA75C /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D470242DB76E001CA75C /* Train.swift */; };
+		A859D474242DB76E001CA75C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D471242DB76E001CA75C /* Schedule.swift */; };
+		A859D475242DB76E001CA75C /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D472242DB76E001CA75C /* Stop.swift */; };
+		A859D478242DB78E001CA75C /* SingletonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D477242DB78E001CA75C /* SingletonClass.swift */; };
+		A859D498242DB79D001CA75C /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D47B242DB79D001CA75C /* EntryViewController.swift */; };
+		A859D499242DB79D001CA75C /* train.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A859D47D242DB79D001CA75C /* train.storyboard */; };
+		A859D49A242DB79D001CA75C /* TrainOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D47F242DB79D001CA75C /* TrainOptionsViewController.swift */; };
+		A859D49B242DB79D001CA75C /* CreateTrainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A859D481242DB79D001CA75C /* CreateTrainViewController.xib */; };
+		A859D49C242DB79D001CA75C /* CreateTrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D482242DB79D001CA75C /* CreateTrainViewController.swift */; };
+		A859D49D242DB79D001CA75C /* SearchUpdateDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D483242DB79D001CA75C /* SearchUpdateDeleteViewController.swift */; };
+		A859D49E242DB79D001CA75C /* ShowTrainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D484242DB79D001CA75C /* ShowTrainsViewController.swift */; };
+		A859D49F242DB79D001CA75C /* SearchScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D486242DB79D001CA75C /* SearchScheduleViewController.swift */; };
+		A859D4A0242DB79D001CA75C /* CreateScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A859D488242DB79D001CA75C /* CreateScheduleViewController.xib */; };
+		A859D4A1242DB79D001CA75C /* CreateScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D489242DB79D001CA75C /* CreateScheduleViewController.swift */; };
+		A859D4A2242DB79D001CA75C /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D48A242DB79D001CA75C /* ScheduleViewController.swift */; };
+		A859D4A3242DB79D001CA75C /* ScheduleOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D48B242DB79D001CA75C /* ScheduleOptionsViewController.swift */; };
+		A859D4A4242DB79D001CA75C /* ShowSchedulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D48C242DB79D001CA75C /* ShowSchedulesViewController.swift */; };
+		A859D4A5242DB79D001CA75C /* StopOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D48F242DB79D001CA75C /* StopOptionsViewController.swift */; };
+		A859D4A6242DB79D001CA75C /* ShowStopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D490242DB79D001CA75C /* ShowStopsViewController.swift */; };
+		A859D4A7242DB79D001CA75C /* StopActionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A859D492242DB79D001CA75C /* StopActionsViewController.xib */; };
+		A859D4A8242DB79D001CA75C /* StopActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D493242DB79D001CA75C /* StopActionsViewController.swift */; };
+		A859D4A9242DB79D001CA75C /* SearchStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D494242DB79D001CA75C /* SearchStopViewController.swift */; };
+		A859D4AA242DB79D001CA75C /* CustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D496242DB79D001CA75C /* CustomCellViewController.swift */; };
+		A859D4AB242DB79D001CA75C /* CustomCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A859D497242DB79D001CA75C /* CustomCellViewController.xib */; };
+		A859D4D3242DCE43001CA75C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D4D2242DCE43001CA75C /* CoreDataManager.swift */; };
+		A8C69201242E905200FD5389 /* StopEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C691FB242E905200FD5389 /* StopEntity+CoreDataClass.swift */; };
+		A8C69202242E905200FD5389 /* StopEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C691FC242E905200FD5389 /* StopEntity+CoreDataProperties.swift */; };
+		A8C69203242E905200FD5389 /* TrainEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C691FD242E905200FD5389 /* TrainEntity+CoreDataClass.swift */; };
+		A8C69204242E905200FD5389 /* TrainEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C691FE242E905200FD5389 /* TrainEntity+CoreDataProperties.swift */; };
+		A8C69205242E905200FD5389 /* ScheduleEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C691FF242E905200FD5389 /* ScheduleEntity+CoreDataClass.swift */; };
+		A8C69206242E905200FD5389 /* ScheduleEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C69200242E905200FD5389 /* ScheduleEntity+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A859D451242DB6F1001CA75C /* mbta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mbta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A859D454242DB6F1001CA75C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A859D457242DB6F1001CA75C /* mbta.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mbta.xcdatamodel; sourceTree = "<group>"; };
+		A859D45F242DB6F2001CA75C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A859D462242DB6F2001CA75C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A859D465242DB6F2001CA75C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A859D467242DB6F2001CA75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A859D470242DB76E001CA75C /* Train.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
+		A859D471242DB76E001CA75C /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		A859D472242DB76E001CA75C /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		A859D477242DB78E001CA75C /* SingletonClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonClass.swift; sourceTree = "<group>"; };
+		A859D47B242DB79D001CA75C /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		A859D47D242DB79D001CA75C /* train.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = train.storyboard; sourceTree = "<group>"; };
+		A859D47F242DB79D001CA75C /* TrainOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainOptionsViewController.swift; sourceTree = "<group>"; };
+		A859D481242DB79D001CA75C /* CreateTrainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTrainViewController.xib; sourceTree = "<group>"; };
+		A859D482242DB79D001CA75C /* CreateTrainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTrainViewController.swift; sourceTree = "<group>"; };
+		A859D483242DB79D001CA75C /* SearchUpdateDeleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUpdateDeleteViewController.swift; sourceTree = "<group>"; };
+		A859D484242DB79D001CA75C /* ShowTrainsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTrainsViewController.swift; sourceTree = "<group>"; };
+		A859D486242DB79D001CA75C /* SearchScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScheduleViewController.swift; sourceTree = "<group>"; };
+		A859D488242DB79D001CA75C /* CreateScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateScheduleViewController.xib; sourceTree = "<group>"; };
+		A859D489242DB79D001CA75C /* CreateScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateScheduleViewController.swift; sourceTree = "<group>"; };
+		A859D48A242DB79D001CA75C /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		A859D48B242DB79D001CA75C /* ScheduleOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsViewController.swift; sourceTree = "<group>"; };
+		A859D48C242DB79D001CA75C /* ShowSchedulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowSchedulesViewController.swift; sourceTree = "<group>"; };
+		A859D48F242DB79D001CA75C /* StopOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopOptionsViewController.swift; sourceTree = "<group>"; };
+		A859D490242DB79D001CA75C /* ShowStopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowStopsViewController.swift; sourceTree = "<group>"; };
+		A859D492242DB79D001CA75C /* StopActionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopActionsViewController.xib; sourceTree = "<group>"; };
+		A859D493242DB79D001CA75C /* StopActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopActionsViewController.swift; sourceTree = "<group>"; };
+		A859D494242DB79D001CA75C /* SearchStopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStopViewController.swift; sourceTree = "<group>"; };
+		A859D496242DB79D001CA75C /* CustomCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellViewController.swift; sourceTree = "<group>"; };
+		A859D497242DB79D001CA75C /* CustomCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCellViewController.xib; sourceTree = "<group>"; };
+		A859D4D2242DCE43001CA75C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A8C691FB242E905200FD5389 /* StopEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8C691FC242E905200FD5389 /* StopEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8C691FD242E905200FD5389 /* TrainEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrainEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8C691FE242E905200FD5389 /* TrainEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrainEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8C691FF242E905200FD5389 /* ScheduleEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8C69200242E905200FD5389 /* ScheduleEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A859D44E242DB6F1001CA75C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A859D448242DB6F1001CA75C = {
+			isa = PBXGroup;
+			children = (
+				A859D453242DB6F1001CA75C /* mbta */,
+				A859D452242DB6F1001CA75C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A859D452242DB6F1001CA75C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A859D451242DB6F1001CA75C /* mbta.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A859D453242DB6F1001CA75C /* mbta */ = {
+			isa = PBXGroup;
+			children = (
+				A859D4D1242DCE24001CA75C /* CoreData */,
+				A859D479242DB79D001CA75C /* Views */,
+				A859D476242DB78E001CA75C /* Util */,
+				A859D46F242DB76E001CA75C /* Model */,
+				A859D454242DB6F1001CA75C /* AppDelegate.swift */,
+				A859D45F242DB6F2001CA75C /* Assets.xcassets */,
+				A859D464242DB6F2001CA75C /* LaunchScreen.storyboard */,
+				A859D467242DB6F2001CA75C /* Info.plist */,
+				A859D461242DB6F2001CA75C /* Preview Content */,
+			);
+			path = mbta;
+			sourceTree = "<group>";
+		};
+		A859D461242DB6F2001CA75C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A859D462242DB6F2001CA75C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A859D46F242DB76E001CA75C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A859D470242DB76E001CA75C /* Train.swift */,
+				A859D471242DB76E001CA75C /* Schedule.swift */,
+				A859D472242DB76E001CA75C /* Stop.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A859D476242DB78E001CA75C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A859D477242DB78E001CA75C /* SingletonClass.swift */,
+			);
+			name = Util;
+			path = ../../../Assignment7/mbta/mbta/Util;
+			sourceTree = "<group>";
+		};
+		A859D479242DB79D001CA75C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A859D47A242DB79D001CA75C /* Entry Controller */,
+				A859D47C242DB79D001CA75C /* Storyboard */,
+				A859D47E242DB79D001CA75C /* Train ViewControllers */,
+				A859D485242DB79D001CA75C /* Schedule ViewControllers */,
+				A859D48D242DB79D001CA75C /* Stop ViewControllers */,
+				A859D495242DB79D001CA75C /* CustomCell */,
+			);
+			name = Views;
+			path = ../../../Assignment7/mbta/mbta/Views;
+			sourceTree = "<group>";
+		};
+		A859D47A242DB79D001CA75C /* Entry Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A859D47B242DB79D001CA75C /* EntryViewController.swift */,
+			);
+			path = "Entry Controller";
+			sourceTree = "<group>";
+		};
+		A859D47C242DB79D001CA75C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A859D47D242DB79D001CA75C /* train.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		A859D47E242DB79D001CA75C /* Train ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A859D47F242DB79D001CA75C /* TrainOptionsViewController.swift */,
+				A859D480242DB79D001CA75C /* Create Train */,
+				A859D483242DB79D001CA75C /* SearchUpdateDeleteViewController.swift */,
+				A859D484242DB79D001CA75C /* ShowTrainsViewController.swift */,
+			);
+			path = "Train ViewControllers";
+			sourceTree = "<group>";
+		};
+		A859D480242DB79D001CA75C /* Create Train */ = {
+			isa = PBXGroup;
+			children = (
+				A859D481242DB79D001CA75C /* CreateTrainViewController.xib */,
+				A859D482242DB79D001CA75C /* CreateTrainViewController.swift */,
+			);
+			path = "Create Train";
+			sourceTree = "<group>";
+		};
+		A859D485242DB79D001CA75C /* Schedule ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A859D486242DB79D001CA75C /* SearchScheduleViewController.swift */,
+				A859D487242DB79D001CA75C /* Create Schedule */,
+				A859D48A242DB79D001CA75C /* ScheduleViewController.swift */,
+				A859D48B242DB79D001CA75C /* ScheduleOptionsViewController.swift */,
+				A859D48C242DB79D001CA75C /* ShowSchedulesViewController.swift */,
+			);
+			path = "Schedule ViewControllers";
+			sourceTree = "<group>";
+		};
+		A859D487242DB79D001CA75C /* Create Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				A859D488242DB79D001CA75C /* CreateScheduleViewController.xib */,
+				A859D489242DB79D001CA75C /* CreateScheduleViewController.swift */,
+			);
+			path = "Create Schedule";
+			sourceTree = "<group>";
+		};
+		A859D48D242DB79D001CA75C /* Stop ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A859D48E242DB79D001CA75C /* Stop Options */,
+				A859D490242DB79D001CA75C /* ShowStopsViewController.swift */,
+				A859D491242DB79D001CA75C /* Create Stop */,
+				A859D494242DB79D001CA75C /* SearchStopViewController.swift */,
+			);
+			path = "Stop ViewControllers";
+			sourceTree = "<group>";
+		};
+		A859D48E242DB79D001CA75C /* Stop Options */ = {
+			isa = PBXGroup;
+			children = (
+				A859D48F242DB79D001CA75C /* StopOptionsViewController.swift */,
+			);
+			path = "Stop Options";
+			sourceTree = "<group>";
+		};
+		A859D491242DB79D001CA75C /* Create Stop */ = {
+			isa = PBXGroup;
+			children = (
+				A859D492242DB79D001CA75C /* StopActionsViewController.xib */,
+				A859D493242DB79D001CA75C /* StopActionsViewController.swift */,
+			);
+			path = "Create Stop";
+			sourceTree = "<group>";
+		};
+		A859D495242DB79D001CA75C /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				A859D496242DB79D001CA75C /* CustomCellViewController.swift */,
+				A859D497242DB79D001CA75C /* CustomCellViewController.xib */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		A859D4D1242DCE24001CA75C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A8C691FB242E905200FD5389 /* StopEntity+CoreDataClass.swift */,
+				A8C691FC242E905200FD5389 /* StopEntity+CoreDataProperties.swift */,
+				A8C691FD242E905200FD5389 /* TrainEntity+CoreDataClass.swift */,
+				A8C691FE242E905200FD5389 /* TrainEntity+CoreDataProperties.swift */,
+				A8C691FF242E905200FD5389 /* ScheduleEntity+CoreDataClass.swift */,
+				A8C69200242E905200FD5389 /* ScheduleEntity+CoreDataProperties.swift */,
+				A859D456242DB6F1001CA75C /* mbta.xcdatamodeld */,
+				A859D4D2242DCE43001CA75C /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A859D450242DB6F1001CA75C /* mbta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A859D46A242DB6F2001CA75C /* Build configuration list for PBXNativeTarget "mbta" */;
+			buildPhases = (
+				A859D44D242DB6F1001CA75C /* Sources */,
+				A859D44E242DB6F1001CA75C /* Frameworks */,
+				A859D44F242DB6F1001CA75C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mbta;
+			productName = mbta;
+			productReference = A859D451242DB6F1001CA75C /* mbta.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A859D449242DB6F1001CA75C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Krishna Vikas";
+				TargetAttributes = {
+					A859D450242DB6F1001CA75C = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A859D44C242DB6F1001CA75C /* Build configuration list for PBXProject "mbta" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A859D448242DB6F1001CA75C;
+			productRefGroup = A859D452242DB6F1001CA75C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A859D450242DB6F1001CA75C /* mbta */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A859D44F242DB6F1001CA75C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A859D4A0242DB79D001CA75C /* CreateScheduleViewController.xib in Resources */,
+				A859D4A7242DB79D001CA75C /* StopActionsViewController.xib in Resources */,
+				A859D49B242DB79D001CA75C /* CreateTrainViewController.xib in Resources */,
+				A859D466242DB6F2001CA75C /* LaunchScreen.storyboard in Resources */,
+				A859D499242DB79D001CA75C /* train.storyboard in Resources */,
+				A859D463242DB6F2001CA75C /* Preview Assets.xcassets in Resources */,
+				A859D460242DB6F2001CA75C /* Assets.xcassets in Resources */,
+				A859D4AB242DB79D001CA75C /* CustomCellViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A859D44D242DB6F1001CA75C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A859D49D242DB79D001CA75C /* SearchUpdateDeleteViewController.swift in Sources */,
+				A859D4A1242DB79D001CA75C /* CreateScheduleViewController.swift in Sources */,
+				A859D4A2242DB79D001CA75C /* ScheduleViewController.swift in Sources */,
+				A859D4A3242DB79D001CA75C /* ScheduleOptionsViewController.swift in Sources */,
+				A8C69203242E905200FD5389 /* TrainEntity+CoreDataClass.swift in Sources */,
+				A8C69202242E905200FD5389 /* StopEntity+CoreDataProperties.swift in Sources */,
+				A859D498242DB79D001CA75C /* EntryViewController.swift in Sources */,
+				A859D4A5242DB79D001CA75C /* StopOptionsViewController.swift in Sources */,
+				A859D4A9242DB79D001CA75C /* SearchStopViewController.swift in Sources */,
+				A859D4A4242DB79D001CA75C /* ShowSchedulesViewController.swift in Sources */,
+				A859D49F242DB79D001CA75C /* SearchScheduleViewController.swift in Sources */,
+				A859D4A8242DB79D001CA75C /* StopActionsViewController.swift in Sources */,
+				A859D455242DB6F1001CA75C /* AppDelegate.swift in Sources */,
+				A859D475242DB76E001CA75C /* Stop.swift in Sources */,
+				A859D458242DB6F1001CA75C /* mbta.xcdatamodeld in Sources */,
+				A859D473242DB76E001CA75C /* Train.swift in Sources */,
+				A859D4A6242DB79D001CA75C /* ShowStopsViewController.swift in Sources */,
+				A859D49C242DB79D001CA75C /* CreateTrainViewController.swift in Sources */,
+				A8C69201242E905200FD5389 /* StopEntity+CoreDataClass.swift in Sources */,
+				A859D478242DB78E001CA75C /* SingletonClass.swift in Sources */,
+				A859D4AA242DB79D001CA75C /* CustomCellViewController.swift in Sources */,
+				A859D49A242DB79D001CA75C /* TrainOptionsViewController.swift in Sources */,
+				A859D474242DB76E001CA75C /* Schedule.swift in Sources */,
+				A859D4D3242DCE43001CA75C /* CoreDataManager.swift in Sources */,
+				A859D49E242DB79D001CA75C /* ShowTrainsViewController.swift in Sources */,
+				A8C69205242E905200FD5389 /* ScheduleEntity+CoreDataClass.swift in Sources */,
+				A8C69204242E905200FD5389 /* TrainEntity+CoreDataProperties.swift in Sources */,
+				A8C69206242E905200FD5389 /* ScheduleEntity+CoreDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A859D464242DB6F2001CA75C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A859D465242DB6F2001CA75C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A859D468242DB6F2001CA75C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A859D469242DB6F2001CA75C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A859D46B242DB6F2001CA75C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"mbta/Preview Content\"";
+				DEVELOPMENT_TEAM = 3QX92GRWD9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = mbta/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kv.mbta.mbta;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A859D46C242DB6F2001CA75C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"mbta/Preview Content\"";
+				DEVELOPMENT_TEAM = 3QX92GRWD9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = mbta/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kv.mbta.mbta;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A859D44C242DB6F1001CA75C /* Build configuration list for PBXProject "mbta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A859D468242DB6F2001CA75C /* Debug */,
+				A859D469242DB6F2001CA75C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A859D46A242DB6F2001CA75C /* Build configuration list for PBXNativeTarget "mbta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A859D46B242DB6F2001CA75C /* Debug */,
+				A859D46C242DB6F2001CA75C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A859D456242DB6F1001CA75C /* mbta.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A859D457242DB6F1001CA75C /* mbta.xcdatamodel */,
+			);
+			currentVersion = A859D457242DB6F1001CA75C /* mbta.xcdatamodel */;
+			path = mbta.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A859D449242DB6F1001CA75C /* Project object */;
+}

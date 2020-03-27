@@ -17,7 +17,7 @@ class StopActionsViewController: UIViewController {
     @IBOutlet weak var header: UINavigationItem!
     
     @IBOutlet weak var Submit: UIButton!
-    var stops: Stop?
+    var stops: StopEntity?
     var sn  : String?
     var lat : String?
     var long : String?
@@ -68,7 +68,7 @@ class StopActionsViewController: UIViewController {
         }
         
         
-        var stop : Stop!
+        var stop : StopEntity!
         
 //        if action == "create"{
 //            let x : Int? = Int (sch)
@@ -105,21 +105,21 @@ class StopActionsViewController: UIViewController {
             stops?.latitude = lati
             stops?.longitude = longt
             stops?.address = addd
-            showAlert(title: "Stop: \(stops?.stopID! ?? -1000) succesfully updated ")
+            showAlert(title: "Stop: \(stops?.stopID ?? -1000) succesfully updated ")
             return
         }
 
-        if let _ = SingletonClass.shared.getStopByName(stopName: stName)  {
+        if let _ = CoreDataManager.getStopByName(stopName: stName)  {
                    showAlert(title: "Stop exists already")
                    return
                }
-        stop = SingletonClass.shared.addStop()
+        stop = CoreDataManager.addStop();
         stop.stopName = stName
         stop.latitude = lati
         stop.longitude = longt
         stop.address = addd
         
-        showAlert(title: "Stop: \(stop.stopID!) succesfully added ")
+        showAlert(title: "Stop: \(stop.stopID) succesfully added ")
         
     }
     
@@ -142,7 +142,7 @@ class StopActionsViewController: UIViewController {
      
      func refreshData(action: UIAlertAction) {
        NotificationCenter.default.post(name:  NSNotification.Name(rawValue: "refresh"), object: nil)
-         self.dismiss(animated: true, completion: nil)
+       //  self.dismiss(animated: true, completion: nil)
 
      }
 }
