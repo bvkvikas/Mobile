@@ -22,23 +22,6 @@ extension ScheduleEntity {
     @NSManaged public var lineID: Int16
     @NSManaged public var scheduleID: Int16
     @NSManaged public var stops: NSObject?
-    @NSManaged public var toTrain: NSSet?
-
-}
-
-// MARK: Generated accessors for toTrain
-extension ScheduleEntity {
-
-    @objc(addToTrainObject:)
-    @NSManaged public func addToToTrain(_ value: TrainEntity)
-
-    @objc(removeToTrainObject:)
-    @NSManaged public func removeFromToTrain(_ value: TrainEntity)
-
-    @objc(addToTrain:)
-    @NSManaged public func addToToTrain(_ values: NSSet)
-
-    @objc(removeToTrain:)
-    @NSManaged public func removeFromToTrain(_ values: NSSet)
+    @NSManaged public var toTrain: TrainEntity?
 
 }

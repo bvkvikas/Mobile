@@ -13,24 +13,25 @@ class CoreDataManager: NSObject {
     
     static var appdel =  UIApplication.shared.delegate as! AppDelegate
     
-      // MARK: - Stop Functions
+    // MARK: - Stop Functions
     
     static func addStopTestData() {
-      
+        
         
         for i in 1...10{
             //let stop = NSManagedObject(entity: entity, insertInto: persistentContainer.viewContext)
             let stop = StopEntity(context: appdel.persistentContainer.viewContext);
-                   stop.stopName = "Test" + "\(i)";
-                   stop.address = "address" + "\(i)";
-                   stop.latitude = "latitude" + "\(i)";
-                   stop.longitude = "longitude" + "\(i)";
-               }
-        appdel.saveContext();
+            stop.stopID = Int16.random(in: 1 ..< 1000)
+            stop.stopName = "Test" + "\(i)";
+            stop.address = "address" + "\(i)";
+            stop.latitude = "latitude" + "\(i)";
+            stop.longitude = "longitude" + "\(i)";
         }
+        appdel.saveContext();
+    }
     
     static func getStopByName(stopName: String) -> StopEntity?
-      {
+    {
         var res : StopEntity?
         let request: NSFetchRequest<StopEntity> = StopEntity.fetchRequest();
         request.predicate = NSPredicate(format: "stopName = %@", stopName)
@@ -42,20 +43,19 @@ class CoreDataManager: NSObject {
             }
         }catch{
             print("Fetch failed");
-            
         }
         return res
     }
     
     static func getAllStops() -> [StopEntity] {
-           let request: NSFetchRequest<StopEntity> = StopEntity.fetchRequest()
-             do {
-                return try appdel.persistentContainer.viewContext.fetch(request)
-                 
-             } catch {
-                 print("Fetch failed")
-                 return []
-             }
+        let request: NSFetchRequest<StopEntity> = StopEntity.fetchRequest()
+        do {
+            return try appdel.persistentContainer.viewContext.fetch(request)
+            
+        } catch {
+            print("Fetch failed")
+            return []
+        }
     }
     
     static func addStop() -> StopEntity
@@ -65,14 +65,14 @@ class CoreDataManager: NSObject {
         
         return stopEntity
     }
-
+    
     static func deleteStop(entity: StopEntity)
     {
         appdel.persistentContainer.viewContext.delete(entity)
         saveContext()
     }
     
-    
+    // MARK: - Train Functions
     
     
     static func getTrainEntities() -> [TrainEntity]  {
@@ -88,8 +88,33 @@ class CoreDataManager: NSObject {
         }
     }
     
+    static func getTrainByName(trainName: String) -> TrainEntity?
+    {
+        var res : TrainEntity?
+        let request: NSFetchRequest<TrainEntity> = TrainEntity.fetchRequest();
+        request.predicate = NSPredicate(format: "trainLineName = %@", trainName)
+        do{
+            let result = try appdel.persistentContainer.viewContext.fetch(request);
+            for data in result as [TrainEntity]{
+                res = data
+                return data
+            }
+        }catch{
+            print("Fetch failed");
+            
+        }
+        return res
+    }
+    
+    static func createTrain() -> TrainEntity {
+        let trainEntity = TrainEntity(context: appdel.persistentContainer.viewContext)
+        trainEntity.lineID = Int16.random(in: 0 ..< 1000 )
+        
+        return trainEntity
+    }
+    
     static func saveContext()
     {
-       _ = appdel.saveContext()
+        _ = appdel.saveContext()
     }
 }

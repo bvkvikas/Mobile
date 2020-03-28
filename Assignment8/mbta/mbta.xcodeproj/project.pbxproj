@@ -37,12 +37,12 @@
 		A859D4AA242DB79D001CA75C /* CustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D496242DB79D001CA75C /* CustomCellViewController.swift */; };
 		A859D4AB242DB79D001CA75C /* CustomCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A859D497242DB79D001CA75C /* CustomCellViewController.xib */; };
 		A859D4D3242DCE43001CA75C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D4D2242DCE43001CA75C /* CoreDataManager.swift */; };
-		A8C69201242E905200FD5389 /* StopEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C691FB242E905200FD5389 /* StopEntity+CoreDataClass.swift */; };
-		A8C69202242E905200FD5389 /* StopEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C691FC242E905200FD5389 /* StopEntity+CoreDataProperties.swift */; };
-		A8C69203242E905200FD5389 /* TrainEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C691FD242E905200FD5389 /* TrainEntity+CoreDataClass.swift */; };
-		A8C69204242E905200FD5389 /* TrainEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C691FE242E905200FD5389 /* TrainEntity+CoreDataProperties.swift */; };
-		A8C69205242E905200FD5389 /* ScheduleEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C691FF242E905200FD5389 /* ScheduleEntity+CoreDataClass.swift */; };
-		A8C69206242E905200FD5389 /* ScheduleEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C69200242E905200FD5389 /* ScheduleEntity+CoreDataProperties.swift */; };
+		A8C69219242EE2E700FD5389 /* StopEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C69213242EE2E700FD5389 /* StopEntity+CoreDataClass.swift */; };
+		A8C6921A242EE2E700FD5389 /* StopEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C69214242EE2E700FD5389 /* StopEntity+CoreDataProperties.swift */; };
+		A8C6921B242EE2E700FD5389 /* ScheduleEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C69215242EE2E700FD5389 /* ScheduleEntity+CoreDataClass.swift */; };
+		A8C6921C242EE2E700FD5389 /* ScheduleEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C69216242EE2E700FD5389 /* ScheduleEntity+CoreDataProperties.swift */; };
+		A8C6921D242EE2E700FD5389 /* TrainEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C69217242EE2E700FD5389 /* TrainEntity+CoreDataClass.swift */; };
+		A8C6921E242EE2E700FD5389 /* TrainEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C69218242EE2E700FD5389 /* TrainEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,12 +78,12 @@
 		A859D496242DB79D001CA75C /* CustomCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellViewController.swift; sourceTree = "<group>"; };
 		A859D497242DB79D001CA75C /* CustomCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCellViewController.xib; sourceTree = "<group>"; };
 		A859D4D2242DCE43001CA75C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		A8C691FB242E905200FD5389 /* StopEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A8C691FC242E905200FD5389 /* StopEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A8C691FD242E905200FD5389 /* TrainEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrainEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A8C691FE242E905200FD5389 /* TrainEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrainEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A8C691FF242E905200FD5389 /* ScheduleEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A8C69200242E905200FD5389 /* ScheduleEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8C69213242EE2E700FD5389 /* StopEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8C69214242EE2E700FD5389 /* StopEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8C69215242EE2E700FD5389 /* ScheduleEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8C69216242EE2E700FD5389 /* ScheduleEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8C69217242EE2E700FD5389 /* TrainEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrainEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8C69218242EE2E700FD5389 /* TrainEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrainEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,12 +267,12 @@
 		A859D4D1242DCE24001CA75C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				A8C691FB242E905200FD5389 /* StopEntity+CoreDataClass.swift */,
-				A8C691FC242E905200FD5389 /* StopEntity+CoreDataProperties.swift */,
-				A8C691FD242E905200FD5389 /* TrainEntity+CoreDataClass.swift */,
-				A8C691FE242E905200FD5389 /* TrainEntity+CoreDataProperties.swift */,
-				A8C691FF242E905200FD5389 /* ScheduleEntity+CoreDataClass.swift */,
-				A8C69200242E905200FD5389 /* ScheduleEntity+CoreDataProperties.swift */,
+				A8C69213242EE2E700FD5389 /* StopEntity+CoreDataClass.swift */,
+				A8C69214242EE2E700FD5389 /* StopEntity+CoreDataProperties.swift */,
+				A8C69215242EE2E700FD5389 /* ScheduleEntity+CoreDataClass.swift */,
+				A8C69216242EE2E700FD5389 /* ScheduleEntity+CoreDataProperties.swift */,
+				A8C69217242EE2E700FD5389 /* TrainEntity+CoreDataClass.swift */,
+				A8C69218242EE2E700FD5389 /* TrainEntity+CoreDataProperties.swift */,
 				A859D456242DB6F1001CA75C /* mbta.xcdatamodeld */,
 				A859D4D2242DCE43001CA75C /* CoreDataManager.swift */,
 			);
@@ -359,30 +359,30 @@
 				A859D4A1242DB79D001CA75C /* CreateScheduleViewController.swift in Sources */,
 				A859D4A2242DB79D001CA75C /* ScheduleViewController.swift in Sources */,
 				A859D4A3242DB79D001CA75C /* ScheduleOptionsViewController.swift in Sources */,
-				A8C69203242E905200FD5389 /* TrainEntity+CoreDataClass.swift in Sources */,
-				A8C69202242E905200FD5389 /* StopEntity+CoreDataProperties.swift in Sources */,
+				A8C6921A242EE2E700FD5389 /* StopEntity+CoreDataProperties.swift in Sources */,
 				A859D498242DB79D001CA75C /* EntryViewController.swift in Sources */,
 				A859D4A5242DB79D001CA75C /* StopOptionsViewController.swift in Sources */,
+				A8C6921C242EE2E700FD5389 /* ScheduleEntity+CoreDataProperties.swift in Sources */,
 				A859D4A9242DB79D001CA75C /* SearchStopViewController.swift in Sources */,
 				A859D4A4242DB79D001CA75C /* ShowSchedulesViewController.swift in Sources */,
 				A859D49F242DB79D001CA75C /* SearchScheduleViewController.swift in Sources */,
 				A859D4A8242DB79D001CA75C /* StopActionsViewController.swift in Sources */,
+				A8C6921D242EE2E700FD5389 /* TrainEntity+CoreDataClass.swift in Sources */,
 				A859D455242DB6F1001CA75C /* AppDelegate.swift in Sources */,
 				A859D475242DB76E001CA75C /* Stop.swift in Sources */,
 				A859D458242DB6F1001CA75C /* mbta.xcdatamodeld in Sources */,
 				A859D473242DB76E001CA75C /* Train.swift in Sources */,
 				A859D4A6242DB79D001CA75C /* ShowStopsViewController.swift in Sources */,
 				A859D49C242DB79D001CA75C /* CreateTrainViewController.swift in Sources */,
-				A8C69201242E905200FD5389 /* StopEntity+CoreDataClass.swift in Sources */,
+				A8C69219242EE2E700FD5389 /* StopEntity+CoreDataClass.swift in Sources */,
 				A859D478242DB78E001CA75C /* SingletonClass.swift in Sources */,
+				A8C6921E242EE2E700FD5389 /* TrainEntity+CoreDataProperties.swift in Sources */,
 				A859D4AA242DB79D001CA75C /* CustomCellViewController.swift in Sources */,
 				A859D49A242DB79D001CA75C /* TrainOptionsViewController.swift in Sources */,
 				A859D474242DB76E001CA75C /* Schedule.swift in Sources */,
+				A8C6921B242EE2E700FD5389 /* ScheduleEntity+CoreDataClass.swift in Sources */,
 				A859D4D3242DCE43001CA75C /* CoreDataManager.swift in Sources */,
 				A859D49E242DB79D001CA75C /* ShowTrainsViewController.swift in Sources */,
-				A8C69205242E905200FD5389 /* ScheduleEntity+CoreDataClass.swift in Sources */,
-				A8C69204242E905200FD5389 /* TrainEntity+CoreDataProperties.swift in Sources */,
-				A8C69206242E905200FD5389 /* ScheduleEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

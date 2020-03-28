@@ -22,5 +22,23 @@ extension StopEntity {
     @NSManaged public var longitude: String?
     @NSManaged public var stopID: Int16
     @NSManaged public var stopName: String?
+    @NSManaged public var train: NSSet?
+
+}
+
+// MARK: Generated accessors for train
+extension StopEntity {
+
+    @objc(addTrainObject:)
+    @NSManaged public func addToTrain(_ value: TrainEntity)
+
+    @objc(removeTrainObject:)
+    @NSManaged public func removeFromTrain(_ value: TrainEntity)
+
+    @objc(addTrain:)
+    @NSManaged public func addToTrain(_ values: NSSet)
+
+    @objc(removeTrain:)
+    @NSManaged public func removeFromTrain(_ values: NSSet)
 
 }

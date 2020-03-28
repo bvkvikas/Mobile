@@ -17,11 +17,29 @@ extension TrainEntity {
         return NSFetchRequest<TrainEntity>(entityName: "TrainEntity")
     }
 
-    @NSManaged public var destination: NSObject?
+    @NSManaged public var destination: StopEntity?
     @NSManaged public var lineID: Int16
     @NSManaged public var schedule: NSObject?
-    @NSManaged public var source: NSObject?
+    @NSManaged public var source: StopEntity?
     @NSManaged public var trainLineName: String?
-    @NSManaged public var manySchedules: ScheduleEntity?
+    @NSManaged public var manySchedules: NSSet?
+    @NSManaged public var stop: StopEntity?
+
+}
+
+// MARK: Generated accessors for manySchedules
+extension TrainEntity {
+
+    @objc(addManySchedulesObject:)
+    @NSManaged public func addToManySchedules(_ value: ScheduleEntity)
+
+    @objc(removeManySchedulesObject:)
+    @NSManaged public func removeFromManySchedules(_ value: ScheduleEntity)
+
+    @objc(addManySchedules:)
+    @NSManaged public func addToManySchedules(_ values: NSSet)
+
+    @objc(removeManySchedules:)
+    @NSManaged public func removeFromManySchedules(_ values: NSSet)
 
 }
