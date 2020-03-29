@@ -2,7 +2,7 @@
 //  TrainEntity+CoreDataProperties.swift
 //  mbta
 //
-//  Created by Krishna Vikas on 3/27/20.
+//  Created by Krishna Vikas on 3/29/20.
 //  Copyright © 2020 Krishna Vikas. All rights reserved.
 //
 //
@@ -17,13 +17,12 @@ extension TrainEntity {
         return NSFetchRequest<TrainEntity>(entityName: "TrainEntity")
     }
 
-    @NSManaged public var destination: StopEntity?
     @NSManaged public var lineID: Int16
-    @NSManaged public var schedule: NSObject?
-    @NSManaged public var source: StopEntity?
     @NSManaged public var trainLineName: String?
     @NSManaged public var manySchedules: NSSet?
     @NSManaged public var stop: StopEntity?
+    @NSManaged public var source: StopEntity?
+    @NSManaged public var destination: StopEntity?
 
 }
 

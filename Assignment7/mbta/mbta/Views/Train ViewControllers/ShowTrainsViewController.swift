@@ -20,14 +20,14 @@ UIViewController, UITableViewDelegate, UITableViewDataSource , UISearchResultsUp
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCellViewController
-          let train = SingletonClass.shared.trains[indexPath.row]
+          let train = CoreDataManager.getTrainEntities()[indexPath.row]
           
           var scheduleString = ""
-          for schedule in train.schedule{
-              scheduleString = scheduleString + "\(schedule.scheduleID ?? 0), "
+        for schedule in train.manySchedules!{
+            scheduleString = scheduleString + "\((schedule as AnyObject).scheduleID ?? 0), "
           }
           
-        cell.label.text = " Train ID: \(train.lineID ?? 0) \n Train Name : \(train.trainLineName ?? "Error") \n Source: \(train.source.stopName ?? "Error")\n Destination: \(train.destination.stopName ?? "Error") \n Schedules : \(scheduleString)"
+        cell.label.text = " Train ID: \(train.lineID ) \n Train Name : \(train.trainLineName ?? "Error") \n Source: \(train.source?.stopName ?? "Error")\n Destination: \(train.destination?.stopName ?? "Error") \n Schedules : \(scheduleString)"
           
           return cell;
       }
@@ -49,11 +49,11 @@ UIViewController, UITableViewDelegate, UITableViewDataSource , UISearchResultsUp
      func updateSearchResults(for searchController: UISearchController) {
                  
          if let searchText = searchController.searchBar.text, !searchText.isEmpty {
-             self.trains = SingletonClass.shared.trains.filter { train in
-                 return train.trainLineName.lowercased().contains(searchText.lowercased())
+            self.trains = CoreDataManager.getTrainEntities().filter { train in
+                return train.trainLineName!.lowercased().contains(searchText.lowercased())
              }
          } else {
-             self.trains  = SingletonClass.shared.trains
+             self.trains  = CoreDataManager.getTrainEntities()
          }
          self.tableObject.reloadData()
      }
@@ -62,7 +62,7 @@ UIViewController, UITableViewDelegate, UITableViewDataSource , UISearchResultsUp
 
     @IBOutlet weak var tableObject: UITableView!
     
-    var trains : [Train] = SingletonClass.shared.trains
+    var trains : [TrainEntity] = CoreDataManager.getTrainEntities()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,7 +110,7 @@ UIViewController, UITableViewDelegate, UITableViewDataSource , UISearchResultsUp
     
     @objc func refresh() {
         
-         trains = SingletonClass.shared.trains
+        trains = CoreDataManager.getTrainEntities()
          tableObject.reloadData()
     }
     

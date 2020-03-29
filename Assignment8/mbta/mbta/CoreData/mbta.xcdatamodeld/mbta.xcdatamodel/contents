@@ -5,7 +5,7 @@
         <attribute name="departureTime" optional="YES" attributeType="String"/>
         <attribute name="lineID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="scheduleID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="stops" optional="YES" attributeType="Transformable"/>
+        <relationship name="manyStops" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StopEntity" inverseName="manySchedules" inverseEntity="StopEntity"/>
         <relationship name="toTrain" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TrainEntity" inverseName="manySchedules" inverseEntity="TrainEntity"/>
     </entity>
     <entity name="StopEntity" representedClassName=".StopEntity" syncable="YES">
@@ -14,21 +14,23 @@
         <attribute name="longitude" optional="YES" attributeType="String"/>
         <attribute name="stopID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="stopName" optional="YES" attributeType="String"/>
+        <relationship name="destinationStop" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrainEntity" inverseName="destination" inverseEntity="TrainEntity"/>
+        <relationship name="manySchedules" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScheduleEntity" inverseName="manyStops" inverseEntity="ScheduleEntity"/>
+        <relationship name="sourceStop" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrainEntity" inverseName="source" inverseEntity="TrainEntity"/>
         <relationship name="train" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrainEntity" inverseName="stop" inverseEntity="TrainEntity"/>
     </entity>
     <entity name="TrainEntity" representedClassName=".TrainEntity">
-        <attribute name="destination" attributeType="Transformable" valueTransformerName="source" customClassName=".StopEntity"/>
         <attribute name="lineID" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="schedule" attributeType="Transformable"/>
-        <attribute name="source" attributeType="Transformable" valueTransformerName="source" customClassName=".StopEntity"/>
         <attribute name="trainLineName" attributeType="String" defaultValueString="t1"/>
-        <relationship name="manySchedules" toMany="YES" deletionRule="Nullify" destinationEntity="ScheduleEntity" inverseName="toTrain" inverseEntity="ScheduleEntity"/>
-        <relationship name="stop" maxCount="1" deletionRule="Nullify" destinationEntity="StopEntity" inverseName="train" inverseEntity="StopEntity"/>
+        <relationship name="destination" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StopEntity" inverseName="destinationStop" inverseEntity="StopEntity"/>
+        <relationship name="manySchedules" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScheduleEntity" inverseName="toTrain" inverseEntity="ScheduleEntity"/>
+        <relationship name="source" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StopEntity" inverseName="sourceStop" inverseEntity="StopEntity"/>
+        <relationship name="stop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StopEntity" inverseName="train" inverseEntity="StopEntity"/>
         <userInfo/>
     </entity>
     <elements>
         <element name="ScheduleEntity" positionX="137.79296875" positionY="14.91796875" width="128" height="133"/>
-        <element name="StopEntity" positionX="182.8984375" positionY="232.30078125" width="128" height="133"/>
-        <element name="TrainEntity" positionX="-259.6015625" positionY="191.6484375" width="128" height="148"/>
+        <element name="StopEntity" positionX="404.3828125" positionY="191.7421875" width="128" height="178"/>
+        <element name="TrainEntity" positionX="-259.6015625" positionY="191.6484375" width="128" height="133"/>
     </elements>
 </model>

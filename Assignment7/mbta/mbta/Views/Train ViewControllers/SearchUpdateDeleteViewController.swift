@@ -14,7 +14,7 @@ class SearchUpdateDeleteViewController: UIViewController {
     @IBOutlet weak var navigationTitle: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -23,20 +23,15 @@ class SearchUpdateDeleteViewController: UIViewController {
             showAlert(title: "Enter correct name")
             return
         }
-        guard let train : Train = SingletonClass.shared.getTrain(trainName) else{
+        guard let train : TrainEntity = CoreDataManager.getTrainByName(trainName: trainName) else{
             showAlert(title: "No Train found")
             return
         }
         
         if action == "delete" {
-            if SingletonClass.shared.deleteTrain(trainName) {
-                showAlert(title: "Deleted Train");
-                return
-            }
-            else {
-                showAlert(title: "Error deleting train");
-                return
-            }
+            CoreDataManager.deleteTrain(entity: train)
+            showAlert(title: "Deleted Train");
+            return
         }
         
         let CTController = CreateTrainViewController();
@@ -54,19 +49,19 @@ class SearchUpdateDeleteViewController: UIViewController {
         
     }
     func showAlert(title: String)
-      {
-          let alert = UIAlertController(title:title, message:"", preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-          self.present(alert, animated: true)
-      }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    {
+        let alert = UIAlertController(title:title, message:"", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
-    */
-
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

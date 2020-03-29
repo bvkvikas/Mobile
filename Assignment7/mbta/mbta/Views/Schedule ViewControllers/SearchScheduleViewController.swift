@@ -35,22 +35,19 @@ class SearchScheduleViewController: UIViewController {
             return
         }
         
-        guard let sch : Schedule = SingletonClass.shared.getScheduleByID(sid: Int(sid)!) else{
+        guard let sch : ScheduleEntity = CoreDataManager.getScheduleByID(sid: Int(sid)!) else{
             showAlert(title: "No Schedule found")
             return
         }
         
         if action == "delete" {
-            if SingletonClass.shared.deleteSchedule(sid: Int(sid)!){
+            CoreDataManager.deleteSchedule(entity: sch)
                 showAlert(title: "Schedule deleted from train")
                 return
-            }else{
-                showAlert(title: "Error deleting schedule")
-                return
-            }
+           
         }
         
-        let tr : Train = SingletonClass.shared.getTrainByID(sch.lineID)!
+        let tr : TrainEntity = CoreDataManager.getTrainByID(lineID: sch.lineID)!
         
         let SVController = CreateScheduleViewController();
         SVController.sch = sch;
@@ -58,7 +55,7 @@ class SearchScheduleViewController: UIViewController {
         SVController.dep = sch.departureTime
         SVController.tn =  tr
         SVController.action = action
-        SVController.listOfStps = SingletonClass.shared.getListOfStopsInString(list: sch.stops)!
+        SVController.listOfStps = CoreDataManager.getListOfStopsInString(list: sch.manyStops as! Set<StopEntity>)
         self.navigationController?.pushViewController(SVController, animated: true)
         
     }

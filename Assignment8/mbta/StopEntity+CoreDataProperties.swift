@@ -2,7 +2,7 @@
 //  StopEntity+CoreDataProperties.swift
 //  mbta
 //
-//  Created by Krishna Vikas on 3/27/20.
+//  Created by Krishna Vikas on 3/29/20.
 //  Copyright © 2020 Krishna Vikas. All rights reserved.
 //
 //
@@ -23,6 +23,7 @@ extension StopEntity {
     @NSManaged public var stopID: Int16
     @NSManaged public var stopName: String?
     @NSManaged public var train: NSSet?
+    @NSManaged public var manySchedules: NSSet?
 
 }
 
@@ -40,5 +41,22 @@ extension StopEntity {
 
     @objc(removeTrain:)
     @NSManaged public func removeFromTrain(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for manySchedules
+extension StopEntity {
+
+    @objc(addManySchedulesObject:)
+    @NSManaged public func addToManySchedules(_ value: ScheduleEntity)
+
+    @objc(removeManySchedulesObject:)
+    @NSManaged public func removeFromManySchedules(_ value: ScheduleEntity)
+
+    @objc(addManySchedules:)
+    @NSManaged public func addToManySchedules(_ values: NSSet)
+
+    @objc(removeManySchedules:)
+    @NSManaged public func removeFromManySchedules(_ values: NSSet)
 
 }

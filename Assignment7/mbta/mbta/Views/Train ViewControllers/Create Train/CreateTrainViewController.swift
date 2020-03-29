@@ -18,8 +18,8 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
     @IBOutlet weak var ActionBtn: UIButton!
     @IBOutlet weak var viewLabel: UILabel!
     
-    var pickerData : [Stop] = [Stop]()
-    var tr : Train?
+    var pickerData : [StopEntity] = [StopEntity]()
+    var tr : TrainEntity?
     var tntf : String?
     var dtf : String?
     var stf : String?
@@ -28,12 +28,12 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pickerData = SingletonClass.shared.stops;
+        pickerData = CoreDataManager.getAllStops();
         createPickerView()
         dismissPickerView()
-        TrainNameTF?.text = tr?.trainLineName ?? ""
-        DestinationTF?.text = tr?.destination.stopName ?? ""
-        SourceTF?.text = tr?.source.stopName ?? ""
+        TrainNameTF?.text = tr?.trainLineName ?? "1"
+        DestinationTF?.text = tr?.destination?.stopName
+        SourceTF?.text = tr?.source?.stopName
         SourceTF.allowsEditingTextAttributes = false;
         if action == "search" {
             TrainNameTF?.isUserInteractionEnabled = false
@@ -90,8 +90,8 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
         
         
         if action == "update"{
-            tr?.source = SingletonClass.shared.getStopByName(stopName: source);
-            tr?.destination = SingletonClass.shared.getStopByName(stopName: destination);
+            tr?.source = CoreDataManager.getStopByName(stopName: source);
+            tr?.destination = CoreDataManager.getStopByName(stopName: destination);
             tr?.trainLineName = trainName;
             showAlert(title: "Train Updated")
         }else if action == "create"{
@@ -100,13 +100,14 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
                 showAlert(title: "Train exists already")
                 return
             }
-            let train = SingletonClass.shared.addTrain()
-            train.source = SingletonClass.shared.getStopByName(stopName: source);
-            train.destination = SingletonClass.shared.getStopByName(stopName: destination);
+            let train : TrainEntity = CoreDataManager.createTrain()
+            train.source = CoreDataManager.getStopByName(stopName: source);
+            train.destination = CoreDataManager.getStopByName(stopName: destination);
             train.trainLineName = trainName;
+            CoreDataManager.saveContext()
             
             showAlert(title: "Train created")
-        
+            
         }
         
     }
@@ -114,7 +115,7 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
     func isSourceAndDestSame(source: String, destination: String) -> Bool {
         return source.lowercased() == destination.lowercased();
     }
-        
+    
     func showAlert(title: String)
     {
         let alert = UIAlertController(title:title, message:"", preferredStyle: .alert)
@@ -124,10 +125,10 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
     
     func refreshData(action: UIAlertAction) {
         NotificationCenter.default.post(name:  NSNotification.Name(rawValue: "refresh"), object: nil)
-    //    self.dismiss(animated: true, completion: nil)
+        //    self.dismiss(animated: true, completion: nil)
         
     }
-
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -148,13 +149,13 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
             selectedSource = pickerData[row].stopName
             SourceTF.text = selectedSource
         }
-         if pickerView.tag == 2 {
+        if pickerView.tag == 2 {
             selectedDestination = pickerData[row].stopName
-             DestinationTF.text = selectedDestination
-         }
+            DestinationTF.text = selectedDestination
+        }
         
     }
-   
+    
     func createPickerView() {
         let pickerView = UIPickerView()
         let pickerView2 = UIPickerView()

@@ -27,7 +27,18 @@ class CoreDataManager: NSObject {
             stop.latitude = "latitude" + "\(i)";
             stop.longitude = "longitude" + "\(i)";
         }
+        
         appdel.saveContext();
+//
+//        let tr : TrainEntity = createTrain()
+//        tr.lineID = Int16.random(in: 1 ..< 100)
+//        tr.source = getStopByName(stopName: "Test1")
+//        tr.destination = getStopByName(stopName: "Test2")
+//        tr.trainLineName = "test"
+//        
+//        
+//        appdel.saveContext();
+        
     }
     
     static func getStopByName(stopName: String) -> StopEntity?
@@ -58,6 +69,18 @@ class CoreDataManager: NSObject {
         }
     }
     
+    static func getListOfStopsInString(list: Set<StopEntity>) -> String {
+        
+        var res : String = ""
+        let arr = Array(list)
+        for stop in arr {
+            res += stop.stopName!
+        }
+        
+        return res;
+    }
+    
+    
     static func addStop() -> StopEntity
     {
         let stopEntity = StopEntity(context: appdel.persistentContainer.viewContext)
@@ -71,6 +94,31 @@ class CoreDataManager: NSObject {
         appdel.persistentContainer.viewContext.delete(entity)
         saveContext()
     }
+    
+    static func validateStopsList(listOfStops : String) -> Set<StopEntity>? {
+        var result : Set<StopEntity>? = [];
+        let list : [String] = listOfStops.split(separator: ",").map {String($0)}
+        if list.count > 0 {
+            
+            for s in list {
+                if let st = doesStopExsit(stop: s) {
+                    result?.insert(st);
+                }else{
+                    return nil;
+                }
+            }
+            
+        }
+        return result;
+    }
+    
+    static func doesStopExsit(stop : String) -> StopEntity? {
+        if let res = getStopByName(stopName: stop){
+            return res;
+        }
+        return nil;
+    }
+    
     
     // MARK: - Train Functions
     
@@ -106,6 +154,26 @@ class CoreDataManager: NSObject {
         return res
     }
     
+    static func getTrainByID(lineID: Int16) -> TrainEntity?
+    {
+        var res : TrainEntity?
+        let request: NSFetchRequest<TrainEntity> = TrainEntity.fetchRequest();
+        request.predicate = NSPredicate(format: "lineID == %i", lineID)
+        do{
+            let result = try appdel.persistentContainer.viewContext.fetch(request);
+            for data in result as [TrainEntity]{
+                res = data
+                return data
+            }
+        }catch{
+            print("Fetch failed");
+            
+        }
+        return res
+    }
+    
+    
+    
     static func createTrain() -> TrainEntity {
         let trainEntity = TrainEntity(context: appdel.persistentContainer.viewContext)
         trainEntity.lineID = Int16.random(in: 0 ..< 1000 )
@@ -113,6 +181,60 @@ class CoreDataManager: NSObject {
         return trainEntity
     }
     
+    static func deleteTrain(entity: TrainEntity)
+    {
+        appdel.persistentContainer.viewContext.delete(entity)
+        saveContext()
+    }
+    
+    // MARK: - Schedule functions
+    
+    static func createSchedule(trainEntity : TrainEntity) -> ScheduleEntity {
+        let scheduleEntity = ScheduleEntity(context: appdel.persistentContainer.viewContext)
+        scheduleEntity.scheduleID = Int16.random(in: 0 ..< 1000 )
+        trainEntity.addToManySchedules(scheduleEntity);
+        return scheduleEntity
+    }
+    
+    static func getAllSchedules() -> [ScheduleEntity]{
+        var result : [ScheduleEntity] = []
+        
+        for train in getTrainEntities() {
+            for schedule in train.manySchedules! {
+                result.append(schedule as! ScheduleEntity)
+            }
+        }
+        
+        return result
+    }
+    
+    static func getScheduleByID(sid: Int) -> ScheduleEntity? {
+        var res : ScheduleEntity?
+        
+        let request: NSFetchRequest<ScheduleEntity> = ScheduleEntity.fetchRequest();
+        request.predicate = NSPredicate(format: "scheduleID == %i", sid)
+        
+        do{
+            let result = try appdel.persistentContainer.viewContext.fetch(request);
+            for data in result as [ScheduleEntity]{
+                res = data
+                return data
+            }
+        }catch{
+            print("Fetch failed");
+            
+        }
+        return res
+    }
+    
+    static func deleteSchedule(entity: ScheduleEntity)
+       {
+        
+           appdel.persistentContainer.viewContext.delete(entity)
+            saveContext()
+       }
+    
+    // MARK: - Save Context
     static func saveContext()
     {
         _ = appdel.saveContext()
