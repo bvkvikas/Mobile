@@ -17,29 +17,32 @@ class CoreDataManager: NSObject {
     
     static func addStopTestData() {
         
-        
-        for i in 1...10{
-            //let stop = NSManagedObject(entity: entity, insertInto: persistentContainer.viewContext)
-            let stop = StopEntity(context: appdel.persistentContainer.viewContext);
-            stop.stopID = Int16.random(in: 1 ..< 1000)
-            stop.stopName = "Test" + "\(i)";
-            stop.address = "address" + "\(i)";
-            stop.latitude = "latitude" + "\(i)";
-            stop.longitude = "longitude" + "\(i)";
+        if getAllStops().count < 1 {
+            
+            for i in 1...10{
+                //let stop = NSManagedObject(entity: entity, insertInto: persistentContainer.viewContext)
+                let stop = StopEntity(context: appdel.persistentContainer.viewContext);
+                stop.stopID = Int16.random(in: 1 ..< 1000)
+                stop.stopName = "Test" + "\(i)";
+                stop.address = "address" + "\(i)";
+                stop.latitude = "latitude" + "\(i)";
+                stop.longitude = "longitude" + "\(i)";
+            }
+            appdel.saveContext();
         }
-        
-        appdel.saveContext();
-//
-//        let tr : TrainEntity = createTrain()
-//        tr.lineID = Int16.random(in: 1 ..< 100)
-//        tr.source = getStopByName(stopName: "Test1")
-//        tr.destination = getStopByName(stopName: "Test2")
-//        tr.trainLineName = "test"
-//        
-//        
-//        appdel.saveContext();
-        
     }
+    
+    //
+    //        let tr : TrainEntity = createTrain()
+    //        tr.lineID = Int16.random(in: 1 ..< 100)
+    //        tr.source = getStopByName(stopName: "Test1")
+    //        tr.destination = getStopByName(stopName: "Test2")
+    //        tr.trainLineName = "test"
+    //
+    //
+    //        appdel.saveContext();
+    
+    
     
     static func getStopByName(stopName: String) -> StopEntity?
     {
@@ -228,11 +231,11 @@ class CoreDataManager: NSObject {
     }
     
     static func deleteSchedule(entity: ScheduleEntity)
-       {
+    {
         
-           appdel.persistentContainer.viewContext.delete(entity)
-            saveContext()
-       }
+        appdel.persistentContainer.viewContext.delete(entity)
+        saveContext()
+    }
     
     // MARK: - Save Context
     static func saveContext()
