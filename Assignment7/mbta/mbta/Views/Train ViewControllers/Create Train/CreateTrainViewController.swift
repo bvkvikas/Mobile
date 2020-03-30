@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var selectedSource: String?
     var selectedDestination: String?
     @IBOutlet weak var TrainNameTF: UITextField!
@@ -17,7 +17,9 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
     
     @IBOutlet weak var ActionBtn: UIButton!
     @IBOutlet weak var viewLabel: UILabel!
+    @IBOutlet weak var image: UIButton!
     
+    @IBOutlet weak var imageDisplay: UIImageView!
     var pickerData : [StopEntity] = [StopEntity]()
     var tr : TrainEntity?
     var tntf : String?
@@ -39,11 +41,15 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
             TrainNameTF?.isUserInteractionEnabled = false
             DestinationTF?.isUserInteractionEnabled = false
             SourceTF?.isUserInteractionEnabled = false
+            imageDisplay.image = tr?.pic
+            image.isHidden = true
             viewLabel.text = "Train Details"
             btntitle = "Go to Train Options"
         }
         
         if action == "create" {
+            imageDisplay.isHidden = true;
+            
             viewLabel.text = "Create Train"
         }
         
@@ -88,29 +94,79 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
         }
         
         
+        let sr = CoreDataManager.getStopByName(stopName: source);
+        let des =  CoreDataManager.getStopByName(stopName: destination);
         
         if action == "update"{
-            tr?.source = CoreDataManager.getStopByName(stopName: source);
-            tr?.destination = CoreDataManager.getStopByName(stopName: destination);
+            tr?.source = sr
+            tr?.destination = des
             tr?.trainLineName = trainName;
             showAlert(title: "Train Updated")
         }else if action == "create"{
             
-            if let _ = SingletonClass.shared.getTrain(trainName)  {
+            if let _ =  CoreDataManager.getTrainByName(trainName: trainName)  {
                 showAlert(title: "Train exists already")
                 return
             }
+            
             let train : TrainEntity = CoreDataManager.createTrain()
-            train.source = CoreDataManager.getStopByName(stopName: source);
-            train.destination = CoreDataManager.getStopByName(stopName: destination);
             train.trainLineName = trainName;
+            train.source = sr
+            train.destination = des
+            train.pic = self.image.backgroundImage(for: .normal)
             CoreDataManager.saveContext()
+            
+            sr?.addToSource(train)
+            des?.addToDestination(train)
+            
+            CoreDataManager.saveContext()
+            
+            
+            
             
             showAlert(title: "Train created")
             
         }
         
     }
+    @IBAction func imageClicked(_ sender: UIButton) {
+        self.imgClciked()
+    }
+    
+    func imgClciked(){
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+            let imagePickerobj = UIImagePickerController()
+            imagePickerobj.delegate = self
+            imagePickerobj.allowsEditing = true
+            imagePickerobj.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(imagePickerobj, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "Caution", message: "Gallery access not permitted.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let originalImage = info[UIImagePickerController.InfoKey.originalImage], let imagee = originalImage as? UIImage   {
+            self.image.setBackgroundImage(imagee, for: .normal)
+            self.image.isHidden = false
+            self.image.backgroundColor = UIColor.clear
+            self.image.setTitle("", for: .normal)
+            
+            picker.dismiss(animated: true, completion: nil)
+        }
+        else
+        {
+            self.image.backgroundColor = UIColor.clear
+        }
+    }
+    
+    
     
     func isSourceAndDestSame(source: String, destination: String) -> Bool {
         return source.lowercased() == destination.lowercased();

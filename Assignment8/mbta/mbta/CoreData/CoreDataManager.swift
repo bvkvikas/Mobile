@@ -11,8 +11,13 @@ import CoreData
 
 class CoreDataManager: NSObject {
     
+    // MARK: - CoreData
     static var appdel =  UIApplication.shared.delegate as! AppDelegate
     
+    static func saveContext()
+    {
+        _ = appdel.saveContext()
+    }
     // MARK: - Stop Functions
     
     static func addStopTestData() {
@@ -32,23 +37,11 @@ class CoreDataManager: NSObject {
         }
     }
     
-    //
-    //        let tr : TrainEntity = createTrain()
-    //        tr.lineID = Int16.random(in: 1 ..< 100)
-    //        tr.source = getStopByName(stopName: "Test1")
-    //        tr.destination = getStopByName(stopName: "Test2")
-    //        tr.trainLineName = "test"
-    //
-    //
-    //        appdel.saveContext();
-    
-    
-    
     static func getStopByName(stopName: String) -> StopEntity?
     {
         var res : StopEntity?
         let request: NSFetchRequest<StopEntity> = StopEntity.fetchRequest();
-        request.predicate = NSPredicate(format: "stopName = %@", stopName)
+        request.predicate = NSPredicate(format: "stopName == %@", stopName)
         do{
             let result = try appdel.persistentContainer.viewContext.fetch(request);
             for data in result as [StopEntity]{
@@ -122,6 +115,13 @@ class CoreDataManager: NSObject {
         return nil;
     }
     
+    static func isStopBeingUsed(stop: StopEntity) -> Bool{
+        
+        if stop.source!.count > 0 || stop.destination!.count > 0 || stop.schedule!.count > 0{
+        return true;
+        }
+        return false;
+    }
     
     // MARK: - Train Functions
     
@@ -199,16 +199,15 @@ class CoreDataManager: NSObject {
         return scheduleEntity
     }
     
-    static func getAllSchedules() -> [ScheduleEntity]{
-        var result : [ScheduleEntity] = []
-        
-        for train in getTrainEntities() {
-            for schedule in train.manySchedules! {
-                result.append(schedule as! ScheduleEntity)
-            }
+    static func getAllSchedules() ->[ScheduleEntity]{
+        let request: NSFetchRequest<ScheduleEntity> = ScheduleEntity.fetchRequest()
+        do {
+            return try appdel.persistentContainer.viewContext.fetch(request)
+            
+        } catch {
+            print("Fetch failed")
+            return []
         }
-        
-        return result
     }
     
     static func getScheduleByID(sid: Int) -> ScheduleEntity? {
@@ -237,9 +236,5 @@ class CoreDataManager: NSObject {
         saveContext()
     }
     
-    // MARK: - Save Context
-    static func saveContext()
-    {
-        _ = appdel.saveContext()
-    }
+    
 }

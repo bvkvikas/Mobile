@@ -9,7 +9,7 @@
 
 import Foundation
 import CoreData
-
+import UIKit
 
 extension TrainEntity {
 
@@ -19,8 +19,8 @@ extension TrainEntity {
 
     @NSManaged public var lineID: Int16
     @NSManaged public var trainLineName: String?
+    @NSManaged public var pic: UIImage?
     @NSManaged public var manySchedules: NSSet?
-    @NSManaged public var stop: StopEntity?
     @NSManaged public var source: StopEntity?
     @NSManaged public var destination: StopEntity?
 

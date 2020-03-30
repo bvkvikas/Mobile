@@ -22,23 +22,23 @@ extension ScheduleEntity {
     @NSManaged public var lineID: Int16
     @NSManaged public var scheduleID: Int16
     @NSManaged public var toTrain: TrainEntity?
-    @NSManaged public var manyStops: NSSet?
+    @NSManaged public var listOfStops: NSSet?
 
 }
 
-// MARK: Generated accessors for manyStops
+// MARK: Generated accessors for listOfStops
 extension ScheduleEntity {
 
-    @objc(addManyStopsObject:)
-    @NSManaged public func addToManyStops(_ value: StopEntity)
+    @objc(addListOfStopsObject:)
+    @NSManaged public func addToListOfStops(_ value: StopEntity)
 
-    @objc(removeManyStopsObject:)
-    @NSManaged public func removeFromManyStops(_ value: StopEntity)
+    @objc(removeListOfStopsObject:)
+    @NSManaged public func removeFromListOfStops(_ value: StopEntity)
 
-    @objc(addManyStops:)
-    @NSManaged public func addToManyStops(_ values: NSSet)
+    @objc(addListOfStops:)
+    @NSManaged public func addToListOfStops(_ values: NSSet)
 
-    @objc(removeManyStops:)
-    @NSManaged public func removeFromManyStops(_ values: NSSet)
+    @objc(removeListOfStops:)
+    @NSManaged public func removeFromListOfStops(_ values: NSSet)
 
 }

@@ -17,46 +17,64 @@ extension StopEntity {
         return NSFetchRequest<StopEntity>(entityName: "StopEntity")
     }
 
-    @NSManaged public var address: String?
-    @NSManaged public var latitude: String?
-    @NSManaged public var longitude: String?
     @NSManaged public var stopID: Int16
     @NSManaged public var stopName: String?
-    @NSManaged public var train: NSSet?
-    @NSManaged public var manySchedules: NSSet?
+    @NSManaged public var longitude: String?
+    @NSManaged public var latitude: String?
+    @NSManaged public var address: String?
+    @NSManaged public var source: NSSet?
+    @NSManaged public var destination: NSSet?
+    @NSManaged public var schedule: NSSet?
 
 }
 
-// MARK: Generated accessors for train
+// MARK: Generated accessors for source
 extension StopEntity {
 
-    @objc(addTrainObject:)
-    @NSManaged public func addToTrain(_ value: TrainEntity)
+    @objc(addSourceObject:)
+    @NSManaged public func addToSource(_ value: TrainEntity)
 
-    @objc(removeTrainObject:)
-    @NSManaged public func removeFromTrain(_ value: TrainEntity)
+    @objc(removeSourceObject:)
+    @NSManaged public func removeFromSource(_ value: TrainEntity)
 
-    @objc(addTrain:)
-    @NSManaged public func addToTrain(_ values: NSSet)
+    @objc(addSource:)
+    @NSManaged public func addToSource(_ values: NSSet)
 
-    @objc(removeTrain:)
-    @NSManaged public func removeFromTrain(_ values: NSSet)
+    @objc(removeSource:)
+    @NSManaged public func removeFromSource(_ values: NSSet)
 
 }
 
-// MARK: Generated accessors for manySchedules
+// MARK: Generated accessors for destination
 extension StopEntity {
 
-    @objc(addManySchedulesObject:)
-    @NSManaged public func addToManySchedules(_ value: ScheduleEntity)
+    @objc(addDestinationObject:)
+    @NSManaged public func addToDestination(_ value: TrainEntity)
 
-    @objc(removeManySchedulesObject:)
-    @NSManaged public func removeFromManySchedules(_ value: ScheduleEntity)
+    @objc(removeDestinationObject:)
+    @NSManaged public func removeFromDestination(_ value: TrainEntity)
 
-    @objc(addManySchedules:)
-    @NSManaged public func addToManySchedules(_ values: NSSet)
+    @objc(addDestination:)
+    @NSManaged public func addToDestination(_ values: NSSet)
 
-    @objc(removeManySchedules:)
-    @NSManaged public func removeFromManySchedules(_ values: NSSet)
+    @objc(removeDestination:)
+    @NSManaged public func removeFromDestination(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for schedule
+extension StopEntity {
+
+    @objc(addScheduleObject:)
+    @NSManaged public func addToSchedule(_ value: ScheduleEntity)
+
+    @objc(removeScheduleObject:)
+    @NSManaged public func removeFromSchedule(_ value: ScheduleEntity)
+
+    @objc(addSchedule:)
+    @NSManaged public func addToSchedule(_ values: NSSet)
+
+    @objc(removeSchedule:)
+    @NSManaged public func removeFromSchedule(_ values: NSSet)
 
 }

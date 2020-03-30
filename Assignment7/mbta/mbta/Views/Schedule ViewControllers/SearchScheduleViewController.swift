@@ -19,7 +19,7 @@ class SearchScheduleViewController: UIViewController {
         case "search":
             header.title = "Search Schedule"
         case "delete":
-            searchScheduleAction.setTitle("Delete Scheule", for: .normal)
+            searchScheduleAction.setTitle("Delete Schedule", for: .normal)
             header.title = "Delete Schedule"
         case "update":
             header.title = "Update Schedule"
@@ -41,7 +41,9 @@ class SearchScheduleViewController: UIViewController {
         }
         
         if action == "delete" {
+            
             CoreDataManager.deleteSchedule(entity: sch)
+            
                 showAlert(title: "Schedule deleted from train")
                 return
            
@@ -55,7 +57,7 @@ class SearchScheduleViewController: UIViewController {
         SVController.dep = sch.departureTime
         SVController.tn =  tr
         SVController.action = action
-        SVController.listOfStps = CoreDataManager.getListOfStopsInString(list: sch.manyStops as! Set<StopEntity>)
+        SVController.listOfStps = CoreDataManager.getListOfStopsInString(list: sch.listOfStops! as! Set<StopEntity>)
         self.navigationController?.pushViewController(SVController, animated: true)
         
     }

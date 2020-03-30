@@ -24,8 +24,10 @@ class ShowSchedulesViewController: UIViewController, UITableViewDelegate, UITabl
         
         let scheduleOfTrain = CoreDataManager.getAllSchedules()[indexPath.row]
         
-        let st : Set<StopEntity> = scheduleOfTrain.manyStops as! Set<StopEntity>
+        let st = scheduleOfTrain.listOfStops?.allObjects as! [StopEntity]
+        
         var stopsList = "";
+        
         for stop in st{
             stopsList += "\(stop.stopName ?? "") ,"
         }
@@ -47,7 +49,7 @@ class ShowSchedulesViewController: UIViewController, UITableViewDelegate, UITabl
         let result =  CreateScheduleViewController()
         result.sch = sch
         result.tn = tr
-        result.listOfStps = CoreDataManager.getListOfStopsInString(list: sch.manyStops as! Set<StopEntity>)
+        result.listOfStps = CoreDataManager.getListOfStopsInString(list: sch.listOfStops! as! Set<StopEntity>)
         result.action = "search"
         self.navigationController?.pushViewController(result, animated: true)
         

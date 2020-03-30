@@ -92,7 +92,7 @@ class CreateScheduleViewController: UIViewController {
         if action == "update"{
             sch?.arrivalTime = at
             sch?.departureTime = dt
-            sch?.manyStops = stopsList as NSSet
+            sch?.listOfStops = stopsList as NSSet
             showAlert(title: "Schedule: \(sch?.scheduleID ?? -1000) succesfully updated ")
             return
         }
@@ -112,7 +112,9 @@ class CreateScheduleViewController: UIViewController {
         schedule.lineID = tn!.lineID
         schedule.arrivalTime = at
         schedule.departureTime = dt
-        schedule.manyStops = stopsList as NSSet
+        schedule.listOfStops = stopsList as NSSet
+        
+        
         CoreDataManager.saveContext()
         showAlert(title: "Schedule: \(schedule.scheduleID) succesfully added ")
     }

@@ -45,6 +45,11 @@ class SearchStopViewController: UIViewController {
         }
         
         if action == "delete" {
+            
+            if CoreDataManager.isStopBeingUsed(stop: stop){
+                showAlert(title: "Stop being used for train or schedule")
+                return
+            }
             CoreDataManager.deleteStop(entity: stop)
             showAlert(title: "Stop deleted")
             return
