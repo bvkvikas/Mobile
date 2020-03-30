@@ -101,6 +101,13 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
             tr?.source = sr
             tr?.destination = des
             tr?.trainLineName = trainName;
+            tr?.pic = self.image.backgroundImage(for: .normal)
+            
+            sr?.addToSource(tr!)
+            des?.addToDestination(tr!)
+                      
+                      CoreDataManager.saveContext()
+                      
             showAlert(title: "Train Updated")
         }else if action == "create"{
             
