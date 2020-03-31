@@ -539,7 +539,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="GhJ-z6-UpG"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Back" id="fDC-5Z-B1s"/>
+                    <navigationItem key="navigationItem" title="Stops" id="fDC-5Z-B1s"/>
                     <connections>
                         <outlet property="tableObject" destination="dDt-1C-nxF" id="ufp-Jb-z7o"/>
                     </connections>

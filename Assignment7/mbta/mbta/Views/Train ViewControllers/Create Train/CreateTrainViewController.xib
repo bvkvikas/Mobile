@@ -13,6 +13,8 @@
                 <outlet property="DestinationTF" destination="elA-qU-gNg" id="huP-yS-pa9"/>
                 <outlet property="SourceTF" destination="Slh-T2-pgQ" id="PTF-xt-Kji"/>
                 <outlet property="TrainNameTF" destination="G5P-kN-kzH" id="v9o-J3-WQe"/>
+                <outlet property="image" destination="d7H-YF-Xcj" id="pec-AD-MYf"/>
+                <outlet property="imageDisplay" destination="fez-ZO-kmk" id="CE8-oj-o1R"/>
                 <outlet property="view" destination="sLd-h9-Ikd" id="bvt-Le-CoU"/>
                 <outlet property="viewLabel" destination="DpR-Rl-9wU" id="2wS-f7-wfn"/>
             </connections>
@@ -124,7 +126,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxP-WB-ID3">
-                    <rect key="frame" x="45" y="457" width="325.5" height="42"/>
+                    <rect key="frame" x="45" y="588" width="325.5" height="42"/>
                     <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                     <state key="normal">
@@ -134,15 +136,30 @@
                         <action selector="createTrain:" destination="-1" eventType="touchUpInside" id="zhW-Yk-WVa"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="d7H-YF-Xcj">
+                    <rect key="frame" x="136" y="388.5" width="143" height="119"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="paperplane" catalog="system"/>
+                    <connections>
+                        <action selector="imageClicked:" destination="-1" eventType="touchUpInside" id="1GI-xj-ppC"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fez-ZO-kmk">
+                    <rect key="frame" x="113" y="381" width="213" height="136"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="KxP-WB-ID3" firstAttribute="leading" secondItem="3rO-0B-X3N" secondAttribute="leading" constant="45" id="8tM-8u-4v7"/>
                 <constraint firstItem="3rO-0B-X3N" firstAttribute="trailing" secondItem="KxP-WB-ID3" secondAttribute="trailing" constant="43.5" id="Hh5-HO-EHX"/>
-                <constraint firstItem="3rO-0B-X3N" firstAttribute="bottom" secondItem="KxP-WB-ID3" secondAttribute="bottom" constant="363" id="aWg-eb-PIi"/>
+                <constraint firstItem="3rO-0B-X3N" firstAttribute="bottom" secondItem="KxP-WB-ID3" secondAttribute="bottom" constant="232" id="aWg-eb-PIi"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="3rO-0B-X3N"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
     </objects>
+    <resources>
+        <image name="paperplane" catalog="system" width="64" height="60"/>
+    </resources>
 </document>
