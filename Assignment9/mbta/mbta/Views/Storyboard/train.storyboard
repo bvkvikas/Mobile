@@ -275,78 +275,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="2h0-ZS-upK">
-                                <rect key="frame" x="7.5" y="119" width="399" height="30"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMD-Wd-PtF">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="MNi-gx-O0b"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Hf-9f-y9C">
-                                        <rect key="frame" x="199" y="0.0" width="200" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="P18-zp-Rky"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
-                                    </textField>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5O-Zi-mv5">
+                                <rect key="frame" x="20" y="242" width="374" height="54"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="hI7-wZ-mea"/>
+                                    <constraint firstAttribute="height" constant="54" id="c8B-BC-Vn5"/>
                                 </constraints>
-                                <viewLayoutGuide key="safeArea" id="HPn-9O-xhb"/>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdh-J9-SFH">
-                                <rect key="frame" x="0.0" y="237" width="414" height="42"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Search Schedule">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="searchButtonClicked:" destination="Rj8-dU-IfP" eventType="touchUpInside" id="RRJ-lF-axu"/>
-                                </connections>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ed-f9-xqU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                                <color key="barTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Search Schedule" id="nQt-26-9VY"/>
-                                </items>
-                            </navigationBar>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="BjJ-oc-iQ1">
+                                <rect key="frame" x="20" y="360" width="374" height="122"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="2h0-ZS-upK">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMD-Wd-PtF">
+                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Hf-9f-y9C">
+                                                <rect key="frame" x="236.5" y="0.0" width="137.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="hI7-wZ-mea"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="HPn-9O-xhb"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfM-VU-ucU">
+                                        <rect key="frame" x="0.0" y="80" width="374" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdh-J9-SFH">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="42"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="Search Schedule">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchButtonClicked:" destination="Rj8-dU-IfP" eventType="touchUpInside" id="RRJ-lF-axu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2h0-ZS-upK" firstAttribute="centerX" secondItem="9ed-f9-xqU" secondAttribute="centerX" id="Cvq-Lz-QZD"/>
-                            <constraint firstItem="bdh-J9-SFH" firstAttribute="leading" secondItem="UEh-KS-Jrt" secondAttribute="leading" id="KSE-oG-o8J"/>
-                            <constraint firstItem="UEh-KS-Jrt" firstAttribute="bottom" secondItem="bdh-J9-SFH" secondAttribute="bottom" constant="529" id="Mfh-HR-HtI"/>
-                            <constraint firstItem="2h0-ZS-upK" firstAttribute="top" secondItem="9ed-f9-xqU" secondAttribute="bottom" constant="63" id="d6M-rU-Lwz"/>
-                            <constraint firstItem="bdh-J9-SFH" firstAttribute="centerX" secondItem="2h0-ZS-upK" secondAttribute="centerX" id="dHV-dq-YgG"/>
-                            <constraint firstItem="9ed-f9-xqU" firstAttribute="leading" secondItem="UEh-KS-Jrt" secondAttribute="leading" id="eyn-s7-LYS"/>
-                            <constraint firstItem="9ed-f9-xqU" firstAttribute="centerX" secondItem="UEh-KS-Jrt" secondAttribute="centerX" id="or8-jb-suf"/>
-                            <constraint firstItem="9ed-f9-xqU" firstAttribute="top" secondItem="UEh-KS-Jrt" secondAttribute="top" id="wP7-K9-dAI"/>
+                            <constraint firstItem="n5O-Zi-mv5" firstAttribute="trailing" secondItem="BjJ-oc-iQ1" secondAttribute="trailing" id="822-Uo-Pzk"/>
+                            <constraint firstItem="BjJ-oc-iQ1" firstAttribute="centerY" secondItem="An6-p8-i0S" secondAttribute="centerY" id="DXR-qM-D0p"/>
+                            <constraint firstItem="BjJ-oc-iQ1" firstAttribute="top" secondItem="n5O-Zi-mv5" secondAttribute="bottom" constant="64" id="Fcn-Al-6wO"/>
+                            <constraint firstItem="n5O-Zi-mv5" firstAttribute="leading" secondItem="BjJ-oc-iQ1" secondAttribute="leading" id="WCf-yA-H15"/>
+                            <constraint firstItem="BjJ-oc-iQ1" firstAttribute="leading" secondItem="UEh-KS-Jrt" secondAttribute="leading" constant="20" id="kgj-am-Bm4"/>
+                            <constraint firstAttribute="trailing" secondItem="BjJ-oc-iQ1" secondAttribute="trailing" constant="20" id="prj-gH-Yn6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UEh-KS-Jrt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CVt-Ja-S6Y"/>
                     <connections>
-                        <outlet property="header" destination="nQt-26-9VY" id="bC9-3P-qLf"/>
+                        <outlet property="header" destination="n5O-Zi-mv5" id="hcG-p9-WNM"/>
                         <outlet property="scheduleIDTF" destination="7Hf-9f-y9C" id="0bJ-iW-M1N"/>
                         <outlet property="searchScheduleAction" destination="bdh-J9-SFH" id="o9Y-Fq-fNs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yrA-W2-2DL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-475" y="735"/>
+            <point key="canvasLocation" x="-475.36231884057975" y="734.59821428571422"/>
         </scene>
         <!--StopOptionsViewController-->
         <scene sceneID="eXD-gT-Oga">
@@ -451,77 +450,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7Q-mh-48s">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                                <color key="barTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Search Train" id="Gs5-2t-hDF"/>
-                                </items>
-                            </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="cUe-cA-VNA">
-                                <rect key="frame" x="7.5" y="119" width="399" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ioa-U5-J37">
+                                <rect key="frame" x="20" y="370.5" width="374" height="101"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gij-TL-gRQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="p35-TV-vOt"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Red" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-vB-Off">
-                                        <rect key="frame" x="199" y="0.0" width="200" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="aFy-yU-alX"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="cUe-cA-VNA">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gij-TL-gRQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Red" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-vB-Off">
+                                                <rect key="frame" x="236.5" y="0.0" width="137.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                            </textField>
+                                        </subviews>
+                                        <viewLayoutGuide key="safeArea" id="buu-rR-qYT"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wg-4P-Ia2">
+                                        <rect key="frame" x="0.0" y="59" width="374" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEV-Aq-07j">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="42"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="Search Train">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="SearchForTrain:" destination="0WW-id-9sn" eventType="touchUpInside" id="5kO-UT-kDF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="0jw-Fb-m2H"/>
-                                </constraints>
-                                <viewLayoutGuide key="safeArea" id="buu-rR-qYT"/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEV-Aq-07j">
-                                <rect key="frame" x="0.0" y="237" width="414" height="42"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlT-nK-Y2O">
+                                <rect key="frame" x="177.5" y="296" width="59.5" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="kK0-VW-iJe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Search Train">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="SearchForTrain:" destination="0WW-id-9sn" eventType="touchUpInside" id="5kO-UT-kDF"/>
-                                </connections>
-                            </button>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="iEV-Aq-07j" firstAttribute="centerX" secondItem="cUe-cA-VNA" secondAttribute="centerX" id="3DJ-m4-uEo"/>
-                            <constraint firstItem="B7Q-mh-48s" firstAttribute="centerX" secondItem="iPH-zV-89X" secondAttribute="centerX" id="ENt-pw-y7o"/>
-                            <constraint firstItem="cUe-cA-VNA" firstAttribute="top" secondItem="B7Q-mh-48s" secondAttribute="bottom" constant="63" id="Naz-Xr-ElZ"/>
-                            <constraint firstItem="cUe-cA-VNA" firstAttribute="centerX" secondItem="B7Q-mh-48s" secondAttribute="centerX" id="OdA-Kj-U5S"/>
-                            <constraint firstItem="B7Q-mh-48s" firstAttribute="top" secondItem="iPH-zV-89X" secondAttribute="top" id="RNF-hj-p2K"/>
-                            <constraint firstItem="B7Q-mh-48s" firstAttribute="leading" secondItem="iPH-zV-89X" secondAttribute="leading" id="Tzg-MS-PJ8"/>
-                            <constraint firstItem="iPH-zV-89X" firstAttribute="bottom" secondItem="iEV-Aq-07j" secondAttribute="bottom" constant="529" id="ciD-iI-Vd3"/>
-                            <constraint firstItem="iEV-Aq-07j" firstAttribute="leading" secondItem="iPH-zV-89X" secondAttribute="leading" id="i6s-Gx-5G6"/>
+                            <constraint firstItem="Ioa-U5-J37" firstAttribute="top" secondItem="FlT-nK-Y2O" secondAttribute="bottom" constant="41.5" id="L4v-Dk-GYO"/>
+                            <constraint firstItem="Ioa-U5-J37" firstAttribute="centerY" secondItem="vAH-tt-CdV" secondAttribute="centerY" id="UVA-nt-yID"/>
+                            <constraint firstItem="FlT-nK-Y2O" firstAttribute="centerX" secondItem="vAH-tt-CdV" secondAttribute="centerX" id="Y1j-op-QYu"/>
+                            <constraint firstItem="Ioa-U5-J37" firstAttribute="leading" secondItem="iPH-zV-89X" secondAttribute="leading" constant="20" id="ZS7-ah-YKL"/>
+                            <constraint firstItem="iPH-zV-89X" firstAttribute="trailing" secondItem="Ioa-U5-J37" secondAttribute="trailing" constant="20" id="ybc-gT-Ygv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iPH-zV-89X"/>
                     </view>
-                    <navigationItem key="navigationItem" id="O2Q-qf-vIS"/>
                     <connections>
                         <outlet property="TrainNameTF" destination="3tb-vB-Off" id="jbQ-Ef-1AP"/>
-                        <outlet property="navigationTitle" destination="Gs5-2t-hDF" id="lN7-KG-dyB"/>
+                        <outlet property="navigationTitle" destination="FlT-nK-Y2O" id="ORB-Kx-ZSY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="otA-n5-ai8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-475" y="-852"/>
+            <point key="canvasLocation" x="-475.36231884057975" y="-852.45535714285711"/>
         </scene>
         <!--Show Trains View Controller-->
         <scene sceneID="0bS-24-uhb">
@@ -566,7 +560,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="iS3-2d-o9s"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Back" id="C65-bA-dAI"/>
+                    <navigationItem key="navigationItem" title="Schedules" id="C65-bA-dAI"/>
                     <connections>
                         <outlet property="tableObject" destination="yM1-qq-0If" id="tNX-yw-HWE"/>
                     </connections>
@@ -609,79 +603,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="Dwb-nW-1JX">
-                                <rect key="frame" x="7.5" y="211" width="399" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="5PR-6g-D0L">
+                                <rect key="frame" x="20" y="372.5" width="374" height="97"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyb-NB-svg">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="Dwb-nW-1JX">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyb-NB-svg">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbp-3c-UK9">
+                                                <rect key="frame" x="186.5" y="0.0" width="187.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                            </textField>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="i9Y-7J-nOi"/>
+                                            <constraint firstAttribute="height" constant="30" id="tI7-ve-MhN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbp-3c-UK9">
-                                        <rect key="frame" x="199" y="0.0" width="200" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="M8h-cb-zvY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
-                                    </textField>
+                                        <viewLayoutGuide key="safeArea" id="m53-qC-id7"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84b-QS-drg">
+                                        <rect key="frame" x="0.0" y="55" width="374" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11o-sE-GlN">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="42"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="Search Stop">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="tfZ-Qd-rEx" eventType="touchUpInside" id="otm-n9-ctE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="tI7-ve-MhN"/>
-                                </constraints>
-                                <viewLayoutGuide key="safeArea" id="m53-qC-id7"/>
                             </stackView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKT-6J-om6">
-                                <rect key="frame" x="0.0" y="52" width="414" height="56"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="barTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Search Stop" id="xvb-iK-JFa"/>
-                                </items>
-                            </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11o-sE-GlN">
-                                <rect key="frame" x="0.0" y="348" width="414" height="42"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBI-7x-AZd">
+                                <rect key="frame" x="20" y="282" width="374" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="HCo-f9-fwv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Search Stop">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonClicked:" destination="tfZ-Qd-rEx" eventType="touchUpInside" id="dgf-SJ-eoJ"/>
-                                </connections>
-                            </button>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="oKT-6J-om6" firstAttribute="top" secondItem="Zha-87-vTf" secondAttribute="top" constant="52" id="6Er-hu-Zct"/>
-                            <constraint firstItem="oKT-6J-om6" firstAttribute="leading" secondItem="11o-sE-GlN" secondAttribute="leading" id="DdP-A4-Gqn"/>
-                            <constraint firstItem="Zha-87-vTf" firstAttribute="bottom" secondItem="11o-sE-GlN" secondAttribute="bottom" constant="418" id="W7P-5K-zJt"/>
-                            <constraint firstItem="oKT-6J-om6" firstAttribute="centerX" secondItem="I2g-cx-1ke" secondAttribute="centerX" id="avy-xE-X8C"/>
-                            <constraint firstItem="oKT-6J-om6" firstAttribute="leading" secondItem="Zha-87-vTf" secondAttribute="leading" id="rkL-7c-0fe"/>
-                            <constraint firstItem="11o-sE-GlN" firstAttribute="centerX" secondItem="Dwb-nW-1JX" secondAttribute="centerX" id="xBJ-7v-Yuk"/>
-                            <constraint firstItem="Dwb-nW-1JX" firstAttribute="top" secondItem="oKT-6J-om6" secondAttribute="bottom" constant="103" id="z0t-MW-vaH"/>
-                            <constraint firstItem="Dwb-nW-1JX" firstAttribute="centerX" secondItem="oKT-6J-om6" secondAttribute="centerX" id="zdw-QO-p9h"/>
+                            <constraint firstItem="VBI-7x-AZd" firstAttribute="trailing" secondItem="5PR-6g-D0L" secondAttribute="trailing" id="2bx-1R-RIM"/>
+                            <constraint firstItem="VBI-7x-AZd" firstAttribute="leading" secondItem="5PR-6g-D0L" secondAttribute="leading" id="HtL-qC-S8h"/>
+                            <constraint firstItem="5PR-6g-D0L" firstAttribute="leading" secondItem="Zha-87-vTf" secondAttribute="leading" constant="20" id="KKu-bV-3pv"/>
+                            <constraint firstAttribute="trailing" secondItem="5PR-6g-D0L" secondAttribute="trailing" constant="20" id="Ths-fB-kLa"/>
+                            <constraint firstItem="5PR-6g-D0L" firstAttribute="top" secondItem="VBI-7x-AZd" secondAttribute="bottom" constant="29.5" id="XW5-aG-DVV"/>
+                            <constraint firstItem="5PR-6g-D0L" firstAttribute="centerY" secondItem="I2g-cx-1ke" secondAttribute="centerY" id="ncO-h4-enW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zha-87-vTf"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jkC-cU-tCU"/>
                     <connections>
-                        <outlet property="actionButton" destination="11o-sE-GlN" id="KDu-6B-KoY"/>
-                        <outlet property="header" destination="xvb-iK-JFa" id="2OF-1X-ial"/>
-                        <outlet property="searchTF" destination="dbp-3c-UK9" id="dFN-8w-46e"/>
+                        <outlet property="actionButton" destination="11o-sE-GlN" id="pga-4M-d57"/>
+                        <outlet property="header" destination="VBI-7x-AZd" id="pxp-sO-tUe"/>
+                        <outlet property="searchTF" destination="dbp-3c-UK9" id="t7S-q3-xkO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FVy-iS-CNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-475" y="2194"/>
+            <point key="canvasLocation" x="-475.36231884057975" y="2193.75"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

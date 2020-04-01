@@ -11,10 +11,10 @@ import UIKit
 class SearchUpdateDeleteViewController: UIViewController {
     var action : String = "";
     @IBOutlet weak var TrainNameTF: UITextField!
-    @IBOutlet weak var navigationTitle: UINavigationItem!
+    @IBOutlet weak var navigationTitle: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationTitle.text = "Search Train"
         // Do any additional setup after loading the view.
     }
     

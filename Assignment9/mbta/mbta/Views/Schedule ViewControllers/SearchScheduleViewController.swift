@@ -12,19 +12,19 @@ class SearchScheduleViewController: UIViewController {
     var action : String = "";
     @IBOutlet weak var searchScheduleAction: UIButton!
     @IBOutlet weak var scheduleIDTF: UITextField!
-    @IBOutlet weak var header: UINavigationItem!
+    @IBOutlet weak var header: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         switch action {
         case "search":
-            header.title = "Search Schedule"
+            header.text = "Search Schedule"
         case "delete":
             searchScheduleAction.setTitle("Delete Schedule", for: .normal)
-            header.title = "Delete Schedule"
+            header.text = "Delete Schedule"
         case "update":
-            header.title = "Update Schedule"
+            header.text = "Update Schedule"
         default:
-            header.title = "Schedule"
+            header.text = "Schedule"
         }
         // Do any additional setup after loading the view.
     }

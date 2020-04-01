@@ -14,7 +14,7 @@ class CreateScheduleViewController: UIViewController {
     @IBOutlet weak var departureTime: UITextField!
     @IBOutlet weak var actionBtn: UIButton!
     @IBOutlet weak var trainName: UITextField!
-    @IBOutlet weak var header: UINavigationItem!
+    @IBOutlet weak var header: UILabel!
     @IBOutlet weak var listOfStops: UITextField!
     var sch : ScheduleEntity?
     var dep : String?
@@ -32,14 +32,14 @@ class CreateScheduleViewController: UIViewController {
         listOfStops?.text = listOfStps ?? ""
         if action == "create" {
             btnTitle = "Create Schedule"
-            header.title = "Create Schedule"
+            header.text = "Create Schedule"
         }
         if action == "search" {
             trainName?.isUserInteractionEnabled = false
             arrivalTime?.isUserInteractionEnabled = false
             departureTime?.isUserInteractionEnabled = false
             listOfStops?.isUserInteractionEnabled = false
-            header.title = "Schedule Details"
+            header.text = "Schedule Details"
             btnTitle = "Go to Schedule Options"
         }
         

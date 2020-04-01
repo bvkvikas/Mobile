@@ -13,20 +13,20 @@ class SearchStopViewController: UIViewController {
     var action : String = "";
     @IBOutlet weak var searchTF: UITextField!
     @IBOutlet weak var actionButton: UIButton!
-    @IBOutlet weak var header: UINavigationItem!
+    @IBOutlet weak var header: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         switch action{
         case "search":
-            header.title = "Search Stop"
+            header.text = "Search Stop"
         case "delete":
-            header.title = "Delete Stop"
+            header.text = "Delete Stop"
             actionButton.setTitle("Delete Stop", for: .normal)
         case "update":
-            header.title = "Update Stop"
+            header.text = "Update Stop"
         default:
-            header.title = "Stop"
+            header.text = "Stop"
         }
         
         

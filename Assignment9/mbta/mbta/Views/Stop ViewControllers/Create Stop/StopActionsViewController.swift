@@ -9,14 +9,14 @@
 import UIKit
 
 class StopActionsViewController: UIViewController {
+
+    @IBOutlet weak var stopName: UITextField!
+    @IBOutlet weak var Btn: UIButton!
+    @IBOutlet weak var Address: UITextField!
+    @IBOutlet weak var Latitude: UITextField!
+    @IBOutlet weak var Longitude: UITextField!
     
-    @IBOutlet weak var StopNameTF: UITextField!
-    @IBOutlet weak var LatitudeTF: UITextField!
-    @IBOutlet weak var LongitudeTF: UITextField!
-    @IBOutlet weak var AddressTF: UITextField!
-    @IBOutlet weak var header: UINavigationItem!
-    
-    @IBOutlet weak var Submit: UIButton!
+    @IBOutlet weak var randomName: UILabel!
     var stops: StopEntity?
     var sn  : String?
     var lat : String?
@@ -28,99 +28,100 @@ class StopActionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        StopNameTF?.text = sn ?? "s1"
-        LatitudeTF?.text = lat ?? "lat"
-        LongitudeTF?.text = long ?? "long"
-        AddressTF?.text = add ?? "Boston-02115"
+        stopName?.text = sn ?? "s1"
+        Latitude?.text = lat ?? "lat"
+        Longitude?.text = long ?? "long"
+        Address?.text = add ?? "Boston-02115"
         
         if action == "create" {
             btnTitle = "Add Stop"
-            header.title = "Create Stop"
+            randomName.text = "Create Stop"
         }
         if action == "search" {
-            StopNameTF?.isUserInteractionEnabled = false
-            LatitudeTF?.isUserInteractionEnabled = false
-            LongitudeTF?.isUserInteractionEnabled = false
-            AddressTF?.isUserInteractionEnabled = false
+            stopName?.isUserInteractionEnabled = false
+            Latitude?.isUserInteractionEnabled = false
+            Longitude?.isUserInteractionEnabled = false
+            Address?.isUserInteractionEnabled = false
             btnTitle = "Go to Stops Options"
         }
         
         if action == "update"{
             btnTitle = "Update Stop"
-            header.title = "Update Stop"
-            StopNameTF?.isUserInteractionEnabled = false
+            randomName.text = "Update Stop"
+            stopName?.isUserInteractionEnabled = false
         }
         
         if action == "delete" {
             btnTitle = "Delete Stop"
         }
         
-        Submit.setTitle(btnTitle, for: .normal)
+        Btn.setTitle(btnTitle, for: .normal)
         
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func buttonClicked(_ sender: Any) {
-        
-        if action == "search"{
-            self.navigationController?.popToViewController((self.navigationController?.viewControllers[1]) as! StopOptionsViewController, animated: true)
-            return
-        }
-        
-        
-        var stop : StopEntity!
-        
-//        if action == "create"{
-//            let x : Int? = Int (sch)
-//            schedule = SingletonClass.shared.getScheduleByID(sid: x ?? -100)
-//            if schedule == nil {
-//                showAlert(title: "Schedule not found")
-//                return
-//            }
-//
-//
-//        }
-        
-        guard let st = StopNameTF, let stName = st.text, !stName.isEmptyOrWhitespace() else {
-            showAlert(title: "Enter stop name")
-            return
-        }
-        
-        guard let latt = LatitudeTF, let lati = latt.text, !lati.isEmptyOrWhitespace() else {
-            showAlert(title: "Enter latitude")
-            return
-        }
-        
-        guard let lont = LongitudeTF, let longt = lont.text, !longt.isEmptyOrWhitespace() else {
-            showAlert(title: "Enter Longitude")
-            return
-        }
-        
-        guard let ad = AddressTF, let addd = ad.text, !addd.isEmptyOrWhitespace() else {
-            showAlert(title: "Enter Address")
-            return
-        }
-        
-        if action == "update"{
-            stops?.latitude = lati
-            stops?.longitude = longt
-            stops?.address = addd
-            showAlert(title: "Stop: \(stops?.stopID ?? -1000) succesfully updated ")
-            return
-        }
+    @IBAction func submitted(_ sender: Any) {
 
-        if let _ = CoreDataManager.getStopByName(stopName: stName)  {
-                   showAlert(title: "Stop exists already")
-                   return
-               }
-        stop = CoreDataManager.addStop();
-        stop.stopName = stName
-        stop.latitude = lati
-        stop.longitude = longt
-        stop.address = addd
-        
-        showAlert(title: "Stop: \(stop.stopID) succesfully added ")
-        
+                
+                if action == "search"{
+                    self.navigationController?.popToViewController((self.navigationController?.viewControllers[1]) as! StopOptionsViewController, animated: true)
+                    return
+                }
+                
+                
+                var stop : StopEntity!
+                
+        //        if action == "create"{
+        //            let x : Int? = Int (sch)
+        //            schedule = SingletonClass.shared.getScheduleByID(sid: x ?? -100)
+        //            if schedule == nil {
+        //                showAlert(title: "Schedule not found")
+        //                return
+        //            }
+        //
+        //
+        //        }
+                
+                guard let st = stopName, let stName = st.text, !stName.isEmptyOrWhitespace() else {
+                    showAlert(title: "Enter stop name")
+                    return
+                }
+                
+                guard let latt = Latitude, let lati = latt.text, !lati.isEmptyOrWhitespace() else {
+                    showAlert(title: "Enter latitude")
+                    return
+                }
+                
+                guard let lont = Longitude, let longt = lont.text, !longt.isEmptyOrWhitespace() else {
+                    showAlert(title: "Enter Longitude")
+                    return
+                }
+                
+                guard let ad = Address, let addd = ad.text, !addd.isEmptyOrWhitespace() else {
+                    showAlert(title: "Enter Address")
+                    return
+                }
+                
+                if action == "update"{
+                    stops?.latitude = lati
+                    stops?.longitude = longt
+                    stops?.address = addd
+                    showAlert(title: "Stop: \(stops?.stopID ?? -1000) succesfully updated ")
+                    return
+                }
+
+                if let _ = CoreDataManager.getStopByName(stopName: stName)  {
+                           showAlert(title: "Stop exists already")
+                           return
+                       }
+                stop = CoreDataManager.addStop();
+                stop.stopName = stName
+                stop.latitude = lati
+                stop.longitude = longt
+                stop.address = addd
+                
+                showAlert(title: "Stop: \(stop.stopID) succesfully added ")
+                
+            
     }
     
     

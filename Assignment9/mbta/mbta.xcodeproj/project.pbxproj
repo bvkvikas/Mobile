@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A83B0EB124345277005EED2A /* StopActionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83B0EB024345277005EED2A /* StopActionsViewController.xib */; };
+		A89D0C42243407AB009882A9 /* CreateTrainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89D0C41243407AB009882A9 /* CreateTrainViewController.xib */; };
 		A8A511C72433AADF005D2BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A511C62433AADF005D2BA9 /* AppDelegate.swift */; };
 		A8A511CA2433AADF005D2BA9 /* mbta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8A511C82433AADF005D2BA9 /* mbta.xcdatamodeld */; };
 		A8A511D22433AAE3005D2BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8A511D12433AAE3005D2BA9 /* Assets.xcassets */; };
@@ -23,7 +25,6 @@
 		A8A512182433BFB5005D2BA9 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A511FB2433BFB5005D2BA9 /* EntryViewController.swift */; };
 		A8A512192433BFB5005D2BA9 /* train.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A511FD2433BFB5005D2BA9 /* train.storyboard */; };
 		A8A5121A2433BFB5005D2BA9 /* TrainOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A511FF2433BFB5005D2BA9 /* TrainOptionsViewController.swift */; };
-		A8A5121B2433BFB5005D2BA9 /* CreateTrainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A512012433BFB5005D2BA9 /* CreateTrainViewController.xib */; };
 		A8A5121C2433BFB5005D2BA9 /* CreateTrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A512022433BFB5005D2BA9 /* CreateTrainViewController.swift */; };
 		A8A5121D2433BFB5005D2BA9 /* SearchUpdateDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A512032433BFB5005D2BA9 /* SearchUpdateDeleteViewController.swift */; };
 		A8A5121E2433BFB5005D2BA9 /* ShowTrainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A512042433BFB5005D2BA9 /* ShowTrainsViewController.swift */; };
@@ -35,7 +36,6 @@
 		A8A512242433BFB5005D2BA9 /* ShowSchedulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5120C2433BFB5005D2BA9 /* ShowSchedulesViewController.swift */; };
 		A8A512252433BFB5005D2BA9 /* StopOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5120F2433BFB5005D2BA9 /* StopOptionsViewController.swift */; };
 		A8A512262433BFB5005D2BA9 /* ShowStopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A512102433BFB5005D2BA9 /* ShowStopsViewController.swift */; };
-		A8A512272433BFB5005D2BA9 /* StopActionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A512122433BFB5005D2BA9 /* StopActionsViewController.xib */; };
 		A8A512282433BFB5005D2BA9 /* StopActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A512132433BFB5005D2BA9 /* StopActionsViewController.swift */; };
 		A8A512292433BFB5005D2BA9 /* SearchStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A512142433BFB5005D2BA9 /* SearchStopViewController.swift */; };
 		A8A5122A2433BFB5005D2BA9 /* CustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A512162433BFB5005D2BA9 /* CustomCellViewController.swift */; };
@@ -43,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A83B0EB024345277005EED2A /* StopActionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StopActionsViewController.xib; sourceTree = "<group>"; };
+		A89D0C41243407AB009882A9 /* CreateTrainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTrainViewController.xib; sourceTree = "<group>"; };
 		A8A511C32433AADF005D2BA9 /* mbta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mbta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A511C62433AADF005D2BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8A511C92433AADF005D2BA9 /* mbta.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mbta.xcdatamodel; sourceTree = "<group>"; };
@@ -61,7 +63,6 @@
 		A8A511FB2433BFB5005D2BA9 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		A8A511FD2433BFB5005D2BA9 /* train.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = train.storyboard; sourceTree = "<group>"; };
 		A8A511FF2433BFB5005D2BA9 /* TrainOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainOptionsViewController.swift; sourceTree = "<group>"; };
-		A8A512012433BFB5005D2BA9 /* CreateTrainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTrainViewController.xib; sourceTree = "<group>"; };
 		A8A512022433BFB5005D2BA9 /* CreateTrainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTrainViewController.swift; sourceTree = "<group>"; };
 		A8A512032433BFB5005D2BA9 /* SearchUpdateDeleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUpdateDeleteViewController.swift; sourceTree = "<group>"; };
 		A8A512042433BFB5005D2BA9 /* ShowTrainsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTrainsViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		A8A5120C2433BFB5005D2BA9 /* ShowSchedulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowSchedulesViewController.swift; sourceTree = "<group>"; };
 		A8A5120F2433BFB5005D2BA9 /* StopOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopOptionsViewController.swift; sourceTree = "<group>"; };
 		A8A512102433BFB5005D2BA9 /* ShowStopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowStopsViewController.swift; sourceTree = "<group>"; };
-		A8A512122433BFB5005D2BA9 /* StopActionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopActionsViewController.xib; sourceTree = "<group>"; };
 		A8A512132433BFB5005D2BA9 /* StopActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopActionsViewController.swift; sourceTree = "<group>"; };
 		A8A512142433BFB5005D2BA9 /* SearchStopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStopViewController.swift; sourceTree = "<group>"; };
 		A8A512162433BFB5005D2BA9 /* CustomCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellViewController.swift; sourceTree = "<group>"; };
@@ -196,8 +196,8 @@
 		A8A512002433BFB5005D2BA9 /* Create Train */ = {
 			isa = PBXGroup;
 			children = (
-				A8A512012433BFB5005D2BA9 /* CreateTrainViewController.xib */,
 				A8A512022433BFB5005D2BA9 /* CreateTrainViewController.swift */,
+				A89D0C41243407AB009882A9 /* CreateTrainViewController.xib */,
 			);
 			path = "Create Train";
 			sourceTree = "<group>";
@@ -245,8 +245,8 @@
 		A8A512112433BFB5005D2BA9 /* Create Stop */ = {
 			isa = PBXGroup;
 			children = (
-				A8A512122433BFB5005D2BA9 /* StopActionsViewController.xib */,
 				A8A512132433BFB5005D2BA9 /* StopActionsViewController.swift */,
+				A83B0EB024345277005EED2A /* StopActionsViewController.xib */,
 			);
 			path = "Create Stop";
 			sourceTree = "<group>";
@@ -318,12 +318,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83B0EB124345277005EED2A /* StopActionsViewController.xib in Resources */,
 				A8A512202433BFB5005D2BA9 /* CreateScheduleViewController.xib in Resources */,
-				A8A512272433BFB5005D2BA9 /* StopActionsViewController.xib in Resources */,
-				A8A5121B2433BFB5005D2BA9 /* CreateTrainViewController.xib in Resources */,
 				A8A511D82433AAE3005D2BA9 /* LaunchScreen.storyboard in Resources */,
 				A8A512192433BFB5005D2BA9 /* train.storyboard in Resources */,
 				A8A511D52433AAE3005D2BA9 /* Preview Assets.xcassets in Resources */,
+				A89D0C42243407AB009882A9 /* CreateTrainViewController.xib in Resources */,
 				A8A511D22433AAE3005D2BA9 /* Assets.xcassets in Resources */,
 				A8A5122B2433BFB5005D2BA9 /* CustomCellViewController.xib in Resources */,
 			);
