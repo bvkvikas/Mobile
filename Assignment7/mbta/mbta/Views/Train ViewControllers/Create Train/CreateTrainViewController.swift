@@ -37,6 +37,7 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
         DestinationTF?.text = tr?.destination?.stopName
         SourceTF?.text = tr?.source?.stopName
         SourceTF.allowsEditingTextAttributes = false;
+        imageDisplay?.image = tr?.pic
         if action == "search" {
             TrainNameTF?.isUserInteractionEnabled = false
             DestinationTF?.isUserInteractionEnabled = false
