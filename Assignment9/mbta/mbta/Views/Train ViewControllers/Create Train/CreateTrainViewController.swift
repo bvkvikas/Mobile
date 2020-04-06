@@ -173,7 +173,9 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let originalImage = info[UIImagePickerController.InfoKey.originalImage], let imgBtn = originalImage as? UIImage   {
             self.imgBtn.setBackgroundImage(imgBtn, for: .normal)
+            self.imgBtn.setImage(nil, for: .normal)
             self.imgBtn.isHidden = false
+            
             self.imgBtn.backgroundColor = UIColor.clear
             self.imgBtn.setTitle("", for: .normal)
             

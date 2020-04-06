@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A81395E92438113000952AA3 /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81395E82438113000952AA3 /* Train.swift */; };
+		A81395EB2438350300952AA3 /* TrainRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81395EA2438350300952AA3 /* TrainRequest.swift */; };
 		A83B0EB124345277005EED2A /* StopActionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83B0EB024345277005EED2A /* StopActionsViewController.xib */; };
 		A89D0C42243407AB009882A9 /* CreateTrainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89D0C41243407AB009882A9 /* CreateTrainViewController.xib */; };
 		A8A511C72433AADF005D2BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A511C62433AADF005D2BA9 /* AppDelegate.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A81395E82438113000952AA3 /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
+		A81395EA2438350300952AA3 /* TrainRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainRequest.swift; sourceTree = "<group>"; };
 		A83B0EB024345277005EED2A /* StopActionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StopActionsViewController.xib; sourceTree = "<group>"; };
 		A89D0C41243407AB009882A9 /* CreateTrainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTrainViewController.xib; sourceTree = "<group>"; };
 		A8A511C32433AADF005D2BA9 /* mbta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mbta.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A81395E72438111F00952AA3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A81395E82438113000952AA3 /* Train.swift */,
+				A81395EA2438350300952AA3 /* TrainRequest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		A8A511BA2433AADE005D2BA9 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +123,7 @@
 		A8A511C52433AADF005D2BA9 /* mbta */ = {
 			isa = PBXGroup;
 			children = (
+				A81395E72438111F00952AA3 /* API */,
 				A8A511F92433BFB5005D2BA9 /* Views */,
 				A8A511EE2433B057005D2BA9 /* Singleton */,
 				A8A511EB2433ADAE005D2BA9 /* Coredata */,
@@ -350,12 +364,14 @@
 				A8A512212433BFB5005D2BA9 /* CreateScheduleViewController.swift in Sources */,
 				A8A512292433BFB5005D2BA9 /* SearchStopViewController.swift in Sources */,
 				A8A5121E2433BFB5005D2BA9 /* ShowTrainsViewController.swift in Sources */,
+				A81395EB2438350300952AA3 /* TrainRequest.swift in Sources */,
 				A8A512182433BFB5005D2BA9 /* EntryViewController.swift in Sources */,
 				A8A511ED2433AFAF005D2BA9 /* CoreDataManager.swift in Sources */,
 				A8A5121F2433BFB5005D2BA9 /* SearchScheduleViewController.swift in Sources */,
 				A8A5121A2433BFB5005D2BA9 /* TrainOptionsViewController.swift in Sources */,
 				A8A511CA2433AADF005D2BA9 /* mbta.xcdatamodeld in Sources */,
 				A8A512242433BFB5005D2BA9 /* ShowSchedulesViewController.swift in Sources */,
+				A81395E92438113000952AA3 /* Train.swift in Sources */,
 				A8A512232433BFB5005D2BA9 /* ScheduleOptionsViewController.swift in Sources */,
 				A8A511F02433B06F005D2BA9 /* SingletonClass.swift in Sources */,
 				A8A512282433BFB5005D2BA9 /* StopActionsViewController.swift in Sources */,

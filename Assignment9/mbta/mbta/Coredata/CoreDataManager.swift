@@ -23,16 +23,49 @@ class CoreDataManager: NSObject {
     static func addStopTestData() {
         
         if getAllStops().count < 1 {
-            
-            for i in 1...10{
-                //let stop = NSManagedObject(entity: entity, insertInto: persistentContainer.viewContext)
-                let stop = StopEntity(context: appdel.persistentContainer.viewContext);
-                stop.stopID = Int16.random(in: 1 ..< 1000)
-                stop.stopName = "Test" + "\(i)";
-                stop.address = "address" + "\(i)";
-                stop.latitude = "latitude" + "\(i)";
-                stop.longitude = "longitude" + "\(i)";
+            let tr = TrainRequest();
+            var trList = [Datum]() {
+                didSet{
+                    DispatchQueue.main.async {
+                        for train in trList{
+                            for stopName in train.attributes.direction_destinations{
+                                print(stopName)
+                                let stop = StopEntity(context: appdel.persistentContainer.viewContext);
+                                stop.stopID = Int16.random(in: 1 ..< 1000)
+                                stop.stopName = "\(stopName)";
+                                stop.address = "address" + "\(Int16.random(in: 1 ..< 1000))";
+                                stop.latitude = "latitude" + "\(Int16.random(in: 1 ..< 1000))";
+                                stop.longitude = "longitude" + "\(Int16.random(in: 1 ..< 1000))";
+                                appdel.saveContext();
+                            }
+                            let tr : TrainEntity = CoreDataManager.createTrain()
+                            tr.trainLineName = train.id;
+                            let sr = CoreDataManager.getStopByName(stopName: train.attributes.direction_destinations[0])
+                            let des = CoreDataManager.getStopByName(stopName: train.attributes.direction_destinations[1])
+                            tr.source = sr
+                            tr.destination  = des
+                            CoreDataManager.saveContext()
+                            
+                            sr?.addToSource(tr)
+                            des?.addToDestination(tr)
+                            
+                            CoreDataManager.saveContext()
+                            
+                        }
+                        
+                    }
+                }
             }
+            
+            tr.getTrains(url: "https://api-v3.mbta.com/routes?filter%5Btype%5D=0%2C1", userCompletionHandler: { trainsList , error in
+                if let trainsList = trainsList {
+                    trList = trainsList
+                }
+            })
+            
+            
+            
+            
             appdel.saveContext();
         }
     }
@@ -118,7 +151,7 @@ class CoreDataManager: NSObject {
     static func isStopBeingUsed(stop: StopEntity) -> Bool{
         
         if stop.source!.count > 0 || stop.destination!.count > 0 || stop.schedule!.count > 0{
-        return true;
+            return true;
         }
         return false;
     }
