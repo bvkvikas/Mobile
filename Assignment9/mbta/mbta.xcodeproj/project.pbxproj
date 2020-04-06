@@ -31,8 +31,6 @@
 		A8A5121D2433BFB5005D2BA9 /* SearchUpdateDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A512032433BFB5005D2BA9 /* SearchUpdateDeleteViewController.swift */; };
 		A8A5121E2433BFB5005D2BA9 /* ShowTrainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A512042433BFB5005D2BA9 /* ShowTrainsViewController.swift */; };
 		A8A5121F2433BFB5005D2BA9 /* SearchScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A512062433BFB5005D2BA9 /* SearchScheduleViewController.swift */; };
-		A8A512202433BFB5005D2BA9 /* CreateScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A512082433BFB5005D2BA9 /* CreateScheduleViewController.xib */; };
-		A8A512212433BFB5005D2BA9 /* CreateScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A512092433BFB5005D2BA9 /* CreateScheduleViewController.swift */; };
 		A8A512222433BFB5005D2BA9 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5120A2433BFB5005D2BA9 /* ScheduleViewController.swift */; };
 		A8A512232433BFB5005D2BA9 /* ScheduleOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5120B2433BFB5005D2BA9 /* ScheduleOptionsViewController.swift */; };
 		A8A512242433BFB5005D2BA9 /* ShowSchedulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5120C2433BFB5005D2BA9 /* ShowSchedulesViewController.swift */; };
@@ -42,6 +40,8 @@
 		A8A512292433BFB5005D2BA9 /* SearchStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A512142433BFB5005D2BA9 /* SearchStopViewController.swift */; };
 		A8A5122A2433BFB5005D2BA9 /* CustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A512162433BFB5005D2BA9 /* CustomCellViewController.swift */; };
 		A8A5122B2433BFB5005D2BA9 /* CustomCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A512172433BFB5005D2BA9 /* CustomCellViewController.xib */; };
+		A8C9FDF2243B0EC4002ABF21 /* CreateScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9FDF0243B0EC4002ABF21 /* CreateScheduleViewController.swift */; };
+		A8C9FDF3243B0EC4002ABF21 /* CreateScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C9FDF1243B0EC4002ABF21 /* CreateScheduleViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,8 +71,6 @@
 		A8A512032433BFB5005D2BA9 /* SearchUpdateDeleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUpdateDeleteViewController.swift; sourceTree = "<group>"; };
 		A8A512042433BFB5005D2BA9 /* ShowTrainsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTrainsViewController.swift; sourceTree = "<group>"; };
 		A8A512062433BFB5005D2BA9 /* SearchScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScheduleViewController.swift; sourceTree = "<group>"; };
-		A8A512082433BFB5005D2BA9 /* CreateScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateScheduleViewController.xib; sourceTree = "<group>"; };
-		A8A512092433BFB5005D2BA9 /* CreateScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateScheduleViewController.swift; sourceTree = "<group>"; };
 		A8A5120A2433BFB5005D2BA9 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		A8A5120B2433BFB5005D2BA9 /* ScheduleOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsViewController.swift; sourceTree = "<group>"; };
 		A8A5120C2433BFB5005D2BA9 /* ShowSchedulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowSchedulesViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +80,8 @@
 		A8A512142433BFB5005D2BA9 /* SearchStopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStopViewController.swift; sourceTree = "<group>"; };
 		A8A512162433BFB5005D2BA9 /* CustomCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellViewController.swift; sourceTree = "<group>"; };
 		A8A512172433BFB5005D2BA9 /* CustomCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCellViewController.xib; sourceTree = "<group>"; };
+		A8C9FDF0243B0EC4002ABF21 /* CreateScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateScheduleViewController.swift; path = Updated/CreateScheduleViewController.swift; sourceTree = "<group>"; };
+		A8C9FDF1243B0EC4002ABF21 /* CreateScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CreateScheduleViewController.xib; path = Updated/CreateScheduleViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,8 +231,8 @@
 		A8A512072433BFB5005D2BA9 /* Create Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				A8A512082433BFB5005D2BA9 /* CreateScheduleViewController.xib */,
-				A8A512092433BFB5005D2BA9 /* CreateScheduleViewController.swift */,
+				A8C9FDF0243B0EC4002ABF21 /* CreateScheduleViewController.swift */,
+				A8C9FDF1243B0EC4002ABF21 /* CreateScheduleViewController.xib */,
 			);
 			path = "Create Schedule";
 			sourceTree = "<group>";
@@ -332,8 +332,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C9FDF3243B0EC4002ABF21 /* CreateScheduleViewController.xib in Resources */,
 				A83B0EB124345277005EED2A /* StopActionsViewController.xib in Resources */,
-				A8A512202433BFB5005D2BA9 /* CreateScheduleViewController.xib in Resources */,
 				A8A511D82433AAE3005D2BA9 /* LaunchScreen.storyboard in Resources */,
 				A8A512192433BFB5005D2BA9 /* train.storyboard in Resources */,
 				A8A511D52433AAE3005D2BA9 /* Preview Assets.xcassets in Resources */,
@@ -361,12 +361,12 @@
 				A8A511E82433ADA3005D2BA9 /* TrainEntity+CoreDataProperties.swift in Sources */,
 				A8A512262433BFB5005D2BA9 /* ShowStopsViewController.swift in Sources */,
 				A8A511E72433ADA3005D2BA9 /* TrainEntity+CoreDataClass.swift in Sources */,
-				A8A512212433BFB5005D2BA9 /* CreateScheduleViewController.swift in Sources */,
 				A8A512292433BFB5005D2BA9 /* SearchStopViewController.swift in Sources */,
 				A8A5121E2433BFB5005D2BA9 /* ShowTrainsViewController.swift in Sources */,
 				A81395EB2438350300952AA3 /* TrainRequest.swift in Sources */,
 				A8A512182433BFB5005D2BA9 /* EntryViewController.swift in Sources */,
 				A8A511ED2433AFAF005D2BA9 /* CoreDataManager.swift in Sources */,
+				A8C9FDF2243B0EC4002ABF21 /* CreateScheduleViewController.swift in Sources */,
 				A8A5121F2433BFB5005D2BA9 /* SearchScheduleViewController.swift in Sources */,
 				A8A5121A2433BFB5005D2BA9 /* TrainOptionsViewController.swift in Sources */,
 				A8A511CA2433AADF005D2BA9 /* mbta.xcdatamodeld in Sources */,

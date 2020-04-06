@@ -28,10 +28,10 @@ class StopActionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        stopName?.text = sn ?? "s1"
-        Latitude?.text = lat ?? "lat"
-        Longitude?.text = long ?? "long"
-        Address?.text = add ?? "Boston-02115"
+        stopName?.text = stops?.stopName ?? "s1"
+        Latitude?.text = stops?.latitude ?? "lat"
+        Longitude?.text = stops?.longitude ?? "long"
+        Address?.text = stops?.address ?? "Boston-02115"
         
         if action == "create" {
             btnTitle = "Add Stop"
