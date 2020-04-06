@@ -105,6 +105,7 @@ class StopActionsViewController: UIViewController {
                     stops?.latitude = lati
                     stops?.longitude = longt
                     stops?.address = addd
+                    CoreDataManager.saveContext()
                     showAlert(title: "Stop: \(stops?.stopID ?? -1000) succesfully updated ")
                     return
                 }
@@ -118,7 +119,7 @@ class StopActionsViewController: UIViewController {
                 stop.latitude = lati
                 stop.longitude = longt
                 stop.address = addd
-                
+                CoreDataManager.saveContext()
                 showAlert(title: "Stop: \(stop.stopID) succesfully added ")
                 
             

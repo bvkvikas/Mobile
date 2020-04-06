@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SystemConfiguration
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,10 +29,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationBarSecond
         window?.makeKeyAndVisible()
         
-        CoreDataManager.addStopTestData();
+        
+        guard let reachability = SCNetworkReachabilityCreateWithName(nil, "www.google.com") else { return false}
+        var flags = SCNetworkReachabilityFlags()
+        SCNetworkReachabilityGetFlags(reachability, &flags)
+
+        if isNetworkReachable(with: flags) {
+            CoreDataManager.addStopTestData();
+        }else{
+            print("No internet connection. Failed to load test data")
+        }
         
         return true
     }
+    
+    
+        
+    
+        func isNetworkReachable(with flags: SCNetworkReachabilityFlags) -> Bool {
+            let isReachable = flags.contains(.reachable)
+            let needsConnection = flags.contains(.connectionRequired)
+            let canConnectAutomatically = flags.contains(.connectionOnDemand) || flags.contains(.connectionOnTraffic)
+            let canConnectWithoutUserInteraction = canConnectAutomatically && !flags.contains(.interventionRequired)
+
+            return isReachable && (!needsConnection || canConnectWithoutUserInteraction)
+        }
+    
     
     func addTestData() {
       

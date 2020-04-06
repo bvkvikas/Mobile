@@ -7,15 +7,15 @@
 //
 
 import UIKit
+import SystemConfiguration
 
 class EntryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-  
-        
-    }
-        
+
+  }
+
         // Do any additional setup after loading the view.
     
 
@@ -29,7 +29,8 @@ class EntryViewController: UIViewController {
     }
     */
     override func performSegue(withIdentifier identifier: String, sender: Any?) {
-       
+    }
           
-      }
+
+           
 }

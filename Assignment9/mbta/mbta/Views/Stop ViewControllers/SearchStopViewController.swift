@@ -51,6 +51,7 @@ class SearchStopViewController: UIViewController {
                 return
             }
             CoreDataManager.deleteStop(entity: stop)
+            CoreDataManager.saveContext()
             showAlert(title: "Stop deleted")
             return
         }
