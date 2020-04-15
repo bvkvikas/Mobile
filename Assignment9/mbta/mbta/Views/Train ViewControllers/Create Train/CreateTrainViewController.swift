@@ -11,15 +11,27 @@ import UIKit
 class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var selectedSource: String?
     var selectedDestination: String?
-    @IBOutlet weak var TrainNameTF: UITextField!
-    @IBOutlet weak var DestinationTF: UITextField!
-    @IBOutlet weak var SourceTF: UITextField!
+//    @IBOutlet weak var TrainNameTF: UITextField!
+//    @IBOutlet weak var DestinationTF: UITextField!
+//    @IBOutlet weak var SourceTF: UITextField!
+//
+//    @IBOutlet weak var ActionBtn: UIButton!
+//    @IBOutlet weak var viewLabel: UILabel!
+//    @IBOutlet weak var image: UIButton!
+//
+//    @IBOutlet weak var imageDisplay: UIImageView!
     
-    @IBOutlet weak var ActionBtn: UIButton!
-    @IBOutlet weak var viewLabel: UILabel!
-    @IBOutlet weak var image: UIButton!
+    @IBOutlet weak var SubmitButton: UIButton!
+    @IBOutlet weak var imgBtn: UIButton!
+    @IBOutlet weak var imgDisplay: UIImageView!
     
-    @IBOutlet weak var imageDisplay: UIImageView!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var TrainName: UITextField!
+    
+    @IBOutlet weak var Source: UITextField!
+    
+    @IBOutlet weak var Destination: UITextField!
+    
     var pickerData : [StopEntity] = [StopEntity]()
     var tr : TrainEntity?
     var tntf : String?
@@ -33,35 +45,34 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
         pickerData = CoreDataManager.getAllStops();
         createPickerView()
         dismissPickerView()
-        TrainNameTF?.text = tr?.trainLineName ?? "1"
-        DestinationTF?.text = tr?.destination?.stopName
-        SourceTF?.text = tr?.source?.stopName
-        SourceTF.allowsEditingTextAttributes = false;
-        imageDisplay?.image = tr?.pic
+        TrainName?.text = tr?.trainLineName ?? "1"
+        Destination?.text = tr?.destination?.stopName
+        Source?.text = tr?.source?.stopName
+        Source.allowsEditingTextAttributes = false;
         if action == "search" {
-            TrainNameTF?.isUserInteractionEnabled = false
-            DestinationTF?.isUserInteractionEnabled = false
-            SourceTF?.isUserInteractionEnabled = false
-            imageDisplay.image = tr?.pic
-            image.isHidden = true
-            viewLabel.text = "Train Details"
+            TrainName?.isUserInteractionEnabled = false
+            Destination?.isUserInteractionEnabled = false
+            Source?.isUserInteractionEnabled = false
+            imgDisplay.image = tr?.pic
+            imgBtn.isHidden = true
+            label.text = "Train Details"
             btntitle = "Go to Train Options"
         }
         
         if action == "create" {
-            imageDisplay.isHidden = true;
+            imgDisplay.isHidden = true;
             
-            viewLabel.text = "Create Train"
+            label.text = "Create Train"
         }
         
         
         if action == "update" {
-            TrainNameTF?.isUserInteractionEnabled = false
-            viewLabel.text = "Update Train"
+            TrainName?.isUserInteractionEnabled = false
+            label.text = "Update Train"
             btntitle = "Update Train"
         }
         
-        ActionBtn.setTitle(btntitle, for: .normal)        // Do any additional setup after loading the view.
+        SubmitButton.setTitle(btntitle, for: .normal)        // Do any additional setup after loading the view.
     }
     
     @IBAction func createTrain(_ sender: Any) {
@@ -72,17 +83,17 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
             return
         }
         
-        guard let trainName = TrainNameTF!.text, !trainName.isEmptyOrWhitespace() else{
+        guard let trainName = TrainName!.text, !trainName.isEmptyOrWhitespace() else{
             showAlert(title: "Enter correct name")
             return
         }
         
-        guard let source = SourceTF!.text, !source.isEmptyOrWhitespace() else{
+        guard let source = Source!.text, !source.isEmptyOrWhitespace() else{
             showAlert(title: "Enter correct source")
             return
         }
         
-        guard let destination = DestinationTF!.text, !destination.isEmptyOrWhitespace() else{
+        guard let destination = Destination!.text, !destination.isEmptyOrWhitespace() else{
             showAlert(title: "Enter correct destination")
             return
         }
@@ -102,7 +113,7 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
             tr?.source = sr
             tr?.destination = des
             tr?.trainLineName = trainName;
-            tr?.pic = self.image.backgroundImage(for: .normal)
+            tr?.pic = self.imgBtn.backgroundImage(for: .normal)
             
             sr?.addToSource(tr!)
             des?.addToDestination(tr!)
@@ -121,7 +132,7 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
             train.trainLineName = trainName;
             train.source = sr
             train.destination = des
-            train.pic = self.image.backgroundImage(for: .normal)
+            train.pic = self.imgBtn.backgroundImage(for: .normal)
             CoreDataManager.saveContext()
             
             sr?.addToSource(train)
@@ -160,17 +171,19 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let originalImage = info[UIImagePickerController.InfoKey.originalImage], let imagee = originalImage as? UIImage   {
-            self.image.setBackgroundImage(imagee, for: .normal)
-            self.image.isHidden = false
-            self.image.backgroundColor = UIColor.clear
-            self.image.setTitle("", for: .normal)
+        if let originalImage = info[UIImagePickerController.InfoKey.originalImage], let imgBtn = originalImage as? UIImage   {
+            self.imgBtn.setBackgroundImage(imgBtn, for: .normal)
+            self.imgBtn.setImage(nil, for: .normal)
+            self.imgBtn.isHidden = false
+            
+            self.imgBtn.backgroundColor = UIColor.clear
+            self.imgBtn.setTitle("", for: .normal)
             
             picker.dismiss(animated: true, completion: nil)
         }
         else
         {
-            self.image.backgroundColor = UIColor.clear
+            self.imgDisplay.backgroundColor = UIColor.clear
         }
     }
     
@@ -211,11 +224,11 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
         
         if pickerView.tag == 1 {
             selectedSource = pickerData[row].stopName
-            SourceTF.text = selectedSource
+            Source.text = selectedSource
         }
         if pickerView.tag == 2 {
             selectedDestination = pickerData[row].stopName
-            DestinationTF.text = selectedDestination
+            Destination.text = selectedDestination
         }
         
     }
@@ -227,8 +240,8 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
         pickerView2.tag = 2
         pickerView.delegate = self
         pickerView2.delegate = self
-        SourceTF.inputView = pickerView
-        DestinationTF.inputView = pickerView2
+        Source.inputView = pickerView
+        Destination.inputView = pickerView2
     }
     
     func dismissPickerView() {
@@ -238,8 +251,8 @@ class CreateTrainViewController: UIViewController,UIPickerViewDelegate, UIPicker
         let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.action2))
         toolBar.setItems([button], animated: true)
         toolBar.isUserInteractionEnabled = true
-        SourceTF.inputAccessoryView = toolBar
-        DestinationTF.inputAccessoryView = toolBar
+        Source.inputAccessoryView = toolBar
+        Destination.inputAccessoryView = toolBar
     }
     
     @objc func action2() {

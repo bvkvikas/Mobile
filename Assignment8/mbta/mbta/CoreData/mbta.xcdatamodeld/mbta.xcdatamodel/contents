@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E266" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ScheduleEntity" representedClassName=".ScheduleEntity" syncable="YES">
         <attribute name="arrivalTime" optional="YES" attributeType="String"/>
         <attribute name="departureTime" optional="YES" attributeType="String"/>
@@ -29,7 +29,7 @@
     </entity>
     <elements>
         <element name="ScheduleEntity" positionX="137.79296875" positionY="14.91796875" width="128" height="133"/>
-        <element name="TrainEntity" positionX="-183.7421875" positionY="204.953125" width="128" height="133"/>
         <element name="StopEntity" positionX="455.67578125" positionY="160.23046875" width="128" height="163"/>
+        <element name="TrainEntity" positionX="-183.7421875" positionY="204.953125" width="128" height="133"/>
     </elements>
 </model>

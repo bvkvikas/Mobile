@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E266" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ScheduleEntity" representedClassName="ScheduleEntity">
+        <attribute name="arrivalTime" attributeType="String"/>
+        <attribute name="departureTime" attributeType="String"/>
+        <attribute name="lineID" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="scheduleID" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="listOfStops" toMany="YES" deletionRule="Nullify" destinationEntity="StopEntity" inverseName="schedule" inverseEntity="StopEntity"/>
+        <relationship name="toTrain" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TrainEntity" inverseName="manySchedules" inverseEntity="TrainEntity"/>
+        <userInfo/>
+    </entity>
+    <entity name="StopEntity" representedClassName="StopEntity" syncable="YES">
+        <attribute name="address" attributeType="String"/>
+        <attribute name="latitude" attributeType="String"/>
+        <attribute name="longitude" attributeType="String"/>
+        <attribute name="stopID" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="stopName" optional="YES" attributeType="String"/>
+        <relationship name="destination" toMany="YES" deletionRule="Nullify" destinationEntity="TrainEntity"/>
+        <relationship name="schedule" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScheduleEntity" inverseName="listOfStops" inverseEntity="ScheduleEntity"/>
+        <relationship name="source" toMany="YES" deletionRule="Nullify" destinationEntity="TrainEntity"/>
+    </entity>
+    <entity name="TrainEntity" representedClassName="TrainEntity" syncable="YES">
+        <attribute name="lineID" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pic" optional="YES" attributeType="Transformable"/>
+        <attribute name="trainLineName" attributeType="String"/>
+        <relationship name="destination" maxCount="1" deletionRule="Nullify" destinationEntity="StopEntity"/>
+        <relationship name="manySchedules" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScheduleEntity" inverseName="toTrain" inverseEntity="ScheduleEntity"/>
+        <relationship name="source" maxCount="1" deletionRule="Nullify" destinationEntity="StopEntity"/>
+    </entity>
+    <elements>
+        <element name="ScheduleEntity" positionX="261" positionY="189" width="128" height="133"/>
+        <element name="StopEntity" positionX="270" positionY="207" width="128" height="163"/>
+        <element name="TrainEntity" positionX="261" positionY="198" width="128" height="133"/>
+    </elements>
+</model>

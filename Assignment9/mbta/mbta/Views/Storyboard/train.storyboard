@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--EntryController-->
+        <scene sceneID="y9P-lU-HMe">
+            <objects>
+                <viewController storyboardIdentifier="EntryViewController" id="2hg-Bg-3KA" userLabel="EntryController" customClass="EntryViewController" customModule="mbta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mDU-sE-WTB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MBTA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uI-JT-q0f">
+                                <rect key="frame" x="163" y="267.33333333333331" width="88.333333333333314" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ojy-4u-OcG">
+                                <rect key="frame" x="0.0" y="353" width="414" height="190"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ad-e0-5JJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="jxq-XR-HIV"/>
+                                        </constraints>
+                                        <state key="normal" title="Train Options">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="mJh-By-7fS" kind="show" id="Lvz-3w-pWi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d96-Qx-MIb">
+                                        <rect key="frame" x="0.0" y="70" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="SHc-pg-8DC"/>
+                                        </constraints>
+                                        <state key="normal" title="Schedule Options">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="hu8-5o-a9S" kind="show" id="a8N-RU-TEc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABy-Ox-YA8">
+                                        <rect key="frame" x="0.0" y="140" width="414" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="epf-fu-Ufu"/>
+                                        </constraints>
+                                        <state key="normal" title="Stop Options">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Wbc-UR-fry" kind="show" id="jnz-EV-k3K"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cRQ-an-dPB" firstAttribute="trailing" secondItem="Ojy-4u-OcG" secondAttribute="trailing" id="4gg-5K-wsR"/>
+                            <constraint firstItem="Ojy-4u-OcG" firstAttribute="centerY" secondItem="mDU-sE-WTB" secondAttribute="centerY" id="Vch-4I-3uG"/>
+                            <constraint firstItem="8uI-JT-q0f" firstAttribute="centerX" secondItem="mDU-sE-WTB" secondAttribute="centerX" id="clP-2A-S6j"/>
+                            <constraint firstItem="Ojy-4u-OcG" firstAttribute="top" secondItem="8uI-JT-q0f" secondAttribute="bottom" constant="45" id="crw-zp-Svt"/>
+                            <constraint firstItem="Ojy-4u-OcG" firstAttribute="leading" secondItem="cRQ-an-dPB" secondAttribute="leading" id="sKt-8H-ww3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cRQ-an-dPB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ius-Gg-kTF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3982.8125" y="-108.984375"/>
+        </scene>
+        <!--TrainOptionsViewController-->
+        <scene sceneID="9KW-sY-DNG">
+            <objects>
+                <viewController id="mJh-By-7fS" userLabel="TrainOptionsViewController" customClass="TrainOptionsViewController" customModule="mbta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yyV-96-slU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6of-TA-tMN">
+                                <rect key="frame" x="110.66666666666669" y="228" width="192.66666666666663" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XjE-UT-1MT">
+                                <rect key="frame" x="0.0" y="313.66666666666669" width="414" height="215.00000000000006"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVr-x3-T7x">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="TFB-Kg-5l1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="25"/>
+                                        <state key="normal" title="Show Trains">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="tom-CK-b9s" kind="show" identifier="show" id="2mk-oN-hN1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4WP-VQ-mIY">
+                                        <rect key="frame" x="0.0" y="55" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="aet-zt-G1O"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="25"/>
+                                        <state key="normal" title="Update Train">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="0WW-id-9sn" kind="show" identifier="update" id="iHr-30-sZw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AF5-Rk-oTf">
+                                        <rect key="frame" x="0.0" y="110" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="EIY-AU-lvK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="25"/>
+                                        <state key="normal" title="Delete Train">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="0WW-id-9sn" kind="show" identifier="delete" id="aZ3-W8-nS3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmn-DY-kbk">
+                                        <rect key="frame" x="0.0" y="165" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="KnB-ch-vLy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="25"/>
+                                        <state key="normal" title="Search Train">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="0WW-id-9sn" kind="show" identifier="search" id="dny-7d-Um7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6of-TA-tMN" firstAttribute="centerX" secondItem="yyV-96-slU" secondAttribute="centerX" id="7xX-YM-AcG"/>
+                            <constraint firstItem="XjE-UT-1MT" firstAttribute="leading" secondItem="0aq-ml-CPO" secondAttribute="leading" id="X8f-kC-QMG"/>
+                            <constraint firstItem="0aq-ml-CPO" firstAttribute="trailing" secondItem="XjE-UT-1MT" secondAttribute="trailing" id="gAe-1h-qaa"/>
+                            <constraint firstItem="XjE-UT-1MT" firstAttribute="centerY" secondItem="yyV-96-slU" secondAttribute="centerY" id="gYb-Dw-gNP"/>
+                            <constraint firstItem="XjE-UT-1MT" firstAttribute="top" secondItem="6of-TA-tMN" secondAttribute="bottom" constant="45" id="kp1-zd-UmO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0aq-ml-CPO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jp5-vY-S2f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1733.3333333333335" y="-852.45535714285711"/>
+        </scene>
+        <!--ScheduleOptionsViewController-->
+        <scene sceneID="It9-DY-j5v">
+            <objects>
+                <viewController id="hu8-5o-a9S" userLabel="ScheduleOptionsViewController" customClass="ScheduleOptionsViewController" customModule="mbta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gyU-7m-iVy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CG5-lE-4IC" userLabel="Schedule Options">
+                                <rect key="frame" x="77.333333333333343" y="215.66666666666666" width="259.66666666666663" height="49.999999999999972"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WYX-0u-e8G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="kGR-qT-amX">
+                                <rect key="frame" x="0.0" y="310.66666666666669" width="414" height="221.00000000000006"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHx-Be-mJV">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="rpM-Ob-QOk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="25"/>
+                                        <state key="normal" title="Show All Schedules">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="5AN-sA-3Jy" kind="show" id="dxX-NA-Yof"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4i-RN-hNS">
+                                        <rect key="frame" x="0.0" y="57" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="fz9-Sp-Vtl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="25"/>
+                                        <state key="normal" title="Update Schedule">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Rj8-dU-IfP" kind="show" identifier="update" id="ibA-sA-ZgA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bih-KC-7r4">
+                                        <rect key="frame" x="0.0" y="114" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="u49-9y-dUG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="25"/>
+                                        <state key="normal" title="Delete Schedule">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Rj8-dU-IfP" kind="show" identifier="delete" id="7jl-qc-g0y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dn7-ST-QGR">
+                                        <rect key="frame" x="0.0" y="171" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="X3K-53-eqA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="25"/>
+                                        <state key="normal" title="Search for Schedule">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Rj8-dU-IfP" kind="show" identifier="search" id="TCt-eK-EAy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kGR-qT-amX" firstAttribute="leading" secondItem="k4e-Qk-OO8" secondAttribute="leading" id="EFY-Ef-8n5"/>
+                            <constraint firstItem="k4e-Qk-OO8" firstAttribute="trailing" secondItem="kGR-qT-amX" secondAttribute="trailing" id="Fzo-Rv-4il"/>
+                            <constraint firstItem="kGR-qT-amX" firstAttribute="top" secondItem="CG5-lE-4IC" secondAttribute="bottom" constant="45" id="S0n-xj-Xag"/>
+                            <constraint firstItem="CG5-lE-4IC" firstAttribute="centerX" secondItem="gyU-7m-iVy" secondAttribute="centerX" id="fjD-3H-gAU"/>
+                            <constraint firstItem="kGR-qT-amX" firstAttribute="centerY" secondItem="gyU-7m-iVy" secondAttribute="centerY" id="v6l-co-dIf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k4e-Qk-OO8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gb9-9L-nau" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1733.3333333333335" y="2.6785714285714284"/>
+        </scene>
+        <!--Search Schedule View Controller-->
+        <scene sceneID="Hvc-Ca-d29">
+            <objects>
+                <viewController id="Rj8-dU-IfP" userLabel="Search Schedule View Controller" customClass="SearchScheduleViewController" customModule="mbta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="An6-p8-i0S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5O-Zi-mv5">
+                                <rect key="frame" x="20" y="242" width="374" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="c8B-BC-Vn5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="BjJ-oc-iQ1">
+                                <rect key="frame" x="20" y="360" width="374" height="122"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="2h0-ZS-upK">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMD-Wd-PtF">
+                                                <rect key="frame" x="0.0" y="0.0" width="137.66666666666666" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Hf-9f-y9C">
+                                                <rect key="frame" x="236.66666666666669" y="0.0" width="137.33333333333331" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="hI7-wZ-mea"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="HPn-9O-xhb"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfM-VU-ucU">
+                                        <rect key="frame" x="0.0" y="80" width="374" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdh-J9-SFH">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="42"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="Search Schedule">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="searchButtonClicked:" destination="Rj8-dU-IfP" eventType="touchUpInside" id="RRJ-lF-axu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="n5O-Zi-mv5" firstAttribute="trailing" secondItem="BjJ-oc-iQ1" secondAttribute="trailing" id="822-Uo-Pzk"/>
+                            <constraint firstItem="BjJ-oc-iQ1" firstAttribute="centerY" secondItem="An6-p8-i0S" secondAttribute="centerY" id="DXR-qM-D0p"/>
+                            <constraint firstItem="BjJ-oc-iQ1" firstAttribute="top" secondItem="n5O-Zi-mv5" secondAttribute="bottom" constant="64" id="Fcn-Al-6wO"/>
+                            <constraint firstItem="n5O-Zi-mv5" firstAttribute="leading" secondItem="BjJ-oc-iQ1" secondAttribute="leading" id="WCf-yA-H15"/>
+                            <constraint firstItem="BjJ-oc-iQ1" firstAttribute="leading" secondItem="UEh-KS-Jrt" secondAttribute="leading" constant="20" id="kgj-am-Bm4"/>
+                            <constraint firstAttribute="trailing" secondItem="BjJ-oc-iQ1" secondAttribute="trailing" constant="20" id="prj-gH-Yn6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UEh-KS-Jrt"/>
+                    </view>
+                    <connections>
+                        <outlet property="header" destination="n5O-Zi-mv5" id="hcG-p9-WNM"/>
+                        <outlet property="scheduleIDTF" destination="7Hf-9f-y9C" id="0bJ-iW-M1N"/>
+                        <outlet property="searchScheduleAction" destination="bdh-J9-SFH" id="o9Y-Fq-fNs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yrA-W2-2DL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-475.36231884057975" y="734.59821428571422"/>
+        </scene>
+        <!--StopOptionsViewController-->
+        <scene sceneID="eXD-gT-Oga">
+            <objects>
+                <viewController id="Wbc-UR-fry" userLabel="StopOptionsViewController" customClass="StopOptionsViewController" customModule="mbta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ld6-l5-CBW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="etD-cs-VBX">
+                                <rect key="frame" x="0.0" y="310.66666666666669" width="414" height="221.00000000000006"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmI-Lx-L3G">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="yAd-Zm-ja5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="25"/>
+                                        <state key="normal" title="Show All Stops">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="KGj-G0-2M5" kind="show" identifier="" id="4dX-1R-fMJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7u-SE-hM9">
+                                        <rect key="frame" x="0.0" y="57" width="414" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="XMs-6r-H0V"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="25"/>
+                                        <state key="normal" title="Update Stop">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="tfZ-Qd-rEx" kind="show" identifier="update" id="FEj-Ut-B2g"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qg9-Sq-PxN">
+                                        <rect key="frame" x="0.0" y="114" width="414" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="615-FS-Gji"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="25"/>
+                                        <state key="normal" title="Delete Stop">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="tfZ-Qd-rEx" kind="show" identifier="delete" id="MeZ-0s-ATq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcC-PL-tDa">
+                                        <rect key="frame" x="0.0" y="171" width="414" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="TwU-Ag-T11"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="25"/>
+                                        <state key="normal" title="Search for Stop">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="tfZ-Qd-rEx" kind="show" identifier="search" id="2Hd-JF-dRZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop Options" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BK2-hS-ctq" userLabel="Schedule Options">
+                                <rect key="frame" x="77" y="215.66666666666666" width="260" height="49.999999999999972"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bxz-u4-GfM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CdI-fv-WyA" firstAttribute="trailing" secondItem="etD-cs-VBX" secondAttribute="trailing" id="Xo6-jO-Ma2"/>
+                            <constraint firstItem="etD-cs-VBX" firstAttribute="centerY" secondItem="ld6-l5-CBW" secondAttribute="centerY" id="ZH4-Lf-wbV"/>
+                            <constraint firstItem="etD-cs-VBX" firstAttribute="top" secondItem="BK2-hS-ctq" secondAttribute="bottom" constant="45" id="fDX-HF-CFI"/>
+                            <constraint firstItem="BK2-hS-ctq" firstAttribute="leading" secondItem="CdI-fv-WyA" secondAttribute="leading" constant="77" id="kKG-hS-QBN"/>
+                            <constraint firstItem="BK2-hS-ctq" firstAttribute="centerX" secondItem="etD-cs-VBX" secondAttribute="centerX" id="tev-3q-gYa"/>
+                            <constraint firstItem="etD-cs-VBX" firstAttribute="leading" secondItem="CdI-fv-WyA" secondAttribute="leading" id="yNg-gy-OG0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CdI-fv-WyA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H1U-es-och" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1733" y="1429"/>
+        </scene>
+        <!--DeleteTrain Controller-->
+        <scene sceneID="ihp-6R-4dr">
+            <objects>
+                <viewController id="0WW-id-9sn" userLabel="DeleteTrain Controller" customClass="SearchUpdateDeleteViewController" customModule="mbta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vAH-tt-CdV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ioa-U5-J37">
+                                <rect key="frame" x="20" y="370.66666666666669" width="374" height="101"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="cUe-cA-VNA">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gij-TL-gRQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="137.66666666666666" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Red" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3tb-vB-Off">
+                                                <rect key="frame" x="236.66666666666669" y="0.0" width="137.33333333333331" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                            </textField>
+                                        </subviews>
+                                        <viewLayoutGuide key="safeArea" id="buu-rR-qYT"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wg-4P-Ia2">
+                                        <rect key="frame" x="0.0" y="59" width="374" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEV-Aq-07j">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="42"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="Search Train">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="SearchForTrain:" destination="0WW-id-9sn" eventType="touchUpInside" id="5kO-UT-kDF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlT-nK-Y2O">
+                                <rect key="frame" x="177.33333333333334" y="296" width="59.333333333333343" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="kK0-VW-iJe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ioa-U5-J37" firstAttribute="top" secondItem="FlT-nK-Y2O" secondAttribute="bottom" constant="41.5" id="L4v-Dk-GYO"/>
+                            <constraint firstItem="Ioa-U5-J37" firstAttribute="centerY" secondItem="vAH-tt-CdV" secondAttribute="centerY" id="UVA-nt-yID"/>
+                            <constraint firstItem="FlT-nK-Y2O" firstAttribute="centerX" secondItem="vAH-tt-CdV" secondAttribute="centerX" id="Y1j-op-QYu"/>
+                            <constraint firstItem="Ioa-U5-J37" firstAttribute="leading" secondItem="iPH-zV-89X" secondAttribute="leading" constant="20" id="ZS7-ah-YKL"/>
+                            <constraint firstItem="iPH-zV-89X" firstAttribute="trailing" secondItem="Ioa-U5-J37" secondAttribute="trailing" constant="20" id="ybc-gT-Ygv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iPH-zV-89X"/>
+                    </view>
+                    <connections>
+                        <outlet property="TrainNameTF" destination="3tb-vB-Off" id="jbQ-Ef-1AP"/>
+                        <outlet property="navigationTitle" destination="FlT-nK-Y2O" id="ORB-Kx-ZSY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="otA-n5-ai8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-475.36231884057975" y="-852.45535714285711"/>
+        </scene>
+        <!--Show Trains View Controller-->
+        <scene sceneID="0bS-24-uhb">
+            <objects>
+                <viewController id="tom-CK-b9s" userLabel="Show Trains View Controller" customClass="ShowTrainsViewController" customModule="mbta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="INF-si-Dr2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J55-2E-ll4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="J55-2E-ll4" firstAttribute="top" secondItem="H11-cd-UL2" secondAttribute="top" id="NgU-aT-JSL"/>
+                            <constraint firstItem="H11-cd-UL2" firstAttribute="trailing" secondItem="J55-2E-ll4" secondAttribute="trailing" id="OeU-kY-3Zg"/>
+                            <constraint firstItem="J55-2E-ll4" firstAttribute="leading" secondItem="H11-cd-UL2" secondAttribute="leading" id="pMf-f1-Wmo"/>
+                            <constraint firstItem="H11-cd-UL2" firstAttribute="bottom" secondItem="J55-2E-ll4" secondAttribute="bottom" id="ylF-No-mZa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H11-cd-UL2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Back" id="m5S-sh-7xl"/>
+                    <connections>
+                        <outlet property="tableObject" destination="J55-2E-ll4" id="N4Z-mA-aEe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6OR-or-DOG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-475" y="-1498"/>
+        </scene>
+        <!--Show Schedules View Controller-->
+        <scene sceneID="QhM-aB-5d3">
+            <objects>
+                <viewController id="5AN-sA-3Jy" userLabel="Show Schedules View Controller" customClass="ShowSchedulesViewController" customModule="mbta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DlP-Aw-9r7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yM1-qq-0If">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yM1-qq-0If" firstAttribute="leading" secondItem="iS3-2d-o9s" secondAttribute="leading" id="B8d-ev-Y3E"/>
+                            <constraint firstItem="iS3-2d-o9s" firstAttribute="bottom" secondItem="yM1-qq-0If" secondAttribute="bottom" id="U9a-o0-bwh"/>
+                            <constraint firstItem="yM1-qq-0If" firstAttribute="top" secondItem="iS3-2d-o9s" secondAttribute="top" id="UZx-vQ-3EW"/>
+                            <constraint firstItem="iS3-2d-o9s" firstAttribute="trailing" secondItem="yM1-qq-0If" secondAttribute="trailing" id="eoH-cn-19c"/>
+                            <constraint firstItem="iS3-2d-o9s" firstAttribute="bottom" secondItem="yM1-qq-0If" secondAttribute="bottom" id="sY7-X0-qP7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iS3-2d-o9s"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Schedules" id="C65-bA-dAI"/>
+                    <connections>
+                        <outlet property="tableObject" destination="yM1-qq-0If" id="tNX-yw-HWE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kuo-bI-flq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-475" y="3"/>
+        </scene>
+        <!--Show Stops View Controller-->
+        <scene sceneID="YmV-pE-foh">
+            <objects>
+                <viewController id="KGj-G0-2M5" userLabel="Show Stops View Controller" customClass="ShowStopsViewController" customModule="mbta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tiy-Fu-Oun">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dDt-1C-nxF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GhJ-z6-UpG" firstAttribute="bottom" secondItem="dDt-1C-nxF" secondAttribute="bottom" id="crf-G1-lOr"/>
+                            <constraint firstItem="dDt-1C-nxF" firstAttribute="leading" secondItem="GhJ-z6-UpG" secondAttribute="leading" id="fz4-KN-KyI"/>
+                            <constraint firstItem="dDt-1C-nxF" firstAttribute="top" secondItem="GhJ-z6-UpG" secondAttribute="top" id="lV3-pw-08U"/>
+                            <constraint firstItem="GhJ-z6-UpG" firstAttribute="trailing" secondItem="dDt-1C-nxF" secondAttribute="trailing" id="oFY-ka-qym"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GhJ-z6-UpG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stops" id="fDC-5Z-B1s"/>
+                    <connections>
+                        <outlet property="tableObject" destination="dDt-1C-nxF" id="ufp-Jb-z7o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t4X-o6-gWv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-475" y="1428"/>
+        </scene>
+        <!--Search Stops View Controller-->
+        <scene sceneID="TPp-Vx-hiX">
+            <objects>
+                <viewController id="tfZ-Qd-rEx" userLabel="Search Stops View Controller" customClass="SearchStopViewController" customModule="mbta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I2g-cx-1ke">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="5PR-6g-D0L">
+                                <rect key="frame" x="20" y="372.66666666666669" width="374" height="97"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="Dwb-nW-1JX">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyb-NB-svg">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Train Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbp-3c-UK9">
+                                                <rect key="frame" x="186.33333333333337" y="0.0" width="187.66666666666663" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="tI7-ve-MhN"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="m53-qC-id7"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84b-QS-drg">
+                                        <rect key="frame" x="0.0" y="55" width="374" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11o-sE-GlN">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="42"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="Search Stop">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="tfZ-Qd-rEx" eventType="touchUpInside" id="otm-n9-ctE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBI-7x-AZd">
+                                <rect key="frame" x="20" y="282" width="374" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="HCo-f9-fwv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VBI-7x-AZd" firstAttribute="trailing" secondItem="5PR-6g-D0L" secondAttribute="trailing" id="2bx-1R-RIM"/>
+                            <constraint firstItem="VBI-7x-AZd" firstAttribute="leading" secondItem="5PR-6g-D0L" secondAttribute="leading" id="HtL-qC-S8h"/>
+                            <constraint firstItem="5PR-6g-D0L" firstAttribute="leading" secondItem="Zha-87-vTf" secondAttribute="leading" constant="20" id="KKu-bV-3pv"/>
+                            <constraint firstAttribute="trailing" secondItem="5PR-6g-D0L" secondAttribute="trailing" constant="20" id="Ths-fB-kLa"/>
+                            <constraint firstItem="5PR-6g-D0L" firstAttribute="top" secondItem="VBI-7x-AZd" secondAttribute="bottom" constant="29.5" id="XW5-aG-DVV"/>
+                            <constraint firstItem="5PR-6g-D0L" firstAttribute="centerY" secondItem="I2g-cx-1ke" secondAttribute="centerY" id="ncO-h4-enW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zha-87-vTf"/>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="11o-sE-GlN" id="pga-4M-d57"/>
+                        <outlet property="header" destination="VBI-7x-AZd" id="pxp-sO-tUe"/>
+                        <outlet property="searchTF" destination="dbp-3c-UK9" id="t7S-q3-xkO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FVy-iS-CNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-475.36231884057975" y="2193.75"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2Hd-JF-dRZ"/>
+        <segue reference="iHr-30-sZw"/>
+        <segue reference="ibA-sA-ZgA"/>
+    </inferredMetricsTieBreakers>
+</document>
