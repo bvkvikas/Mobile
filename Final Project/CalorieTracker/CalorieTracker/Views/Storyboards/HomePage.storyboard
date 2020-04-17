@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="xF0-qM-0SH">
+            <objects>
+                <viewController id="FgN-Pc-cwy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wxZ-os-kCG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="8dH-CL-0vI"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="GU4-mZ-z0g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RYO-Ua-0Jx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-638" y="-307"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="0iJ-CN-PnB">
+            <objects>
+                <tabBarController storyboardIdentifier="HomePageVC" id="azR-OP-uBh" customClass="HomeViewController" customModule="CalorieTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="koc-KT-n1C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="L4y-GO-yxe"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="FgN-Pc-cwy" kind="relationship" relationship="viewControllers" id="YG6-GK-glI"/>
+                        <segue destination="Dsb-zw-XPI" kind="relationship" relationship="viewControllers" id="ZOj-Ax-RS4"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LSZ-6V-mj4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-233" y="-1061"/>
+        </scene>
+        <!--Recipes-->
+        <scene sceneID="0NR-0w-3sl">
+            <objects>
+                <tableViewController id="Ztz-AN-8zE" customClass="ItemsViewController" customModule="CalorieTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" id="3ct-Tq-6Xg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="100" id="yXf-6f-9N4" customClass="ItemCellViewController" customModule="CalorieTracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yXf-6f-9N4" id="Ytk-Y7-mWq">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRP-LZ-kog">
+                                            <rect key="frame" x="20" y="11" width="61.5" height="26"/>
+                                            <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJk-Tv-vLi">
+                                            <rect key="frame" x="20" y="50" width="118" height="21"/>
+                                            <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bJk-Tv-vLi" firstAttribute="top" secondItem="JRP-LZ-kog" secondAttribute="bottom" constant="13" id="2e0-Gq-tNR"/>
+                                        <constraint firstItem="JRP-LZ-kog" firstAttribute="top" secondItem="Ytk-Y7-mWq" secondAttribute="top" constant="11" id="8uQ-AY-MB6"/>
+                                        <constraint firstAttribute="bottom" secondItem="JRP-LZ-kog" secondAttribute="bottom" constant="63" id="P0a-vc-osu"/>
+                                        <constraint firstAttribute="bottom" secondItem="bJk-Tv-vLi" secondAttribute="bottom" constant="29" id="Z9a-dK-f6j"/>
+                                        <constraint firstAttribute="trailing" secondItem="JRP-LZ-kog" secondAttribute="trailing" constant="332.5" id="a48-qV-Luq"/>
+                                        <constraint firstItem="bJk-Tv-vLi" firstAttribute="leading" secondItem="JRP-LZ-kog" secondAttribute="leading" id="cTT-Zb-hTa"/>
+                                        <constraint firstItem="JRP-LZ-kog" firstAttribute="leading" secondItem="Ytk-Y7-mWq" secondAttribute="leading" constant="20" id="smA-SX-2cx"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detail" destination="bJk-Tv-vLi" id="YaG-t2-p5m"/>
+                                    <outlet property="header" destination="JRP-LZ-kog" id="vks-jB-3lC"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ztz-AN-8zE" id="YLP-fQ-VUi"/>
+                            <outlet property="delegate" destination="Ztz-AN-8zE" id="qgf-Pm-Qdw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Recipes" id="ht2-Af-WLp" userLabel="Items">
+                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="Gnq-cs-WdO">
+                            <connections>
+                                <action selector="onAddTapped:" destination="Ztz-AN-8zE" id="F3h-3a-uaW"/>
+                                <segue destination="FR9-hX-kTn" kind="popoverPresentation" popoverAnchorBarButtonItem="Gnq-cs-WdO" id="U4r-JQ-Wts">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F6r-mC-hGn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1466.6666666666667" y="-1061.3839285714284"/>
+        </scene>
+        <!--Items-->
+        <scene sceneID="NPw-rW-maY">
+            <objects>
+                <navigationController id="Dsb-zw-XPI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Items" image="recipe" id="F44-Jt-A5m"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MWt-RJ-WvQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ztz-AN-8zE" kind="relationship" relationship="rootViewController" id="KO4-Df-1km"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y28-Ye-xYR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1467" y="-1874"/>
+        </scene>
+        <!--Create Items View Controller-->
+        <scene sceneID="J24-Ru-KKs">
+            <objects>
+                <viewController storyboardIdentifier="CreateItemsViewController" id="FR9-hX-kTn" customClass="CreateItemsViewController" customModule="CalorieTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m07-cj-a2S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QhA-3s-ryR">
+                                <rect key="frame" x="20" y="134" width="374" height="347"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mzD-1W-CrC">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyk-Ei-4Kw">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="41"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Example: Brown Bread" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8L-tR-lWa">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="41"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tl7-wH-U2s">
+                                        <rect key="frame" x="0.0" y="51" width="374" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gF3-Xw-Q5M">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="41"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="In grams" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wuh-Mf-NlW">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="41"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FWQ-mK-hU0">
+                                        <rect key="frame" x="0.0" y="102" width="374" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmW-nq-Ocv">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="41"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="In grams" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xbk-ix-PkA">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="41"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lxj-4N-XKf">
+                                        <rect key="frame" x="0.0" y="153" width="374" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fats:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQ9-7e-P95">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="41"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="In grams" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zPw-dd-ydH">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="41"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bnb-8c-Jbk">
+                                        <rect key="frame" x="0.0" y="204" width="374" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fiber:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mga-bp-DBN">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="41"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="In grams" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQR-N2-qHc">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="41"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a9K-H6-ePf">
+                                        <rect key="frame" x="0.0" y="255" width="374" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Calories:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6w-8x-ymg">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="41"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="In grams" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JMY-0T-QCv">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="41"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tRH-Kc-tJ4">
+                                        <rect key="frame" x="0.0" y="306" width="374" height="41"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xh7-sD-8ZU">
+                                                <rect key="frame" x="0.0" y="0.0" width="151.5" height="41"/>
+                                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                                <size key="titleShadowOffset" width="8" height="0.0"/>
+                                                <state key="normal" title="Clear">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clearClicked:" destination="FR9-hX-kTn" eventType="touchUpInside" id="eWX-Ny-ENx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZQ-ax-a4t">
+                                                <rect key="frame" x="161.5" y="0.0" width="212.5" height="41"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                                <size key="titleShadowOffset" width="8" height="0.0"/>
+                                                <state key="normal" title="Create">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="submitClicked:" destination="FR9-hX-kTn" eventType="touchUpInside" id="Qzg-Fk-t6w"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32929718494415283" green="0.908164381980896" blue="0.55327069759368896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QhA-3s-ryR" firstAttribute="top" secondItem="UHL-cF-T5E" secondAttribute="top" constant="134" id="CWH-UI-A46"/>
+                            <constraint firstItem="QhA-3s-ryR" firstAttribute="centerX" secondItem="m07-cj-a2S" secondAttribute="centerX" id="PRU-Up-g4k"/>
+                            <constraint firstItem="QhA-3s-ryR" firstAttribute="leading" secondItem="UHL-cF-T5E" secondAttribute="leading" constant="20" id="dc5-v1-IGg"/>
+                            <constraint firstItem="UHL-cF-T5E" firstAttribute="trailing" secondItem="QhA-3s-ryR" secondAttribute="trailing" constant="20" id="spf-Yz-yrk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UHL-cF-T5E"/>
+                    </view>
+                    <connections>
+                        <outlet property="carbsTF" destination="Wuh-Mf-NlW" id="yX1-TS-Jfy"/>
+                        <outlet property="clearButton" destination="xh7-sD-8ZU" id="sNc-sF-y0D"/>
+                        <outlet property="fatsTF" destination="zPw-dd-ydH" id="3LS-NR-IyU"/>
+                        <outlet property="fiberTF" destination="CQR-N2-qHc" id="8Xo-Ed-R4d"/>
+                        <outlet property="itemNameTF" destination="U8L-tR-lWa" id="Hg7-T3-OR2"/>
+                        <outlet property="proteinTF" destination="Xbk-ix-PkA" id="Vlk-o5-YrD"/>
+                        <outlet property="submitButton" destination="cZQ-ax-a4t" id="cia-3f-BNk"/>
+                        <outlet property="totalCaloriesTF" destination="JMY-0T-QCv" id="Iqb-3l-njV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TWz-UQ-Vod" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2523.1884057971015" y="-1465.8482142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home" width="30" height="30"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="recipe" width="30" height="30"/>
+    </resources>
+</document>
