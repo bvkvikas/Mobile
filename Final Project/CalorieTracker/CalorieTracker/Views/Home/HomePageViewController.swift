@@ -50,5 +50,11 @@ class HomePageViewController: UIViewController {
             print ("Error signing out: %@", signOutError)
         }
     }
+    @IBAction func breakfastButtonTapped(_ sender: Any) {
+    }
+    @IBAction func lunchButtonTapped(_ sender: Any) {
+    }
+    @IBAction func dinnerButtonTapped(_ sender: Any) {
+    }
     
 }

@@ -42,7 +42,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consumed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ET-RI-PHZ">
-                                <rect key="frame" x="20" y="110" width="374" height="30"/>
+                                <rect key="frame" x="20" y="162" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1da-vr-iSj"/>
                                 </constraints>
@@ -51,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J30-15-YfY" customClass="ProgressMeter" customModule="ProgressMeter">
-                                <rect key="frame" x="10" y="150" width="374" height="50"/>
+                                <rect key="frame" x="20" y="211" width="374" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="c7s-jN-ALX"/>
@@ -87,20 +87,103 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="annotationPositionOnTop" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ndI-0z-Ga2">
+                                <rect key="frame" x="20" y="378" width="374" height="140"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5SH-rb-Mxq">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakfast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZs-wN-LXa">
+                                                <rect key="frame" x="0.0" y="0.0" width="338" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="J70-U6-9dg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anR-Va-96H">
+                                                <rect key="frame" x="338" y="0.0" width="36" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="36" id="On8-Rh-niI"/>
+                                                </constraints>
+                                                <state key="normal" title="Add" image="add"/>
+                                                <connections>
+                                                    <action selector="breakfastButtonTapped:" destination="FgN-Pc-cwy" eventType="touchUpInside" id="yDe-5N-Chy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVN-22-UcX">
+                                        <rect key="frame" x="0.0" y="55" width="374" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omx-2t-ToX">
+                                                <rect key="frame" x="0.0" y="0.0" width="338" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="w2E-vL-ZCc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nf8-n5-dMt">
+                                                <rect key="frame" x="338" y="0.0" width="36" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="36" id="EGd-9i-DHy"/>
+                                                </constraints>
+                                                <state key="normal" title="Add" image="add"/>
+                                                <connections>
+                                                    <action selector="lunchButtonTapped:" destination="FgN-Pc-cwy" eventType="touchUpInside" id="nJA-8M-zCI"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gE-ys-XtB">
+                                        <rect key="frame" x="0.0" y="110" width="374" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCl-Qa-QIy">
+                                                <rect key="frame" x="0.0" y="0.0" width="338" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="p1H-di-m87"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AF-KI-CZn">
+                                                <rect key="frame" x="338" y="0.0" width="36" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="36" id="SoH-Ys-Pt2"/>
+                                                </constraints>
+                                                <state key="normal" title="Add" image="add"/>
+                                                <connections>
+                                                    <action selector="dinnerButtonTapped:" destination="FgN-Pc-cwy" eventType="touchUpInside" id="SrK-t3-3hy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZFr-o8-XHS" firstAttribute="trailing" secondItem="x7F-iw-1c8" secondAttribute="trailing" constant="20" id="Fxj-rU-u15"/>
                             <constraint firstItem="3ET-RI-PHZ" firstAttribute="centerX" secondItem="wxZ-os-kCG" secondAttribute="centerX" id="I1M-F4-P4Q"/>
                             <constraint firstItem="3ET-RI-PHZ" firstAttribute="leading" secondItem="ZFr-o8-XHS" secondAttribute="leading" constant="20" id="KfR-jL-KGB"/>
+                            <constraint firstItem="ZFr-o8-XHS" firstAttribute="trailing" secondItem="3ET-RI-PHZ" secondAttribute="trailing" constant="20" id="MRG-ip-IMI"/>
                             <constraint firstItem="x7F-iw-1c8" firstAttribute="top" secondItem="ZFr-o8-XHS" secondAttribute="top" id="SLH-Cv-gdT"/>
+                            <constraint firstItem="3ET-RI-PHZ" firstAttribute="leading" secondItem="ZFr-o8-XHS" secondAttribute="leading" constant="20" id="Tkj-Jd-0A5"/>
+                            <constraint firstItem="ndI-0z-Ga2" firstAttribute="leading" secondItem="ZFr-o8-XHS" secondAttribute="leading" constant="20" id="U2a-ib-Wyr"/>
                             <constraint firstItem="ZFr-o8-XHS" firstAttribute="trailing" secondItem="x7F-iw-1c8" secondAttribute="trailing" constant="20" id="auc-3j-8sR"/>
+                            <constraint firstItem="ndI-0z-Ga2" firstAttribute="centerY" secondItem="wxZ-os-kCG" secondAttribute="centerY" id="cHy-ii-7Lv"/>
                             <constraint firstItem="x7F-iw-1c8" firstAttribute="leading" secondItem="ZFr-o8-XHS" secondAttribute="leading" constant="20" id="kG7-Px-iHr"/>
                             <constraint firstItem="ZFr-o8-XHS" firstAttribute="trailing" secondItem="3ET-RI-PHZ" secondAttribute="trailing" constant="20" id="kSo-C4-2cr"/>
-                            <constraint firstItem="J30-15-YfY" firstAttribute="centerY" secondItem="wxZ-os-kCG" secondAttribute="centerY" constant="-273" id="oSk-wU-fqn"/>
-                            <constraint firstItem="J30-15-YfY" firstAttribute="top" secondItem="3ET-RI-PHZ" secondAttribute="bottom" constant="10" id="uqZ-fr-9t9"/>
-                            <constraint firstItem="J30-15-YfY" firstAttribute="centerX" secondItem="wxZ-os-kCG" secondAttribute="centerX" constant="-10" id="v6g-7q-Rek"/>
-                            <constraint firstItem="J30-15-YfY" firstAttribute="leading" secondItem="x7F-iw-1c8" secondAttribute="leading" constant="-10" id="yTq-vh-hvE"/>
+                            <constraint firstItem="J30-15-YfY" firstAttribute="centerY" secondItem="wxZ-os-kCG" secondAttribute="centerY" constant="-212" id="oSk-wU-fqn"/>
+                            <constraint firstItem="ndI-0z-Ga2" firstAttribute="centerX" secondItem="wxZ-os-kCG" secondAttribute="centerX" id="tGY-J0-I9m"/>
+                            <constraint firstItem="J30-15-YfY" firstAttribute="top" secondItem="3ET-RI-PHZ" secondAttribute="bottom" constant="19" id="uqZ-fr-9t9"/>
+                            <constraint firstItem="J30-15-YfY" firstAttribute="centerX" secondItem="wxZ-os-kCG" secondAttribute="centerX" id="v6g-7q-Rek"/>
+                            <constraint firstItem="J30-15-YfY" firstAttribute="leading" secondItem="x7F-iw-1c8" secondAttribute="leading" id="yTq-vh-hvE"/>
+                            <constraint firstItem="ZFr-o8-XHS" firstAttribute="trailing" secondItem="ndI-0z-Ga2" secondAttribute="trailing" constant="20" id="zw3-Va-XO6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZFr-o8-XHS"/>
                     </view>
@@ -388,6 +471,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add" width="30" height="30"/>
         <image name="home" width="30" height="30"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="recipe" width="30" height="30"/>
