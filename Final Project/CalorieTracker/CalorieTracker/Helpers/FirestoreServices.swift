@@ -68,7 +68,7 @@ class FireStoreServices {
             
             do {
                     
-                let object = try snapshot.decode(as: objectType.self)
+                let object = try snapshot.decodeUser(as: objectType.self)
                     completion(object)
                 
             } catch {
