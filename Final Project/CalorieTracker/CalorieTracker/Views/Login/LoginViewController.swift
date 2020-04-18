@@ -35,28 +35,18 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: pwd) { (result, error) in
             
             if error != nil {
-                print(error)
+                print(error!)
                 self.errorLabel.text = error!.localizedDescription
                 self.errorLabel.alpha = 1
             }
             else {
-                print("logged in")
-                
-                
-                var window: UIWindow?
-                
+
                 let sb = UIStoryboard(name: "HomePage", bundle: nil)
                 UITabBar.appearance().backgroundColor = .white
                 UITabBar.appearance().tintColor = .red
+                let initialViewController = sb.instantiateViewController(withIdentifier: "HomePageVC") as? HomeViewController
                 
-                      let initialViewController = sb.instantiateViewController(withIdentifier: "HomePageVC")
-                       
-                       window = UIWindow(frame: UIScreen.main.bounds)
-                       
-                       let navigationBarSecond = UINavigationController(rootViewController: initialViewController)
-                       window?.rootViewController = navigationBarSecond
-                       window?.makeKeyAndVisible()
-                
+                self.navigationController?.pushViewController(initialViewController!, animated: true)
             }
         }
     }

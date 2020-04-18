@@ -11,6 +11,9 @@
 		A844D95824494E4600AB004B /* Snapshot Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A844D95724494E4600AB004B /* Snapshot Extensions.swift */; };
 		A844D95A24497B6200AB004B /* ItemCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A844D95924497B6200AB004B /* ItemCellViewController.swift */; };
 		A84F578024480BCD00A97790 /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A84F577F24480BCD00A97790 /* HomePage.storyboard */; };
+		A8964DA4244A4E12007794FE /* BMRCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8964DA3244A4E12007794FE /* BMRCalculator.swift */; };
+		A8964DA6244A6112007794FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8964DA5244A6112007794FE /* User.swift */; };
+		A8964DA8244A7D6E007794FE /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8964DA7244A7D6E007794FE /* HomePageViewController.swift */; };
 		A8CB18F42448DE2E00B83885 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB18F32448DE2E00B83885 /* ItemsViewController.swift */; };
 		A8CB18F72448DE8500B83885 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB18F62448DE8500B83885 /* Items.swift */; };
 		A8CB18F92448FF6000B83885 /* CreateItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CB18F82448FF6000B83885 /* CreateItemsViewController.swift */; };
@@ -39,6 +42,9 @@
 		A844D95724494E4600AB004B /* Snapshot Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Snapshot Extensions.swift"; sourceTree = "<group>"; };
 		A844D95924497B6200AB004B /* ItemCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellViewController.swift; sourceTree = "<group>"; };
 		A84F577F24480BCD00A97790 /* HomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
+		A8964DA3244A4E12007794FE /* BMRCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMRCalculator.swift; sourceTree = "<group>"; };
+		A8964DA5244A6112007794FE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A8964DA7244A7D6E007794FE /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		A8CB18F32448DE2E00B83885 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		A8CB18F62448DE8500B83885 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		A8CB18F82448FF6000B83885 /* CreateItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemsViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				A8CB18F62448DE8500B83885 /* Items.swift */,
+				A8964DA5244A6112007794FE /* User.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -183,6 +190,7 @@
 				A8CB190024490DCE00B83885 /* FirebaseCollectionReference.swift */,
 				A8CB1902244910B300B83885 /* EncodableExtensions.swift */,
 				A844D95724494E4600AB004B /* Snapshot Extensions.swift */,
+				A8964DA3244A4E12007794FE /* BMRCalculator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				A8DA0EC2244793BD00DC470C /* HomeViewController.swift */,
+				A8964DA7244A7D6E007794FE /* HomePageViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -324,15 +333,18 @@
 				A8DA0E9A2446EFE700DC470C /* CalorieTracker.xcdatamodeld in Sources */,
 				A8CB18FB2449003C00B83885 /* Helpers.swift in Sources */,
 				A8CB18F42448DE2E00B83885 /* ItemsViewController.swift in Sources */,
+				A8964DA8244A7D6E007794FE /* HomePageViewController.swift in Sources */,
 				A8CB18F92448FF6000B83885 /* CreateItemsViewController.swift in Sources */,
 				A8CB190124490DCE00B83885 /* FirebaseCollectionReference.swift in Sources */,
 				A8DA0EC524479B3E00DC470C /* Utilities.swift in Sources */,
+				A8964DA4244A4E12007794FE /* BMRCalculator.swift in Sources */,
 				A844D95A24497B6200AB004B /* ItemCellViewController.swift in Sources */,
 				A8CB1903244910B400B83885 /* EncodableExtensions.swift in Sources */,
 				A8CB18F72448DE8500B83885 /* Items.swift in Sources */,
 				A8DA0E972446EFE700DC470C /* AppDelegate.swift in Sources */,
 				A8CB18FF24490D9E00B83885 /* FirestoreServices.swift in Sources */,
 				A8DA0EC724479EC200DC470C /* FirstViewController.swift in Sources */,
+				A8964DA6244A6112007794FE /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +484,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3QX92GRWD9;
 				INFOPLIST_FILE = CalorieTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -491,6 +504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3QX92GRWD9;
 				INFOPLIST_FILE = CalorieTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

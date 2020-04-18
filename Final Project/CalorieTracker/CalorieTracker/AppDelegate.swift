@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func isUserLoggedIn() -> Bool{
         if Auth.auth().currentUser != nil {
-            print("user present already")
             return true;
+
         }else{
             print("user not present")
         }
@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                   let initialViewController = sb.instantiateViewController(withIdentifier: "HomePageVC")
                    
                    window = UIWindow(frame: UIScreen.main.bounds)
-                   
+            
                    let navigationBarSecond = UINavigationController(rootViewController: initialViewController)
                    window?.rootViewController = navigationBarSecond
                    window?.makeKeyAndVisible()

@@ -11,4 +11,5 @@ target 'CalorieTracker' do
   pod 'Firebase/Core'
 	pod 'Firebase/Firestore'
 	pod "ESTabBarController-swift"
+	pod 'ProgressMeter'
 end

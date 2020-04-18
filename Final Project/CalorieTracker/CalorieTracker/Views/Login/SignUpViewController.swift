@@ -18,6 +18,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var ageTF: UITextField!
+    @IBOutlet weak var weightTF: UITextField!
+    @IBOutlet weak var hegihtFeetTF: UITextField!
+    @IBOutlet weak var genderPicker: UISegmentedControl!
+    @IBOutlet weak var heightInches: UITextField!
+    var gender: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
@@ -64,24 +70,22 @@ class SignUpViewController: UIViewController {
             let ln = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailAddress.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let pwd = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let ag = ageTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let hf = hegihtFeetTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let hi = heightInches.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let we = weightTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             Auth.auth().createUser(withEmail: email, password: pwd) { (result, err) in
                 
                 if err != nil {
                     self.showError("Error creating user")
                 }
                 else {
+                    let totHeight : Double = BMRCalculator.getTotalHeightInInches(heightInFeet: Int(hf)!, heightInInches: Int(hi)!)
+                    let caloriesToConsume = BMRCalculator.getBMR(weight: we.toDouble(), height: totHeight, age: Int(ag)!, gender: self.gender)
+                    let user : User = User(firstName: fn, lastName: ln, emailID: (result?.user.email)!, age: ag.toDouble(), gender: self.gender, heightFeet: Int(hf)!, heightInches: hi.toDouble(),totalCaloriesToConsume: caloriesToConsume, weight: we.toDouble())
+                    FireStoreServices.shared.createUser(user: user, in: .users)
                     
-                    // User was created successfully, now store the first name and last name
-                    let db = Firestore.firestore()
-
-                    db.collection("users").addDocument(data: ["first_name":fn, "last_name":ln, "uid": result!.user.uid ]) { (error) in
-                        
-                        if error != nil {
-                            // Show error message
-                            self.showError("Error saving user data : \(error) " )
-                        }
-                    }
-                    self.goToLogin()
+                    self.goToHome()
                 }
                 
             }
@@ -91,17 +95,29 @@ class SignUpViewController: UIViewController {
         
     }
     
+    
     func showError(_ message:String) {
         
         errorLabel.text = message
         errorLabel.alpha = 1
     }
     
-    func goToLogin() {
+    @IBAction func genderPicked(_ sender: UISegmentedControl) {
+        if (genderPicker.selectedSegmentIndex == 0){
+            self.gender = "Male"
+        }
+        else{
+            self.gender = "Female"
+        }
+    }
+    
+    func goToHome() {
         
-        let loginViewController = storyboard?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
+        let sb = UIStoryboard(name: "HomePage", bundle: nil)
+        UITabBar.appearance().backgroundColor = .white
+        UITabBar.appearance().tintColor = .red
+        let initialViewController = sb.instantiateViewController(withIdentifier: "HomePageVC") as? HomeViewController
         
-        view.window?.rootViewController = loginViewController
-        view.window?.makeKeyAndVisible()
+        self.navigationController?.pushViewController(initialViewController!, animated: true)
         
     }}
