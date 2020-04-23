@@ -18,7 +18,7 @@ extension DocumentSnapshot {
             documentJson!["itemID"] = documentID
         }
         
-        let documentData = try JSONSerialization.data(withJSONObject: documentJson, options: [])
+        let documentData = try JSONSerialization.data(withJSONObject: documentJson!, options: [])
         let decodedObject = try JSONDecoder().decode(objectType, from: documentData)
         
         return decodedObject
@@ -31,11 +31,24 @@ extension DocumentSnapshot {
 //            documentJson!["uid"] = documentID
 //        }
 //
-        let documentData = try JSONSerialization.data(withJSONObject: documentJson, options: [])
+        let documentData = try JSONSerialization.data(withJSONObject: documentJson!, options: [])
         let decodedObject = try JSONDecoder().decode(objectType, from: documentData)
         
         return decodedObject
     }
+    
+      func decodeRecords<T: Decodable>(as objectType: T.Type, includingRecordID: Bool = true) throws  -> T {
+            
+        var documentJson = data()
+            if includingRecordID {
+                documentJson!["recordID"] = documentID
+            }
+    
+        let documentData = try JSONSerialization.data(withJSONObject: documentJson!, options: [])
+            let decodedObject = try JSONDecoder().decode(objectType, from: documentData)
+            
+            return decodedObject
+        }
     
     
 }

@@ -11,5 +11,6 @@ import Foundation
 enum FirebaseCollectionReference: String {
     case users
     case items
+    case record
     
 }
