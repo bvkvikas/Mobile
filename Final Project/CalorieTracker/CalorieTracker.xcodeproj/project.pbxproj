@@ -28,6 +28,7 @@
 		A8CD775424510E3400B26CE9 /* BreakfastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CD775324510E3400B26CE9 /* BreakfastTableViewController.swift */; };
 		A8CD775624510E5000B26CE9 /* LunchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CD775524510E5000B26CE9 /* LunchTableViewController.swift */; };
 		A8CD775824510E5B00B26CE9 /* DinnerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CD775724510E5B00B26CE9 /* DinnerTableViewController.swift */; };
+		A8CD775A245258D400B26CE9 /* StackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CD7759245258D400B26CE9 /* StackTableViewController.swift */; };
 		A8DA0E972446EFE700DC470C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA0E962446EFE700DC470C /* AppDelegate.swift */; };
 		A8DA0E9A2446EFE700DC470C /* CalorieTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8DA0E982446EFE700DC470C /* CalorieTracker.xcdatamodeld */; };
 		A8DA0EA52446EFEA00DC470C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8DA0EA42446EFEA00DC470C /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		A8CD775324510E3400B26CE9 /* BreakfastTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakfastTableViewController.swift; sourceTree = "<group>"; };
 		A8CD775524510E5000B26CE9 /* LunchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchTableViewController.swift; sourceTree = "<group>"; };
 		A8CD775724510E5B00B26CE9 /* DinnerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinnerTableViewController.swift; sourceTree = "<group>"; };
+		A8CD7759245258D400B26CE9 /* StackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTableViewController.swift; sourceTree = "<group>"; };
 		A8DA0E932446EFE700DC470C /* CalorieTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalorieTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8DA0E962446EFE700DC470C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8DA0E992446EFE700DC470C /* CalorieTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CalorieTracker.xcdatamodel; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				A8DA0EC2244793BD00DC470C /* HomeViewController.swift */,
 				A8964DA7244A7D6E007794FE /* HomePageViewController.swift */,
 				A8CD7746244F977C00B26CE9 /* ItemsPickerHelperController.swift */,
+				A8CD7759245258D400B26CE9 /* StackTableViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				A8DA0EC3244793BD00DC470C /* HomeViewController.swift in Sources */,
 				A844D95824494E4600AB004B /* Snapshot Extensions.swift in Sources */,
 				A8DA0E9A2446EFE700DC470C /* CalorieTracker.xcdatamodeld in Sources */,
+				A8CD775A245258D400B26CE9 /* StackTableViewController.swift in Sources */,
 				A8CB18FB2449003C00B83885 /* Helpers.swift in Sources */,
 				A8CB18F42448DE2E00B83885 /* ItemsViewController.swift in Sources */,
 				A8964DA8244A7D6E007794FE /* HomePageViewController.swift in Sources */,
