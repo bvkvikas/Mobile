@@ -11,6 +11,7 @@ import Firebase
 import FirebaseFirestore
 import FirebaseAuth
 
+
 class FireStoreServices {
     
     private init() {}
@@ -87,11 +88,30 @@ class FireStoreServices {
                 return
             }
             if let data = document.data() {
-                print("Current data: \(data["totalCaloriesForTheDate"]!)")
                 let cals = data["totalCaloriesForTheDate"]!
                 completion(["totalCaloriesForTheDate": String(format: "%@", cals as! CVarArg)])
             }else{
                 print("Document data was empty.")
+                completion([String: String]())
+            }
+        }
+    }
+    
+    func getMealRecordForTheDate(date: String, typeOfMeal: String ,completion: @escaping(_ response: [String: String]) -> Void){
+        let collectionRef = reference(to: .users).document((Auth.auth().currentUser?.email)!).collection("testRecord")
+        collectionRef.document(date).collection(typeOfMeal).document(typeOfMeal).addSnapshotListener{documentSnapshot, error in
+            if let document = documentSnapshot {
+                if let data = document.data() {
+                    let arr = data["items"]! as! [String]
+                    let joined = arr.joined(separator: ",")
+                    completion(["items": joined])
+                }else{
+                    print("Document data was empty.")
+                    completion([String: String]())
+                }
+            }
+            else {
+                print("Error fetching document: \(error!)")
                 completion([String: String]())
             }
             
@@ -103,9 +123,7 @@ class FireStoreServices {
         reference(to: collectionReference).addSnapshotListener { (snapshot, _) in
             
             guard let snapshot = snapshot else { return }
-            
             do {
-                
                 var objects = [T]()
                 for document in snapshot.documents {
                     let object = try document.decode(as: objectType.self)
@@ -117,8 +135,22 @@ class FireStoreServices {
             } catch {
                 print(error)
             }
+        }
+        
+    }
+    
+    func getItem<T: Decodable>(itemID: String,from collectionReference: FirebaseCollectionReference, returning objectType: T.Type, completion: @escaping (T) -> Void) {
+        
+        reference(to: collectionReference).document(itemID).addSnapshotListener { (snapshot, _) in
             
-            
+            guard let snapshot = snapshot else { return }
+            do {
+                let abc = try snapshot.decode(as: Items.self)
+                completion(abc as! T)
+                
+            } catch {
+                print(error)
+            }
         }
         
     }
@@ -126,15 +158,11 @@ class FireStoreServices {
     func delete<T: Identifiable>(_ identifiableObject: T, in collectionReference: FirebaseCollectionReference) {
         
         do {
-            
             guard let itemID = identifiableObject.itemID else { throw MyError.encodingError }
             reference(to: collectionReference).document(itemID).delete()
-            
         } catch {
             print(error)
         }
-        
-        
     }
     
     func updateMeal(dateToUpdate: String, typeOfMeal: String, totalCalories: Double, items: [String], in collectionReference: FirebaseCollectionReference) {

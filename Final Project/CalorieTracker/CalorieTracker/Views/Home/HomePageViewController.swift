@@ -14,31 +14,25 @@ import DateTimePicker
 
 class HomePageViewController: UIViewController, DateTimePickerDelegate, UITableViewDataSource, UITableViewDelegate {
     
-    var breakfastData: [String] = ["Data1","Data2","Data3"]
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return breakfastData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "breakfastCell",for: indexPath)
-        let data = breakfastData[indexPath.row]
-        
-        cell.textLabel?.text = data
-return cell
-    }
-    
-    
+    var breakfastData =  [String]()
+    var lunchData =  [String]()
+    var dinnerData =  [String]()
     
     @IBOutlet weak var progressControl: ProgressMeter!
     @IBOutlet weak var UserNameLabel: UILabel!
     @IBOutlet weak var caloriesLabel: UILabel!
     @IBOutlet weak var breakfastTableView: UITableView!
+    @IBOutlet weak var lunchTableView: UITableView!
+    @IBOutlet weak var dinnerTableView: UITableView!
     
     @IBOutlet weak var dateButton: UIButton!
     var user : User?
     var selectedDate : String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        if breakfastData.count == 0 {
+            breakfastTableView.isHidden = true
+        }
         setupDateButton()
         getUserData()
     }
@@ -53,18 +47,55 @@ return cell
             self.UserNameLabel.text = "Welcome \(user.firstName ?? "error")"
             FireStoreServices.shared.getRecordsForTheDate(date: self.selectedDate!, completion: {
                 retrievedData in
-                print("RETRIEVED DATA :::: \(retrievedData)")
                 var currentIntake: Double = 0
                 if retrievedData.capacity > 0 {
-                 currentIntake = (retrievedData["totalCaloriesForTheDate"]!.toDouble())
+                    currentIntake = (retrievedData["totalCaloriesForTheDate"]!.toDouble())
                 }
-                
                 let totalCalories: Double = Double(user.totalCaloriesToConsume)
                 self.setupWithCustomData(totalCalories: totalCalories, currentIntake: currentIntake)
                 self.caloriesLabel.text = "\(currentIntake) of \(totalCalories) Cal eaten"
-             //   self.breakfastData = retrievedData["breakfast"]?.components(separatedBy: ",") as! [String]
+                FireStoreServices.shared.getMealRecordForTheDate(date: self.selectedDate!, typeOfMeal: "breakfast", completion: {
+                    breakfastResponse in
+                    if breakfastResponse.capacity > 0 {
+                        let items = breakfastResponse["items"]?.components(separatedBy: ",")
+                        self.breakfastData = items ?? []
+                        self.breakfastTableView.reloadData()
+                        self.breakfastTableView.isHidden = false
+                    }else{
+                        
+                        self.breakfastData.removeAll()
+                        self.breakfastTableView.reloadData()
+                    }
+                })
+                FireStoreServices.shared.getMealRecordForTheDate(date: self.selectedDate!, typeOfMeal: "lunch", completion: {
+                    lunchResponse in
+                    if lunchResponse.capacity > 0 {
+                        let items = lunchResponse["items"]?.components(separatedBy: ",")
+                        self.breakfastData = items ?? []
+                        self.breakfastTableView.reloadData()
+                        self.breakfastTableView.isHidden = false
+                    }else{
+                        
+                        self.breakfastData.removeAll()
+                        self.breakfastTableView.reloadData()
+                    }
+                })
+                FireStoreServices.shared.getMealRecordForTheDate(date: self.selectedDate!, typeOfMeal: "dinner", completion: {
+                    dinnerResponse in
+                    if dinnerResponse.capacity > 0 {
+                        let items = dinnerResponse["items"]?.components(separatedBy: ",")
+                        self.breakfastData = items ?? []
+                        self.breakfastTableView.reloadData()
+                        self.breakfastTableView.isHidden = false
+                    }else{
+                        
+                        self.breakfastData.removeAll()
+                        self.breakfastTableView.reloadData()
+                    }
+                })
             })
         })
+        
     }
     
     func showCalender(){
@@ -120,10 +151,26 @@ return cell
         }
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return breakfastData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "breakfastCell",for: indexPath)
+        FireStoreServices.shared.getItem(itemID: breakfastData[indexPath.row], from: .items, returning: Items.self, completion: {
+            (item) in
+            let data = item.itemName!
+            cell.textLabel?.text = data
+            cell.detailTextLabel?.text = String(item.totalCalories)
+        })
+        return cell
+    }
+    
+    
     @IBAction func dateClicked(_ sender: Any) {
         showCalender()
     }
-
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
