@@ -32,10 +32,7 @@ class SignUpViewController: UIViewController {
     
     func setupElements(){
         errorLabel.alpha = 0
-        Utilities.styleTextField(firstName)
-        Utilities.styleTextField(lastName)
-        Utilities.styleTextField(emailAddress)
-        Utilities.styleTextField(password)
+        Utilities.styleFilledButton(signUpButton)
     }
     
     func validateFields() -> String? {

@@ -18,8 +18,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         setupElements()
     }
     
@@ -27,6 +25,7 @@ class LoginViewController: UIViewController {
         errorLabel.alpha = 0
         Utilities.styleTextField(emailAddress)
         Utilities.styleTextField(password)
+        Utilities.styleHollowButton(loginButton)
     }
     
     @IBAction func logginButtonTapped(_ sender: Any) {

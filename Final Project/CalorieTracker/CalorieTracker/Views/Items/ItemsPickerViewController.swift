@@ -61,8 +61,9 @@ class ItemsPickerViewController: UITableViewController {
         self.selectedItems.removeAll()
         if let arr = tableView.indexPathsForSelectedRows{
             for index in arr{
-                print(items[index.row])
-                selectedItems.append(items[index.row].itemID!)
+                let item = items[index.row]
+                let str = "\(item.itemName!),\(item.totalCalories!),\(item.carbs!),\(item.fats!),\(item.fiber!),\(item.protein!)"
+                selectedItems.append(str)
                 totalCalories += items[index.row].totalCalories
             }
             print("selected arrays :::: \(selectedItems.count)")

@@ -100,7 +100,7 @@ class FireStoreServices {
             if let document = documentSnapshot {
                 if let data = document.data() {
                     let arr = data["items"]! as! [String]
-                    let joined = arr.joined(separator: ",")
+                    let joined = arr.joined(separator: ":")
                     completion(["items": joined])
                 }else{
                     print("Document data was empty.")
@@ -228,8 +228,6 @@ class FireStoreServices {
         } catch {
             print(error)
         }
-        
-        
-        
     }
+    
 }

@@ -26,6 +26,7 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
     @IBOutlet weak var caloriesLabel: UILabel!
     @IBOutlet weak var progressMeter: ProgressMeter!
     @IBOutlet weak var dateButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     var breakfastData =  [String]()
     var lunchData =  [String]()
@@ -39,6 +40,8 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Utilities.styleDateButton(dateButton)
+        Utilities.styleLogoutButton(logoutButton)
         hideShowTable()
         setupDateButton()
         getUserData()
@@ -72,7 +75,7 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
                 FireStoreServices.shared.getMealRecordForTheDate(date: self.selectedDate!, typeOfMeal: "breakfast", completion: {
                     breakfastResponse in
                     if breakfastResponse.capacity > 0 {
-                        let items = breakfastResponse["items"]?.components(separatedBy: ",")
+                        let items = breakfastResponse["items"]?.components(separatedBy: ":")
                         self.breakfastData = items ?? []
                         self.breakfastTable.reloadData()
                         self.breakfastTable.isHidden = false
@@ -85,7 +88,7 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
                 FireStoreServices.shared.getMealRecordForTheDate(date: self.selectedDate!, typeOfMeal: "lunch", completion: {
                     lunchResponse in
                     if lunchResponse.capacity > 0 {
-                        let items = lunchResponse["items"]?.components(separatedBy: ",")
+                        let items = lunchResponse["items"]?.components(separatedBy: ":")
                         self.lunchData = items ?? []
                         self.lunchTable.reloadData()
                         self.lunchTable.isHidden = false
@@ -98,7 +101,7 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
                 FireStoreServices.shared.getMealRecordForTheDate(date: self.selectedDate!, typeOfMeal: "dinner", completion: {
                     dinnerResponse in
                     if dinnerResponse.capacity > 0 {
-                        let items = dinnerResponse["items"]?.components(separatedBy: ",")
+                        let items = dinnerResponse["items"]?.components(separatedBy: ":")
                         self.dinnerData = items ?? []
                         self.dinnerTable.reloadData()
                         self.dinnerTable.isHidden = false
@@ -139,13 +142,22 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
         switch tableView{
         case breakfastTable:
             cell = breakfastTable.dequeueReusableCell(withIdentifier: breakfastCell, for: indexPath)
-            cell.textLabel?.text = breakfastData[indexPath.row]
+            let item = breakfastData[indexPath.row].components(separatedBy: ",")
+            cell.textLabel?.text = item[0]
+            let str = "Calories: \(item[1])"
+            cell.detailTextLabel?.text = str
         case lunchTable:
             cell = lunchTable.dequeueReusableCell(withIdentifier: lunchCell, for: indexPath)
-            cell.textLabel?.text = lunchData[indexPath.row]
+            let item = lunchData[indexPath.row].components(separatedBy: ",")
+            cell.textLabel?.text = item[0]
+            let str = "Calories: \(item[1])"
+            cell.detailTextLabel?.text = str
         case dinnerTable:
             cell = dinnerTable.dequeueReusableCell(withIdentifier: dinnerCell, for: indexPath)
-            cell.textLabel?.text = dinnerData[indexPath.row]
+            let item = dinnerData[indexPath.row].components(separatedBy: ",")
+            cell.textLabel?.text = item[0]
+            let str = "Calories: \(item[1])"
+            cell.detailTextLabel?.text = str
         default:
             print("error retrieving rows in table")
         }
