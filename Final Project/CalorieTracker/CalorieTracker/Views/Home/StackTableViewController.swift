@@ -19,7 +19,7 @@ UITableViewDataSource, UITableViewDelegate{
         super.viewDidLoad()
         breakfastTable.dataSource = self
         breakfastTable.delegate = self
-        breakfastTable.isHidden = true
+        //breakfastTable.isHidden = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
