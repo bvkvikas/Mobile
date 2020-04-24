@@ -60,10 +60,7 @@ class FireStoreServices {
     }
     
     func getUser<T:Decodable>(emailID: String , from collectionReference: FirebaseCollectionReference, returning objectType : T.Type, completion : @escaping (T) -> Void){
-        
-        
-        
-        reference(to: .users).document(emailID).addSnapshotListener { (snapshot, _) in
+                reference(to: .users).document(emailID).addSnapshotListener { (snapshot, _) in
             
             guard let snapshot = snapshot else { return }
             

@@ -71,10 +71,7 @@ class ItemsPickerViewController: UITableViewController {
     
     @IBAction func addTapped(_ sender: Any) {
         print(selectedItems)
-//
-//        for item in selectedItems{
-//
-//        }
+
         FireStoreServices.shared.updateMeal(dateToUpdate: dateToAdd!, typeOfMeal: mealType!, totalCalories: Double(totalCalories), items: selectedItems, in: .users)
         
         
