@@ -13,7 +13,8 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("First View Controller")
+        print(self.navigationController?.viewControllers)
         setupElements()
         
         // Do any additional setup after loading the view.

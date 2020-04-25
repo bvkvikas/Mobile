@@ -13,4 +13,6 @@ target 'CalorieTracker' do
 	pod "ESTabBarController-swift"
 	pod 'ProgressMeter' 
   pod 'DateTimePicker'
+  pod 'TextFieldEffects'
+  pod 'BetterSegmentedControl', '~> 1.3'
 end

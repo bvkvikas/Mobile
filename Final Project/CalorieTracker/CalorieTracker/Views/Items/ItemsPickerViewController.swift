@@ -59,6 +59,7 @@ class ItemsPickerViewController: UITableViewController {
      
     func selectDeselectCell(tableView : UITableView, indexPath: IndexPath){
         self.selectedItems.removeAll()
+        self.totalCalories = 0
         if let arr = tableView.indexPathsForSelectedRows{
             for index in arr{
                 let item = items[index.row]
@@ -75,7 +76,7 @@ class ItemsPickerViewController: UITableViewController {
 
         FireStoreServices.shared.updateMeal(dateToUpdate: dateToAdd!, typeOfMeal: mealType!, totalCalories: Double(totalCalories), items: selectedItems, in: .users)
         
-        
+        self.dismiss(animated: true, completion: nil)
         
     }
     

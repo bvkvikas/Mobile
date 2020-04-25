@@ -23,8 +23,8 @@ class LoginViewController: UIViewController {
     
     func setupElements(){
         errorLabel.alpha = 0
-        Utilities.styleTextField(emailAddress)
-        Utilities.styleTextField(password)
+        password?.text = ""
+        emailAddress?.text = ""
         Utilities.styleHollowButton(loginButton)
     }
     

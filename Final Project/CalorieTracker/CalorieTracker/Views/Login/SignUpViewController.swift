@@ -40,17 +40,31 @@ class SignUpViewController: UIViewController {
         if firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             emailAddress.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            
+            password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            ageTF.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            hegihtFeetTF.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            heightInches.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            weightTF.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            gender == "" {
             return "Please fill in all fields."
         }
         
-        let modifiedPwd = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
+        if  !ageTF.text!.isNumeric() ||
+            !hegihtFeetTF.text!.isNumeric() ||
+            !heightInches.text!.isNumeric() ||
+            !weightTF.text!.isNumeric()  {
+            return "Enter numeric values only."
+        }
+        
+        if !emailAddress.text!.isValidEmail(){
+            return "Enter a valid email address"
+        }
+        
+        let modifiedPwd = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         if Utilities.isPasswordValid(modifiedPwd) == false {
             return "Please make sure your password is at least 8 characters, contains a special character and a number."
         }
-        
         return nil
     }
     
@@ -74,6 +88,7 @@ class SignUpViewController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: pwd) { (result, err) in
                 
                 if err != nil {
+                    print(err!)
                     self.showError("Error creating user")
                 }
                 else {

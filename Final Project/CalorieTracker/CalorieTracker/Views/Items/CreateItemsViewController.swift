@@ -19,11 +19,13 @@ class CreateItemsViewController: UIViewController {
     @IBOutlet weak var fatsTF: UITextField!
     @IBOutlet weak var fiberTF: UITextField!
     
+    @IBOutlet weak var errorLabel: UILabel!
     var action : String?
     var item : Items?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupButtonStyle()
+        errorLabel.alpha = 0
         if action == "search"{
             itemNameTF?.isUserInteractionEnabled = false
             carbsTF?.isUserInteractionEnabled = false
@@ -35,58 +37,60 @@ class CreateItemsViewController: UIViewController {
             clearButton?.isHidden = true
             
         }
-        
         if action == "update" || action ==  "search"{
             let proteinDouble: Double = item?.protein ?? 00
             let fatsDouble: Double = item?.fats ?? 0
             let fibersDouble: Double = item?.fiber ?? 0
             let carbsDouble: Double = item?.carbs ?? 0
             let caloriesInt : Int = item?.totalCalories ?? 0
+            itemNameTF.isEnabled = false
             itemNameTF?.text = item?.itemName ?? "error"
             carbsTF?.text = String(format : "%.2f", carbsDouble)
             totalCaloriesTF?.text = String(caloriesInt)
             proteinTF?.text = String(format : "%.2f", proteinDouble)
             fatsTF?.text = String(format : "%.2f", fatsDouble)
             fiberTF?.text = String(format : "%.2f", fibersDouble)
+            submitButton.setTitle("Update", for: .normal)
         }
-        // Do any additional setup after loading the view.
+    }
+    
+    func setupButtonStyle(){
+        Utilities.styleFilledButton(submitButton)
+        Utilities.styleHollowButton(clearButton)
     }
     
     @IBAction func clearClicked(_ sender: Any) {
+        itemNameTF.text = ""
+        carbsTF.text = ""
+        totalCaloriesTF.text = ""
+        proteinTF.text = ""
+        fatsTF.text = ""
+        fiberTF.text = ""
     }
+    
     @IBAction func submitClicked(_ sender: Any) {
         
-        guard let it = itemNameTF, let itName = it.text, !itName.isEmptyOrWhitespace() else {
-            showAlert(title: "Enter Item Name")
-            return
-        }
+        let error = validateFields()
+               
+               if error != nil {
+                   showError(error!)
+               }else{
+                
+     
         
-        guard let cb = carbsTF, let carb = cb.text, !carb.isEmptyOrWhitespace() else {
-            showAlert(title: "Enter carbs in grams")
-            return
-        }
         
-        guard let pt = proteinTF, let prot = pt.text, !prot.isEmptyOrWhitespace() else {
-            showAlert(title: "Enter proteins in grams")
-            return
-        }
+        let itName = itemNameTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        guard let tc = totalCaloriesTF, let tot = tc.text, !tot.isEmptyOrWhitespace() else {
-            showAlert(title: "Enter Total Calories")
-            return
-        }
+        let carb = carbsTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        guard let ft = fatsTF, let fat = ft.text, !fat.isEmptyOrWhitespace() else {
-            showAlert(title: "Enter Fat in grams")
-            return
-        }
+        let prot = proteinTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        guard let fib = fiberTF, let fiber = fib.text, !fiber.isEmptyOrWhitespace() else {
-            showAlert(title: "Enter Fiber in grams")
-            return
-        }
+        let tot = totalCaloriesTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-      
+         let fat = fatsTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+         let fiber = fiberTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
         
         if action == "update"{
             item?.itemName = itName
@@ -97,6 +101,7 @@ class CreateItemsViewController: UIViewController {
             item?.totalCalories = Int(tot)
             FireStoreServices.shared.update(for: item!, in: .items)
             showAlert(title: "Item: \(item!.itemName ?? "Nil") details updated ")
+
             return
         }
         
@@ -105,9 +110,16 @@ class CreateItemsViewController: UIViewController {
         
         FireStoreServices.shared.create(for: newItem, in: .items)
         showAlert(title: "Item created")
+           }
         
         
         
+    }
+    
+    func showError(_ message:String) {
+        
+        errorLabel.text = message
+        errorLabel.alpha = 1
     }
     
     func showAlert(title: String)
@@ -121,5 +133,30 @@ class CreateItemsViewController: UIViewController {
       NotificationCenter.default.post(name:  NSNotification.Name(rawValue: "refresh"), object: nil)
         self.dismiss(animated: true, completion: nil)
 
+    }
+    
+    
+    func validateFields() -> String? {
+       
+        if itemNameTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            carbsTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            totalCaloriesTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            proteinTF.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            fatsTF.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            fiberTF.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return "Please fill in all fields."
+        }
+        
+        if  !carbsTF.text!.isNumeric() ||
+            !totalCaloriesTF.text!.isNumeric() ||
+            !proteinTF.text!.isNumeric() ||
+            !fatsTF.text!.isNumeric() ||
+            !fiberTF.text!.isNumeric()  {
+            return "Enter numeric values only."
+        }
+        
+        
+        
+        return nil
     }
 }

@@ -36,9 +36,9 @@ class ItemsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath) as? ItemCellViewController
-        cell?.header?.text = item.itemName
+        cell?.textLabel?.text = item.itemName
         let cellText = "Total Calories: \(String(item.totalCalories))"
-        cell?.detail?.text = cellText
+        cell?.detailTextLabel?.text = cellText
         
         return cell!
         
@@ -50,7 +50,7 @@ class ItemsViewController: UITableViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "CreateItemsViewController") as? CreateItemsViewController
         vc?.action = "search"
         vc?.item = item
-        self.navigationController?.pushViewController(vc!, animated: true)
+        self.navigationController?.present(vc!, animated: true)
         
         
     }
@@ -78,7 +78,7 @@ class ItemsViewController: UITableViewController {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateItemsViewController") as? CreateItemsViewController
             vc?.action = "update"
             vc?.item = item
-            self.navigationController?.pushViewController(vc!, animated: true)
+            self.navigationController?.present(vc!, animated: true)
             completion(true)
         }
         action.image = UIImage(named: "edit")
@@ -86,5 +86,6 @@ class ItemsViewController: UITableViewController {
         return action
     }
     
+
 }
 

@@ -46,5 +46,9 @@ extension String {
         let date = dateFormatter.date(from: self)
         return date!
     }
+    
+    func isNumeric() -> Bool {
+        return Double(self) != nil
+    }
 }
 

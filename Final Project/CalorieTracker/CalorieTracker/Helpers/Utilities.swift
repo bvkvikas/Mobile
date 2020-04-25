@@ -11,23 +11,6 @@ import UIKit
 
 class Utilities {
     
-    static func styleTextField(_ textfield:UITextField) {
-        
-        // Create the bottom line
-        let bottomLine = CALayer()
-        
-        bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 2, width: textfield.frame.width, height: 2)
-        
-        bottomLine.backgroundColor = UIColor.init(red: 237/255, green: 15/255, blue: 0/255, alpha: 1.0).cgColor
-        
-        // Remove border on text field
-        textfield.borderStyle = .none
-        
-        // Add the line to the text field
-        textfield.layer.addSublayer(bottomLine)
-        
-    }
-    
     static func styleFilledButton(_ button:UIButton) {
         
         // Filled rounded corner style
@@ -40,7 +23,7 @@ class Utilities {
     static func styleLogoutButton(_ button:UIButton) {
         
         // Filled rounded corner style
-        button.backgroundColor = UIColor(red: 237/255, green: 15/255, blue: 0/255, alpha: 1.0)
+        button.backgroundColor = UIColor(red: 181/255, green: 81/255, blue: 232/255, alpha: 1.0)
         button.layer.cornerRadius = 10
         button.tintColor = UIColor.white
         button.titleLabel?.textColor = UIColor.white
@@ -48,11 +31,11 @@ class Utilities {
     
     static func styleDateButton(_ button:UIButton) {
         
-        // Filled rounded corner style
-        button.backgroundColor = UIColor(red: 237/255, green: 15/255, blue: 0/255, alpha: 1.0)
+        button.layer.borderWidth = 1
+        button.backgroundColor = UIColor.white
+        button.layer.borderColor = UIColor.black.cgColor
         button.layer.cornerRadius = 25.0
-        button.tintColor = UIColor.white
-        button.titleLabel?.textColor = UIColor.white
+        button.tintColor = UIColor.black
     }
     
     static func styleHollowButton(_ button:UIButton) {

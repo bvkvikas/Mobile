@@ -16,6 +16,9 @@ class StackTableViewController: UIViewController,
 UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
     
     
+    @IBOutlet weak var noDinnerLabel: UILabel!
+    @IBOutlet weak var noLunchLabel: UILabel!
+    @IBOutlet weak var noBreakfastLabel: UILabel!
     @IBOutlet weak var breakfastTable: UITableView!
     @IBOutlet weak var lunchTable: UITableView!
     @IBOutlet weak var dinnerTable: UITableView!
@@ -48,6 +51,9 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
     }
     
     func hideShowTable(){
+        addInsets(tableView: breakfastTable)
+        addInsets(tableView: lunchTable)
+        addInsets(tableView: dinnerTable)
         if breakfastData.count == 0 {
             breakfastTable.isHidden = true
         }
@@ -57,6 +63,10 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
         if dinnerData.count == 0 {
             dinnerTable.isHidden = true
         }
+    }
+    
+    private func addInsets(tableView: UITableView) {
+        tableView.contentInset = UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 0);
     }
     
     func getUserData() {
@@ -78,9 +88,11 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
                         let items = breakfastResponse["items"]?.components(separatedBy: ":")
                         self.breakfastData = items ?? []
                         self.breakfastTable.reloadData()
+                        self.noBreakfastLabel.isHidden = true
                         self.breakfastTable.isHidden = false
-                    }else{
                         
+                    }else{
+                        self.noBreakfastLabel.isHidden = false
                         self.breakfastData.removeAll()
                         self.breakfastTable.reloadData()
                     }
@@ -91,9 +103,10 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
                         let items = lunchResponse["items"]?.components(separatedBy: ":")
                         self.lunchData = items ?? []
                         self.lunchTable.reloadData()
+                        self.noLunchLabel.isHidden = true
                         self.lunchTable.isHidden = false
                     }else{
-                        
+                        self.noLunchLabel.isHidden = false
                         self.lunchData.removeAll()
                         self.lunchTable.reloadData()
                     }
@@ -104,9 +117,10 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
                         let items = dinnerResponse["items"]?.components(separatedBy: ":")
                         self.dinnerData = items ?? []
                         self.dinnerTable.reloadData()
+                        self.noDinnerLabel.isHidden = true
                         self.dinnerTable.isHidden = false
                     }else{
-                        
+                        self.noDinnerLabel.isHidden = false
                         self.dinnerData.removeAll()
                         self.dinnerTable.reloadData()
                     }
@@ -181,7 +195,7 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
     }
     
     func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date) {
-        title = picker.selectedDateString
+        //title = picker.selectedDateString
     }
     
     func showCalender(){
@@ -199,7 +213,7 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
         picker.completionHandler = { date in
             let formatter = DateFormatter()
             formatter.dateFormat = "dd-MM-YYYY"
-            self.title = formatter.string(from: date)
+            //self.title = formatter.string(from: date)
             self.selectedDate = picker.selectedDateString
             self.dateButton.setTitle(self.selectedDate, for: .normal)
             self.getUserData()
@@ -235,11 +249,13 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
        }
     
     @IBAction func logOutTapped(_ sender: Any) {
+
         do {
             try Auth.auth().signOut()
-            let storyboard = UIStoryboard(name: "Tracker", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "FirstViewController") as? FirstViewController
-            self.navigationController?.pushViewController(vc!, animated: true)
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+         
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
