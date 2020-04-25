@@ -27,10 +27,6 @@ extension DocumentSnapshot {
     func decodeUser<T: Decodable>(as objectType: T.Type) throws  -> T {
         
         let documentJson = data()
-//        if includingItemID {
-//            documentJson!["uid"] = documentID
-//        }
-//
         let documentData = try JSONSerialization.data(withJSONObject: documentJson!, options: [])
         let decodedObject = try JSONDecoder().decode(objectType, from: documentData)
         

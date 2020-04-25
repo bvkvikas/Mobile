@@ -44,7 +44,6 @@ class LoginViewController: UIViewController {
                 UITabBar.appearance().backgroundColor = .white
                 UITabBar.appearance().tintColor = .red
                 let initialViewController = sb.instantiateViewController(withIdentifier: "HomePageVC") as? HomeViewController
-                
                 self.navigationController?.pushViewController(initialViewController!, animated: true)
             }
         }

@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="yfM-Te-WLD" customClass="StackTableViewController" customModule="CalorieTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hpL-G4-t64">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCa-ma-h4X">
@@ -222,7 +222,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="300" height="63.666667938232422"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xd1-7b-7ts" id="IUb-gA-Ymf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="63.666667938232422"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="63.666667938232422"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U2a-mY-dPc">
@@ -289,7 +289,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="300" height="63.666667938232422"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="itZ-lM-cH3" id="tef-YJ-Hvt">
-                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="63.666667938232422"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="63.666667938232422"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qHt-BP-oAq">
@@ -714,7 +714,7 @@
                             <outlet property="delegate" destination="fkQ-5X-DPs" id="PP3-Ao-mcb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="HFc-rm-ePV">
+                    <navigationItem key="navigationItem" title="Add an item" id="HFc-rm-ePV">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="yhR-lC-hGs">
                             <connections>
                                 <action selector="addTapped:" destination="fkQ-5X-DPs" id="1eZ-bp-xnG"/>
