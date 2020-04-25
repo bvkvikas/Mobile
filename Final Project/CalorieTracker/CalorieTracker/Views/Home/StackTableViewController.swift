@@ -254,6 +254,7 @@ UITableViewDataSource, UITableViewDelegate, DateTimePickerDelegate{
             try Auth.auth().signOut()
             
             self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
             self.navigationController?.setNavigationBarHidden(false, animated: true)
          
         } catch let signOutError as NSError {
