@@ -1,3 +1,3 @@
 # Mobile
 
-INFO6350 - Smartphone based web dev
+iOS app development lessons
